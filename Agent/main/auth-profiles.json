@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "profiles": {
+    "openrouter:default": {
+      "type": "api_key",
+      "provider": "openrouter",
+      "key": "OPENROUTER_API_KEY"
+    },
+    "deepseek:default": {
+      "type": "api_key",
+      "provider": "deepseek",
+      "key": "DEEPSEEK_API_KEY"
+    },
+    "opencode:default": {
+      "type": "api_key",
+      "provider": "opencode",
+      "key": "OPENCODE_API_KEY"
+    },
+    "opencode-go:default": {
+      "type": "api_key",
+      "provider": "opencode-go",
+      "key": "OPENCODE_GO_API_KEY"
+    }
+  },
+  "note": "Actual API keys are stored locally. Placeholder values here for reference."
+}
