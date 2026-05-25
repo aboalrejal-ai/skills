@@ -3,9 +3,9 @@ import argparse
 from google_auth_oauthlib.flow import InstalledAppFlow
 
 def main():
-    client_id = "29882678687-kb7ljjvds7jps8q8k36i9gmg5i6glrge.apps.googleusercontent.com"
-    client_secret = "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"
-    code = "4/0AfrIepBJAf0m_dg8jO1ripPDS0rjMr043_KMEsxpn_vSJOMeXIoCwr9otSVHMDiqDwTkAw"
+    client_id = "YOUR_GOOGLE_CLIENT_ID"
+    client_secret = "YOUR_GOOGLE_CLIENT_SECRET"
+    code = "YOUR_AUTHORIZATION_CODE"
     
     client_config = {
         "web": {
