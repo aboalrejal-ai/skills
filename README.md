@@ -155,7 +155,7 @@ To load any of the skills into your AI agent environment (e.g., Claude Code):
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/YOUR_USERNAME/skills.git
+   git clone https://github.com/aboalrejal-ai/skills.git
    cd skills
    ```
 
