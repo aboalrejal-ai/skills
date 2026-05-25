@@ -6,7 +6,7 @@ metadata: {"openclaw":{"emoji":"🧵","requires":{"env":["N8N_API_KEY","N8N_BASE
 
 # n8n Agents Skill
 
-This is a custom-built skill for Mohammed (aboalrejal-ai) that merges:
+This is a custom-built skill for managing n8n workflows that merges:
 1. **Full n8n API Management**: Control workflows, executions, and activation.
 2. **Workflow Templates**: Production-ready automation templates.
 3. **Advanced Automation Design**: High-quality JSON workflow generation with error handling.
