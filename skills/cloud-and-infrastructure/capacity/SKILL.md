@@ -29,7 +29,7 @@ Finds available Azure OpenAI model capacity across all accessible regions and pr
 - ✅ User got a quota error and needs to find an alternative location
 - ✅ User asks "best region and project for deploying model X"
 
-**After discovery → hand off to [preset](../preset/SKILL.md) or [customize](../customize/SKILL.md) for actual deployment.**
+**After discovery → hand off to [preset](../cloud-and-infrastructure/preset/SKILL.md) or [customize](../cloud-and-infrastructure/customize/SKILL.md) for actual deployment.**
 
 ## Scripts
 
@@ -119,8 +119,8 @@ Regions/SKUs where `quotaAvailable = 0` should be marked with ❌ in the results
 
 After the script outputs the ranked table (now annotated with quota info), present it to the user and ask:
 
-1. 🚀 **Quick deploy** to top recommendation with defaults → route to [preset](../preset/SKILL.md)
-2. ⚙️ **Custom deploy** with version/SKU/capacity/RAI selection → route to [customize](../customize/SKILL.md)
+1. 🚀 **Quick deploy** to top recommendation with defaults → route to [preset](../cloud-and-infrastructure/preset/SKILL.md)
+2. ⚙️ **Custom deploy** with version/SKU/capacity/RAI selection → route to [customize](../cloud-and-infrastructure/customize/SKILL.md)
 3. 📊 **Check another model** or capacity target → re-run Phase 2
 4. ❌ Cancel
 
@@ -141,6 +141,6 @@ If the discovery table shows a sample project for the chosen region, suggest it 
 
 ## Related Skills
 
-- **[preset](../preset/SKILL.md)** — Quick deployment after capacity discovery
-- **[customize](../customize/SKILL.md)** — Custom deployment after capacity discovery
+- **[preset](../cloud-and-infrastructure/preset/SKILL.md)** — Quick deployment after capacity discovery
+- **[customize](../cloud-and-infrastructure/customize/SKILL.md)** — Custom deployment after capacity discovery
 - **[quota](../../../quota/quota.md)** — For quota viewing, increase requests, and troubleshooting quota errors, defer to this skill instead of duplicating guidance
