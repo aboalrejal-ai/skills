@@ -2,20 +2,16 @@
 
 ## Supported Versions
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
+We actively support and resolve security vulnerabilities in the following versions:
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
+| Version | Supported |
+| ------- | --------- |
+| v1.x.x  | Yes       |
 
 ## Reporting a Vulnerability
 
-Use this section to tell people how to report a vulnerability.
+We take the security of our AI skills and automation workflows very seriously. If you discover any security vulnerability or risk (such as prompt injections, execution escapes, or data leakage risks), please report it directly.
 
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+Please do **NOT** open a public issue for security-related bugs. Instead, email us at **security@aboalrejal-ai.dev** (or open a private security draft on GitHub).
+
+We will acknowledge your report within 48 hours and provide a detailed timeline for resolution.

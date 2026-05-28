@@ -1,13 +1,13 @@
 # Auditor Authors Guide
 
-> For contributors writing a new auditor-class skill. If you are NOT writing an auditor, read [skill-contract.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md) instead.
+> For contributors writing a new auditor-class skill. If you are NOT writing an auditor, read [skill-contract.md](./skill-contract.md) instead.
 
 ## Start here
 
 Read these three files in order before touching anything:
-1. **[skill-contract.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md)** — general handoff contract all 20 skills follow
-2. **[auditor-runbook.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/auditor-runbook.md) §1-5** — auditor-specific extension: handoff schema, cap arithmetic, guardrails, Artifact Gate, translation
-3. **[contract-fail-caps.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/contract-fail-caps.md)** — cap numbers, single source of truth
+1. **[skill-contract.md](./skill-contract.md)** — general handoff contract all 20 skills follow
+2. **[auditor-runbook.md](./auditor-runbook.md) §1-5** — auditor-specific extension: handoff schema, cap arithmetic, guardrails, Artifact Gate, translation
+3. **[contract-fail-caps.md](./contract-fail-caps.md)** — cap numbers, single source of truth
 
 Then copy the template below.
 
@@ -131,7 +131,7 @@ Yes, still inline the Runbook if you have veto items. The arithmetic is framewor
 
 ## Related
 
-- [auditor-runbook.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/auditor-runbook.md) — authoritative Runbook
-- [skill-contract.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md) — general contract
-- [ADR-001](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/decisions/2026-04-adr-001-inline-auditor-runbook.md) — why inlining was chosen
-- [commands/contract-lint.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/commands/contract-lint.md) — drift detection command
+- [auditor-runbook.md](./auditor-runbook.md) — authoritative Runbook
+- [skill-contract.md](./skill-contract.md) — general contract
+- [ADR-001](./decisions/2026-04-adr-001-inline-auditor-runbook.md) — why inlining was chosen
+- [commands/contract-lint.md](../commands/contract-lint.md) — drift detection command

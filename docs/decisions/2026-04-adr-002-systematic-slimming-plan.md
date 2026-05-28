@@ -3,7 +3,7 @@
 - **Date**: 2026-04-24
 - **Status**: Accepted
 - **Target release**: v9.5.0+
-- **Authors**: aaron-he-zhu + Codex + agent review panel
+- **Authors**: aboalrejal-ai + Codex + agent review panel
 
 ## Context
 

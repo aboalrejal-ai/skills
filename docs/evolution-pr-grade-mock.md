@@ -6,7 +6,7 @@ type: reference
 
 # Evolution PR-Grade Mock
 
-This fixture shows how a PR should summarize controlled evolution: source signal, target, risk, validation_results, rollback, and decision. It is not production evidence.
+This fixture shows how a PR should [summarize](../skills/design-and-creative/summarize) controlled evolution: source signal, target, risk, validation_results, rollback, and decision. It is not production evidence.
 
 ## Mock PR Summary
 

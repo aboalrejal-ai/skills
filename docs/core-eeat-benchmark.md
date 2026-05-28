@@ -1,6 +1,6 @@
 # CORE-EEAT Content Benchmark — Skills Reference
 
-> Based on [CORE-EEAT Content Benchmark](https://github.com/aaron-he-zhu/core-eeat-content-benchmark) **v3.0**
+> Based on [CORE-EEAT Content Benchmark](https://github.com/aboalrejal-ai/core-eeat-content-benchmark) **v3.0**
 >
 > This file is a reference adaptation for the SEO & GEO Skills Library. For the full benchmark with detailed examples, see the source repository.
 >
@@ -179,7 +179,7 @@
 
 ### Veto Items
 
-Failing any veto item activates the Critical Fail Cap. The cap arithmetic and thresholds are defined in [auditor-runbook.md §2](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/auditor-runbook.md). Do not restate cap numbers here or elsewhere — this file owns the item definitions only.
+Failing any veto item activates the Critical Fail Cap. The cap arithmetic and thresholds are defined in [auditor-runbook.md §2](./auditor-runbook.md). Do not restate cap numbers here or elsewhere — this file owns the item definitions only.
 
 | Veto ID | Dimension | Check |
 |---------|-----------|-------|
@@ -187,9 +187,9 @@ Failing any veto item activates the Critical Fail Cap. The cap arithmetic and th
 | **C01** | Contextual Clarity | Clickbait — title promises something the page doesn't deliver |
 | **R10** | Referenceability | Data on the page contradicts itself |
 
-**Single veto fail**: cap applies per [Runbook §2 decision table](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/auditor-runbook.md).
+**Single veto fail**: cap applies per [Runbook §2 decision table](./auditor-runbook.md).
 
-**2+ veto fails**: audit returns `status: BLOCKED` per [Runbook §2 Worked Example 3](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/auditor-runbook.md). Calibration for a numeric multi-veto cap is pending v7.3, gated on 30+ real multi-veto audits in `memory/audits/`.
+**2+ veto fails**: audit returns `status: BLOCKED` per [Runbook §2 Worked Example 3](./auditor-runbook.md). Calibration for a numeric multi-veto cap is pending v7.3, gated on 30+ real multi-veto audits in `memory/audits/`.
 
 Rationale: prevents "79 items pass + 1 veto fails" from producing a misleadingly high overall score.
 
@@ -650,7 +650,7 @@ Affiliate-link disclosure is enforceable only when ALL of the following sub-crit
 
 **Partial**: Page contains no affiliate links (N/A — score as Partial, not Pass, because the control cannot be verified in the positive sense).
 
-**Fail**: Any affiliate link exists on the page and any one of (a)–(e) is missing → **VETO** per [§Veto Items](#veto-items). Cap rule applies per [auditor-runbook.md §2](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/auditor-runbook.md). Also surface in the handoff `key_findings` with severity `veto` and cite the specific sub-item that failed (e.g., "T04(a): disclosure placed in footer only, below first affiliate link").
+**Fail**: Any affiliate link exists on the page and any one of (a)–(e) is missing → **VETO** per [§Veto Items](#veto-items). Cap rule applies per [auditor-runbook.md §2](./auditor-runbook.md). Also surface in the handoff `key_findings` with severity `veto` and cite the specific sub-item that failed (e.g., "T04(a): disclosure placed in footer only, below first affiliate link").
 
 **T05: Editorial Policy** | SEO 🔍
 - **Pass**: Content standards and review process published.
@@ -693,12 +693,12 @@ Calibration examples for the most subjective CORE items. Use these to anchor sco
 **C05 (Topic Scope)** — Does the content explicitly state what is and isn't covered?
 
 - **Pass**: "This guide covers on-page SEO for WordPress sites running WooCommerce. It does not cover technical server configuration, JavaScript-rendered SPAs, or paid search campaigns." Clear boundaries that set reader expectations and prevent scope creep.
-- **Partial**: "We'll look at the main SEO factors for your website." Implies some boundary but never states what is excluded; a reader might expect technical SEO or paid search content.
+- **Partial**: "We'll look at the main SEO factors for your [website](../skills/frontend-development/website)." Implies some boundary but never states what is excluded; a reader might expect technical SEO or paid search content.
 - **Fail**: Article titled "Complete SEO Guide" that covers only title tags and meta descriptions with no mention of the limited scope. Reader expectation is violated.
 
 **C07 (Semantic Coherence)** — Does the content flow logically between paragraphs?
 
-- **Pass**: Article on database indexing moves from "what indexes are" to "how B-tree indexes work" to "when to add indexes" to "common indexing mistakes," with each section building on the previous. Transition sentences connect ideas explicitly.
+- **Pass**: Article on database indexing moves from "what indexes are" to "how B-tree indexes work" to "when to add indexes" to "common indexing mistakes," with each section building on the previous. Transition sentences [connect](../skills/automation-and-saas/connect) ideas explicitly.
 - **Partial**: Article covers the same topics but jumps from B-tree internals to a marketing anecdote about database costs, then returns to technical content. The detour is brief but breaks the logical chain.
 - **Fail**: Article alternates between beginner explanations and advanced query optimization with no transitions. A paragraph about "what is SQL" is followed by EXPLAIN ANALYZE output with no bridging context.
 

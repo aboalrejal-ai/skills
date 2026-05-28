@@ -8,10 +8,10 @@
 
 Use these files for active maintenance:
 
-- [references/state-model.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md) — current memory and wiki data model
-- [cross-cutting/memory-management/SKILL.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/memory-management/SKILL.md) — execution behavior and ownership rules
-- [hooks/hooks.json](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/hooks/hooks.json) — SessionStart, PostToolUse, and Stop automation behavior
-- [commands/wiki-lint.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/commands/wiki-lint.md) — lint and health-check workflow
+- [references/state-model.md](./state-model.md) — current memory and wiki data model
+- [cross-cutting/memory-management/SKILL.md](../skills/memory-management/SKILL.md) — execution behavior and ownership rules
+- [hooks/hooks.json](../hooks/hooks.json) — SessionStart, PostToolUse, and Stop automation behavior
+- [commands/wiki-lint.md](../commands/wiki-lint.md) — lint and health-check workflow
 
 Treat this file as design history, not executable spec.
 

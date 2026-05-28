@@ -3,8 +3,8 @@
 Formalizes the data contract between `entity-optimizer` (writes canonical entity profiles) and `geo-content-optimizer` (reads entity facts to produce AI-citable content).
 
 Referenced by:
-- [entity-optimizer/SKILL.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/entity-optimizer/SKILL.md) — as an authoritative contract for its Writes
-- [geo-content-optimizer/SKILL.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/build/geo-content-optimizer/SKILL.md) — as an authoritative contract for its Reads
+- [entity-optimizer/SKILL.md](../skills/entity-optimizer/SKILL.md) — as an authoritative contract for its Writes
+- [geo-content-optimizer/SKILL.md](../skills/geo-content-optimizer/SKILL.md) — as an authoritative contract for its Reads
 
 ---
 
@@ -58,7 +58,7 @@ ai_resolution_status:                  # auditor-populated; geo-content reads th
   chatgpt: recognized                  # recognized | partial | unrecognized | confused
   perplexity: recognized
   claude: partial
-  gemini: unrecognized
+  [gemini](../skills/ai-and-agents/gemini): unrecognized
   last_tested: 2026-04-10
 ai_resolution_notes:
   - "Claude confuses Acme Analytics with Cloud Monitor (Alibaba product)"
