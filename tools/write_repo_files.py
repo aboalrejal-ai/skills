@@ -207,12 +207,12 @@ Essential commands for the core development and automation workflows:
 
 | Command | Agent Skill | Description |
 |:---|:---|:---|
-| `/speckit.constitution` | [`speckit-constitution`](skills/ai-and-agents/acreadiness-policy/SKILL.md) | Create or update project governing principles and development guidelines |
-| `/speckit.specify` | [`speckit-specify`](skills/ai-and-agents/ai-ready/SKILL.md) | Define what you want to build (requirements and user stories) |
-| `/speckit.plan` | [`speckit-plan`](skills/ai-and-agents/breakdown-plan/SKILL.md) | Create technical implementation plans with your chosen tech stack |
-| `/speckit.tasks` | [`speckit-tasks`](skills/ai-and-agents/breakdown-test/SKILL.md) | Generate actionable task lists for implementation |
-| `/speckit.taskstoissues` | [`speckit-taskstoissues`](skills/ai-and-agents/conventional-commit/SKILL.md) | Convert generated task lists into GitHub issues for tracking |
-| `/speckit.implement` | [`speckit-implement`](skills/ai-and-agents/subagent-driven-development/SKILL.md) | Execute all tasks to build the feature according to the plan |
+| `/coding-agent` | [`coding-agent`](skills/ai-and-agents/coding-agent/SKILL.md) | Delegate complex coding tasks to Codex, Claude Code, or Pi agents via background processes |
+| `/seo-content-writer` | [`seo-content-writer`](skills/marketing-and-seo/seo-content-writer/SKILL.md) | Create high-ranking, SEO-optimized articles with automated keyword structures |
+| `/mcp-builder` | [`mcp-builder`](skills/ai-and-agents/mcp-builder/SKILL.md) | Develop custom Model Context Protocol (MCP) servers in Python or TypeScript |
+| `/ai-ready` | [`ai-ready`](skills/ai-and-agents/ai-ready/SKILL.md) | Bootstrap any repository with custom AI rules, developer configs, and guidelines |
+| `/security-review` | [`security-review`](skills/security-and-compliance/security-review/SKILL.md) | Perform multi-axis security scans and dependency vulnerability auditing |
+| `/pdf` | [`pdf`](skills/document-processing/pdf/SKILL.md) | Perform programmatic PDF creation, extraction, splitting, merging, and OCR scanning |
 
 ---
 
