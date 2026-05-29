@@ -100,29 +100,71 @@ def parse_frontmatter(file_path):
     except Exception:
         return {}
 
-    lines = content.splitlines()
-    frontmatter = {}
-    in_fm = False
-    fm_lines = []
+    match = re.search(r'^---\s*\n(.*?)\n---\s*\n', content, re.DOTALL | re.MULTILINE)
+    if not match:
+        return {}
     
-    for line in lines:
-        if line.strip() == "---":
-            if not in_fm:
-                in_fm = True
-                continue
-            else:
-                break
-        if in_fm:
-            fm_lines.append(line)
-
-    for line in fm_lines:
-        if not line.strip() or line.strip().startswith("#"):
+    fm_text = match.group(1)
+    frontmatter = {}
+    
+    for line in fm_text.splitlines():
+        line = line.strip()
+        if not line or line.startswith('#'):
             continue
-        if ":" in line:
-            key, val = line.split(":", 1)
-            frontmatter[key.strip()] = val.strip().strip('"').strip("'")
-            
+        if ':' in line and not line.startswith('-'):
+            k, v = line.split(':', 1)
+            k = k.strip()
+            v = v.strip()
+            v = re.sub(r"^['\"]|['\"]$", "", v).strip()
+            frontmatter[k] = v
+
+    # Extract block scalars for multiline descriptions specifically
+    block_match = re.search(r'^description:\s*(?:[|>][-+]?)?\s*\n((?:\s{2,}.*\n?)+)', fm_text, re.MULTILINE)
+    if block_match:
+        lines = block_match.group(1).splitlines()
+        cleaned_lines = [l.strip() for l in lines]
+        description = " ".join(cleaned_lines).strip()
+        frontmatter["description"] = description
+        
     return frontmatter
+
+def clean_and_summarize_description(name, desc):
+    desc = desc.strip() if desc else ""
+    if not desc or desc in ["|", ">-", ">", "|-", "No description provided."]:
+        words = name.replace("-", " ").replace("_", " ").title()
+        return f"Automates and optimizes workflows for {words}."
+
+    desc = " ".join(desc.split())
+    sentences = re.split(r'(?<=[.!?])\s+', desc)
+    sentences = [s.strip() for s in sentences if s.strip()]
+
+    if not sentences:
+        words = name.replace("-", " ").replace("_", " ").title()
+        return f"Automates and optimizes workflows for {words}."
+
+    first_sentence = sentences[0]
+    
+    # Only combine if the total length stays under 120 characters
+    if len(sentences) > 1 and len(first_sentence) < 60:
+        combined = first_sentence + " " + sentences[1]
+        if len(combined) < 120:
+            first_sentence = combined
+
+    # Strict limit: if it's longer than 130 characters, clean/shorten it gracefully
+    if len(first_sentence) > 130:
+        sub_parts = re.split(r'[,;]\s+(?:and|but|or|so|to|which|that)\s+', first_sentence)
+        if sub_parts and len(sub_parts[0]) > 40 and len(sub_parts[0]) <= 120:
+            first_sentence = sub_parts[0]
+        else:
+            if len(first_sentence) > 120:
+                truncated = first_sentence[:120].rsplit(' ', 1)[0]
+                first_sentence = truncated
+
+    first_sentence = first_sentence.strip()
+    if not first_sentence.endswith(('.', '!', '?')):
+        first_sentence += '.'
+
+    return first_sentence
 
 class SkillClassifier:
     def __init__(self, workspace_root, dry_run=False):
@@ -326,10 +368,12 @@ class SkillClassifier:
                     skill_file = os.path.join(skill_path, "SKILL.md")
                     if os.path.isdir(skill_path) and os.path.exists(skill_file):
                         fm = parse_frontmatter(skill_file)
+                        raw_desc = fm.get("description") or "No description provided."
+                        cleaned_desc = clean_and_summarize_description(skill_name, raw_desc)
                         cat_skills[name].append({
                             "name": skill_name,
                             "version": fm.get("version") or fm.get("metadata.version") or "1.0.0",
-                            "description": fm.get("description") or "No description provided.",
+                            "description": cleaned_desc,
                             "class": fm.get("class") or "standard"
                         })
 
