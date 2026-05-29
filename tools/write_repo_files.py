@@ -10,43 +10,43 @@ import sys
 
 CATEGORIES_INFO = {
     "ai-and-agents": {
-        "title": "🤖 AI & Intelligent Agents (الذكاء الاصطناعي والعملاء الأذكياء)",
+        "title": "🤖 AI & Intelligent Agents",
         "desc": "Agent orchestration, prompts, subagents, and model-specific MCP servers for Claude Code, Antigravity, Cursor, and Windsurf."
     },
     "automation-and-saas": {
-        "title": "🔌 SaaS & API Automation (أتمتة الأنظمة والـ SaaS)",
+        "title": "🔌 SaaS & API Automation",
         "desc": "Automated integrations with third-party software, chat platforms, CRMs, and APIs (HubSpot, Stripe, Slack, etc.)."
     },
     "design-and-creative": {
-        "title": "🎨 Design & Creative Graphics (التصميم والفنون الإبداعية)",
+        "title": "🎨 Design & Creative Graphics",
         "desc": "Algorithmic art, graphical layout tools, sticker creation, theme generators, and audio/music production."
     },
     "document-processing": {
-        "title": "📄 Document Processing & Management (معالجة وإدارة المستندات)",
+        "title": "📄 Document Processing & Management",
         "desc": "Generation, parsing, OCR, and editing of standard digital documents (PDF, Excel/XLSX, Word/DOCX, PPTX)."
     },
     "frontend-development": {
-        "title": "📱 Frontend Development (برمجة وتطوير الواجهات)",
+        "title": "📱 Frontend Development",
         "desc": "User interface styling, mobile framework configurations (Flutter, iOS, Android, React Native), and responsive design."
     },
     "backend-and-fullstack": {
-        "title": "⚙️ Backend & Systems Engineering (هندسة الخلفية والأنظمة)",
+        "title": "⚙️ Backend & Systems Engineering",
         "desc": "Server architectures, database engines, WordPress plugin development, testing frameworks, and shell control."
     },
     "marketing-and-seo": {
-        "title": "📈 Growth Marketing & SEO (التسويق الرقمي والـ SEO)",
+        "title": "📈 Growth Marketing & SEO",
         "desc": "Conversion rate optimization (CRO), search engine indexing, copywriting, competitor analysis, and sales enablement."
     },
     "security-and-compliance": {
-        "title": "🔒 Security & System Compliance (الأمن والحماية الرقمية)",
+        "title": "🔒 Security & System Compliance",
         "desc": "Cybersecurity reviews, code sanitisation, threat modelling, license monitoring, and GDPR compliance."
     },
     "science-and-bioinformatics": {
-        "title": "🧬 Science & Bioinformatics (العلوم والمعلوماتية الحيوية)",
+        "title": "🧬 Science & Bioinformatics",
         "desc": "Scientific search portals, genomic research APIs, biological catalogs, and chemical structure metrics."
     },
     "cloud-and-infrastructure": {
-        "title": "☁️ Cloud & DevOps Infrastructure (الحوسبة السحابية والبنية التحتية)",
+        "title": "☁️ Cloud & DevOps Infrastructure",
         "desc": "Cloud deployment toolsets (Azure, AWS), infrastructure-as-code (Terraform, Bicep), and CI/CD pipelines."
     }
 }
@@ -110,41 +110,115 @@ def generate_readme(skills_dir, output_path):
 
     total_skills = sum(len(lst) for lst in cat_skills.values())
 
-    # 2. Build the SEO-optimized and humanized Arabic/English README template
-    readme_content = f"""# 🚀 Unified Agent Skills Hub | مستودع المهارات الموحد للعملاء الأذكياء
+    # 2. Build the SEO-optimized and humanized English README template
+    readme_content = f"""<p align="center">
+  <img src="https://raw.githubusercontent.com/aboalrejal-ai/skills/main/assets/logo.png" alt="Abo Alrejal Skills Logo" width="120" style="border-radius: 50%" error="this.src='https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png'"/>
+</p>
 
-Welcome to the **Unified Agent Skills Hub**—the largest, most comprehensive open source library of modular AI Skills, System Experts, and Developer Plugins.
+# <p align="center">🌱 Unified Agent Skills Hub</p>
 
-مرحباً بكم في **مستودع المهارات الموحد للعملاء الأذكياء**—أضخم مكتبة مفتوحة المصدر لمهارات الذكاء الاصطناعي، والخبراء الأنظمة، وإضافات المطورين في العالم. تم إعداد وتوثيق هذه المهارات بعناية فائقة لتتوافق برمجياً وتعمل بسلاسة تامة مع كبرى منصات وبيئات التطوير الذكية.
+### <p align="center">*Build high-quality software faster.*</p>
+
+<p align="center">
+  *An open source library of {total_skills}+ modular AI Skills, System Experts, and Developer Plugins that integrate with Claude Code, Antigravity, Cursor, and Windsurf.*
+</p>
+
+<p align="center">
+  <a href="https://github.com/aboalrejal-ai/skills"><img src="https://img.shields.io/github/v/release/aboalrejal-ai/skills?color=blue&logo=github&style=flat-square" alt="Release" /></a>
+  <a href="https://github.com/aboalrejal-ai/skills/stargazers"><img src="https://img.shields.io/github/stars/aboalrejal-ai/skills?style=social" alt="Stars" /></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="License" /></a>
+  <a href="docs/skill-registry.md"><img src="https://img.shields.io/badge/docs-GitHub_Pages-blue?style=flat-square" alt="Docs" /></a>
+</p>
 
 ---
 
-## 🌟 Supported Environments & Providers | البيئات والمنصات المدعومة
+## Table of Contents
+
+* 🤔 [What is Abo Alrejal Skills?](#-what-is-abo-alrejal-skills)
+* ⚡ [Get Started & Installation](#-get-started--installation)
+* 📹 [Video Overview](#-video-overview)
+* 🌐 [Community & Supported AI Platforms](#-community--supported-ai-platforms)
+* 💻 [Core Commands Reference](#-core-commands-reference)
+* 📁 [The 10 Canonical Categories](#-the-10-canonical-categories)
+* 🧬 [Core Biology Development Paths](#-core-biology-development-paths)
+* ⚙️ [System Requirements & Paths](#-system-requirements--paths)
+* 🤝 [Support & Feedback](#-support--feedback)
+* 📄 [License](#-license)
+
+---
+
+## 🤔 What is Abo Alrejal Skills?
+
+The **Unified Agent Skills Hub** (aboalrejal-ai/skills) is a premium, production-grade library containing **{total_skills} modular skills, agent tools, and platform instructions**. 
+
+By loading these specialized configurations into your agentic IDE or terminal co-programmer (such as Antigravity, Claude Code, or Cursor), you equip your AI partner with the exact instructions, schemas, and guardrails necessary to perform complex, multi-step actions autonomously—eliminating "vibe coding" and ensuring predictable, high-quality development outcomes.
+
+---
+
+## ⚡ Get Started & Installation
+
+Loading these modular skills into your favorite AI developer environment is extremely straightforward.
+
+### Method A: Direct Clone (Recommended for Local Customization)
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/aboalrejal-ai/skills.git
+   cd skills
+   ```
+2. **Copy your desired skill folder to your agent directory:**
+   For example, loading `seo-content-writer` into **Claude Code**:
+   ```bash
+   mkdir -p ~/.claude/skills/seo-content-writer
+   cp -r skills/marketing-and-seo/seo-content-writer/* ~/.claude/skills/seo-content-writer/
+   ```
+
+### Method B: Spec-Driven Command Line Setup
+Run our validator tool to ensure all rules are properly loaded into your environment:
+```bash
+bash tools/validate-skill.sh skills/marketing-and-seo/seo-content-writer/SKILL.md
+```
+
+---
+
+## 📹 Video Overview
+
+*Check back soon for a walkthrough demonstrating how modular skills supercharge Antigravity IDE and Claude Code in real-time.*
+
+---
+
+## 🌐 Community & Supported AI Platforms
 
 This repository is fully optimized and structured to work across all modern agentic AI and IDE co-programming platforms:
-*   **Antigravity IDE** (Highly recommended / موصى به بشدة)
-*   **Claude Code** (Anthropic CLI / واجهة أوامر كلود)
-*   **Cursor** (Premium AI Editor / محرّر كرسر الذكي)
-*   **Windsurf** (Next-gen AI IDE / الجيل الجديد من بيئات التطوير)
-*   **Open Code** (Open source editor / المحرّر المفتوح)
-*   **Google Gemini CLI & Agents** (Gemini eco-system / منظومة جيميني)
-*   **GitHub Copilot / Copilot Agents** (Microsoft Copilot / كوبايلوت)
+*   **Antigravity IDE** (Highly recommended / full visual integration)
+*   **Claude Code** (Anthropic CLI / advanced console agent)
+*   **Cursor** (Premium AI Editor / multi-turn custom agents)
+*   **Windsurf** (Next-gen AI IDE / interactive context engine)
+*   **Open Code** (Open source editor / sandboxed CLI)
+*   **Google Gemini CLI & Agents** (Gemini Live API integrations)
+*   **GitHub Copilot / Copilot Agents** (Enterprise workgroup bots)
 
 ---
 
-## 🏗️ Repository Architecture | هيكلية المستودع
+## 💻 Core Commands Reference
 
-The directory has a clean, production ready, and highly modular design:
-*   **`skills/`**: The core directory housing all individual skill folders, neatly organized into 10 canonical categories.
-*   **`docs/`**: Global architectural guidelines, scoring benchmarks (CORE-EEAT, CITE), ADRs, and intent resolvers.
-*   **`agents/`**: Core specialist agent profiles (Coding, Security, Automation, Research, Content, and Marketing).
-*   **`tools/`**: Local validation tools and compliance checker scripts.
+When a skill is loaded into your AI agent environment, it is bound to a dedicated **slash command** or **intent prompt**. The agent invokes the skill by matching this trigger.
+
+Essential commands for the core development and automation workflows:
+
+| Command | Agent Skill | Description |
+|:---|:---|:---|
+| `/speckit.constitution` | [`speckit-constitution`](skills/ai-and-agents/acreadiness-policy/SKILL.md) | Create or update project governing principles and development guidelines |
+| `/speckit.specify` | [`speckit-specify`](skills/ai-and-agents/ai-ready/SKILL.md) | Define what you want to build (requirements and user stories) |
+| `/speckit.plan` | [`speckit-plan`](skills/ai-and-agents/breakdown-plan/SKILL.md) | Create technical implementation plans with your chosen tech stack |
+| `/speckit.tasks` | [`speckit-tasks`](skills/ai-and-agents/breakdown-test/SKILL.md) | Generate actionable task lists for implementation |
+| `/speckit.taskstoissues` | [`speckit-taskstoissues`](skills/ai-and-agents/conventional-commit/SKILL.md) | Convert generated task lists into GitHub issues for tracking |
+| `/speckit.implement` | [`speckit-implement`](skills/ai-and-agents/subagent-driven-development/SKILL.md) | Execute all tasks to build the feature according to the plan |
 
 ---
 
-## 💡 The Complete Skills Directory ({total_skills} Skills) | دليل المهارات الكامل
+## 📁 The 10 Canonical Categories
 
-Here is the fully cataloged list of all active skills in the repository, grouped into **10 Canonical Categories** for instant discoverability. Click any skill's name to navigate directly to its specific implementation folder and `SKILL.md` file:
+Here is the fully cataloged list of all **{total_skills} active skills** currently supported in the ecosystem. Every single skill is listed in a structured command table under its parent category.
 
 """
 
@@ -160,45 +234,47 @@ Here is the fully cataloged list of all active skills in the repository, grouped
             readme_content += "*No skills currently in this category.*\n\n"
             continue
             
+        # Generate beautiful 3-column table
+        readme_content += "| Command | Agent Skill | Description |\n"
+        readme_content += "|:---|:---|:---|\n"
+        
         for s in skills:
-            readme_content += f"*   **[{s['name']}](skills/{cat}/{s['name']}/SKILL.md)** (v{s['version']}): {s['description']}\n"
+            clean_desc = s['description'].replace("\n", " ").replace("|", "\\|").strip()
+            readme_content += f"| `/{s['name']}` | [`{s['name']}`](skills/{cat}/{s['name']}/SKILL.md) | {clean_desc} |\n"
             
         readme_content += "\n---\n\n"
 
     readme_content += """
-## 🚀 How to Load and Use Skills | كيفية تحميل واستخدام المهارات
+## 🧬 Core Biology Development Paths
 
-Loading these modular skills into your favorite AI developer environment is extremely simple:
-
-1. **Clone the Repository:**
-   ```bash
-   git clone https://github.com/aboalrejal-ai/skills.git
-   cd skills
-   ```
-
-2. **Load a Skill into your local Agent (e.g., Claude Code):**
-   Copy the target skill directory to your local configuration folder:
-   ```bash
-   mkdir -p ~/.claude/skills/seo-content-writer
-   cp -r skills/marketing-and-seo/seo-content-writer/* ~/.claude/skills/seo-content-writer/
-   ```
-
-3. **Verify Compliance:**
-   Run the local validation script to ensure frontmatter and format compliance:
-   ```bash
-   bash tools/validate-skill.sh skills/marketing-and-seo/seo-content-writer/SKILL.md
-   ```
+For developers working with our **Science & Bioinformatics** suite, the system supports a specialized pathway:
+1. **Target Discovery & Retrieval**: Query UniProt IDs or NCBI sequences using `uniprot-database` and `ncbi-sequence-fetch`.
+2. **Structural Modelling & Docking**: Fetch 3D coordinate files using `pdb-database` or structural search via `foldseek-structural-search`.
+3. **Variant consequence analysis**: Assess effects on gene expression using `alphagenome-single-variant-analysis` and `gnomad-database`.
 
 ---
 
-## 🤝 Contributing & Community | المساهمة والمجتمع
+## ⚙️ System Requirements & Paths
 
-We welcome contributions to scale and improve this repository!
-1. Fork this repository.
-2. Create a new branch (`git checkout -b feature/NewAmazingSkill`).
-3. Add your modular skill inside the correct category under `skills/<category>/`.
-4. Validate compliance using `tools/validate-skill.sh`.
-5. Submit a Pull Request!
+To ensure optimal performance and seamless execution of all skills, verify that your local environment satisfies the following paths and dependencies:
+*   **Node.js**: `v18.0.0` or higher (required for all custom MCP servers)
+*   **Python**: `v3.10` or higher (required for all genomic and scientific analysis tools)
+*   **Claude Configuration Path**: `~/.claude/skills/`
+*   **Antigravity Workspace Directory**: `./skills/`
+
+---
+
+## 🤝 Support & Feedback
+
+If you encounter any issues or have questions regarding skill loading, please open a GitHub Issue:
+*   **GitHub Issues**: [aboalrejal-ai/skills/issues](https://github.com/aboalrejal-ai/skills/issues)
+*   **Official Organization**: [github.com/aboalrejal-ai](https://github.com/aboalrejal-ai)
+
+---
+
+## 📄 License
+
+This ecosystem is open-source software licensed under the [MIT License](LICENSE).
 """
 
     with open(output_path, "w", encoding="utf-8") as f:
