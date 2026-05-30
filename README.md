@@ -43,9 +43,51 @@ By loading these specialized configurations into your agentic IDE or terminal co
 
 ## ⚡ Get Started & Installation
 
-Loading these modular skills into your favorite AI developer environment is extremely straightforward.
+Loading these modular skills into your favorite AI developer environment is extremely straightforward. We provide a **zero-dependency interactive CLI** to search, browse, and install skills in milliseconds.
 
-### Method A: Direct Clone (Recommended for Local Customization)
+### Method A: Interactive CLI (Highly Recommended)
+You can search, browse, and install any of our 1738+ skills directly into your environment using a single command:
+
+```bash
+npx aboalrejal-skills
+```
+
+Or install it globally for offline-ready workflows:
+```bash
+npm install -g aboalrejal-skills
+aboalrejal-skills
+```
+
+#### 🖥️ Pick Your Platform (Automatic Installation Mappings)
+
+The interactive tool automatically detects and configures the skill prompts into the correct paths for all major platforms:
+
+| Platform | Install / Config Command | Target Action & Directory Path |
+|:---|:---|:---|
+| **Google Antigravity** | `npx aboalrejal-skills` | Appends under `~/.gemini/config/plugins/aboalrejal-skills/...` |
+| **Claude Code (Linux/Mac)** | `npx aboalrejal-skills` | Creates local `.claudecode/skills/...` |
+| **Claude Code (Windows)** | `npx aboalrejal-skills` | Creates local `.claudecode/skills/...` |
+| **Cursor IDE** | `npx aboalrejal-skills` | Generates a custom rule at `.cursor/rules/<name>.md` |
+| **Devin CLI** | `npx aboalrejal-skills` | Places instructions under `.devin/instructions/` |
+| **Aider** | `npx aboalrejal-skills` | Saves as a `.aider.instruction.<name>.md` rule |
+| **GitHub Copilot CLI** | `npx aboalrejal-skills` | Appends to `.github/copilot-instructions.md` |
+| **VS Code Copilot Chat** | `npx aboalrejal-skills` | Appends to `.github/copilot-instructions.md` |
+| **Trae** | `npx aboalrejal-skills` | Places rule at `.instructions/<name>.md` |
+| **Trae CN** | `npx aboalrejal-skills` | Places rule at `.instructions/<name>.md` |
+| **Gemini CLI** | `npx aboalrejal-skills` | Saves inside `.gemini/skills/<name>.md` |
+| **Codex** | `npx aboalrejal-skills` | Saves to local root workspace directory |
+| **OpenCode** | `npx aboalrejal-skills` | Saves to root workspace directory |
+| **OpenClaw** | `npx aboalrejal-skills` | Saves to `claw-instructions/` |
+| **Factory Droid** | `npx aboalrejal-skills` | Saves to `droid-skills/` |
+| **Hermes** | `npx aboalrejal-skills` | Saves to local project instructions |
+| **Kimi Code** | `npx aboalrejal-skills` | Saves to `kimi-instructions/` |
+| **Amp** | `npx aboalrejal-skills` | Saves to `amp-rules/` |
+| **Kiro IDE/CLI** | `npx aboalrejal-skills` | Saves to `kiro-instructions/` |
+| **Pi coding agent** | `npx aboalrejal-skills` | Saves in local project workspace |
+
+---
+
+### Method B: Direct Clone (Local Customization)
 1. **Clone the Repository:**
    ```bash
    git clone https://github.com/aboalrejal-ai/skills.git
@@ -58,7 +100,7 @@ Loading these modular skills into your favorite AI developer environment is extr
    cp -r skills/marketing-and-seo/seo-content-writer/* ~/.claude/skills/seo-content-writer/
    ```
 
-### Method B: Spec-Driven Command Line Setup
+### Method C: Spec-Driven Command Line Setup
 Run our validator tool to ensure all rules are properly loaded into your environment:
 ```bash
 bash tools/validate-skill.sh skills/marketing-and-seo/seo-content-writer/SKILL.md
