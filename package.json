@@ -1,0 +1,32 @@
+{
+  "name": "aboalrejal-skills",
+  "version": "1.0.0",
+  "description": "The ultimate high-performance repository of agentic skills for AI coding assistants.",
+  "license": "MIT",
+  "scripts": {
+    "validate": "node tools/scripts/run-python.js tools/scripts/plugin_compatibility.py",
+    "index": "node tools/scripts/run-python.js tools/scripts/generate_index.py",
+    "readme": "node tools/scripts/run-python.js tools/scripts/update_readme.py",
+    "bundles:sync": "node tools/scripts/run-python.js tools/scripts/sync_editorial_bundles.py",
+    "app:setup": "node tools/scripts/setup_web.js",
+    "app:dev": "npm run app:setup && cd apps/web-app && npm run dev",
+    "app:build": "npm run app:setup && cd apps/web-app && npm run build",
+    "chain": "npm run validate && npm run index && npm run bundles:sync && npm run readme",
+    "sync:all": "npm run chain"
+  },
+  "dependencies": {
+    "yaml": "^2.8.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aboalrejal-ai/skills.git"
+  },
+  "keywords": [
+    "claude-code",
+    "cursor",
+    "gemini-cli",
+    "antigravity",
+    "agentic-skills",
+    "ai-coding"
+  ]
+}

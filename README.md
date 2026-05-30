@@ -35,7 +35,7 @@
 
 ## 🤔 What is Abo Alrejal Skills?
 
-The **Unified Agent Skills Hub** (aboalrejal-ai/skills) is a premium, production-grade library containing **1738 modular skills, agent tools, and platform instructions**. 
+The **Unified Agent Skills Hub** (aboalrejal-ai/skills) is a premium, production-grade library containing **1,767 modular skills, agent tools, and platform instructions**. 
 
 By loading these specialized configurations into your agentic IDE or terminal co-programmer (such as Antigravity, Claude Code, or Cursor), you equip your AI partner with the exact instructions, schemas, and guardrails necessary to perform complex, multi-step actions autonomously—eliminating "vibe coding" and ensuring predictable, high-quality development outcomes.
 
@@ -140,7 +140,7 @@ Essential commands for the core development and automation workflows:
 
 ## 📁 The 10 Canonical Categories
 
-Here is the fully cataloged list of all **1738 active skills** currently supported in the ecosystem. Every single skill is listed in a structured command table under its parent category.
+Here is the fully cataloged list of all **1,767 active skills** currently supported in the ecosystem. Every single skill is listed in a structured command table under its parent category.
 
 ### 🤖 AI & Intelligent Agents
 > *Agent orchestration, prompts, subagents, and model-specific MCP servers for Claude Code, Antigravity, Cursor, and Windsurf.*

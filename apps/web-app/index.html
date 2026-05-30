@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore and install modular agentic skills for Claude Code, Cursor, Antigravity, and Gemini.">
+  <meta name="theme-color" content="#0B0F19">
+  <title>Abo Alrejal Skills Hub | Unified Agent Skills Catalog</title>
+  
+  <!-- Modern Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Premium Stylesheets -->
+  <style>
+    :root {
+      --bg-dark: #0B0F19;
+      --bg-card: rgba(17, 24, 39, 0.7);
+      --glass-border: rgba(255, 255, 255, 0.08);
+      --neon-blue: #00F0FF;
+      --neon-indigo: #8B5CF6;
+      --neon-pink: #EC4899;
+      --text-main: #F1F5F9;
+      --text-muted: #94A3B8;
+      --font-outfit: 'Outfit', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(139, 92, 246, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(0, 240, 255, 0.1) 0%, transparent 45%);
+      background-attachment: fixed;
+      font-family: var(--font-outfit);
+      color: var(--text-main);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Layout Structure */
+    .app-container {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* Glassmorphic Sidebar */
+    .sidebar {
+      width: 320px;
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-right: 1px solid var(--glass-border);
+      padding: 2.5rem 1.8rem;
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      height: 100vh;
+      z-index: 100;
+    }
+
+    .brand-section {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .brand-logo {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--neon-blue), var(--neon-indigo));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: var(--bg-dark);
+      box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+    }
+
+    .brand-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      background: linear-gradient(to right, #FFFFFF, var(--text-muted));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-label {
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      padding-left: 0.5rem;
+    }
+
+    .category-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      overflow-y: auto;
+      flex-grow: 1;
+      padding-right: 0.2rem;
+    }
+
+    .category-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.8rem 1rem;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid transparent;
+    }
+
+    .category-item:hover, .category-item.active {
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text-main);
+      border-color: var(--glass-border);
+    }
+
+    .category-item.active {
+      background: linear-gradient(to right, rgba(139, 92, 246, 0.15), rgba(0, 240, 255, 0.05));
+      border-color: rgba(0, 240, 255, 0.3);
+      color: var(--neon-blue);
+    }
+
+    .category-count {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      background: rgba(255, 255, 255, 0.06);
+      padding: 0.2rem 0.5rem;
+      border-radius: 6px;
+      color: var(--text-muted);
+    }
+
+    .category-item.active .category-count {
+      background: rgba(0, 240, 255, 0.1);
+      color: var(--neon-blue);
+    }
+
+    /* Main Content Area */
+    .main-content {
+      margin-left: 320px;
+      flex-grow: 1;
+      padding: 3rem 4rem;
+      max-width: 1600px;
+    }
+
+    /* Top Search / Header section */
+    .header-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .search-wrapper {
+      position: relative;
+      width: 500px;
+    }
+
+    .search-input {
+      width: 100%;
+      background: rgba(15, 23, 42, 0.4);
+      border: 1px solid var(--glass-border);
+      padding: 1rem 1.5rem;
+      padding-left: 3.5rem;
+      border-radius: 14px;
+      color: var(--text-main);
+      font-family: var(--font-outfit);
+      font-size: 1rem;
+      outline: none;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(8px);
+    }
+
+    .search-input:focus {
+      border-color: rgba(0, 240, 255, 0.5);
+      box-shadow: 0 0 15px rgba(0, 240, 255, 0.1);
+      background: rgba(15, 23, 42, 0.7);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 1.3rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    /* Bundles Row */
+    .bundles-container {
+      margin-bottom: 3.5rem;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .section-title span {
+      background: linear-gradient(to right, var(--neon-blue), var(--neon-indigo));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .bundles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .bundle-card {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      padding: 1.5rem;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .bundle-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(139, 92, 246, 0.4);
+      box-shadow: 0 10px 20px rgba(139, 92, 246, 0.05);
+    }
+
+    .bundle-header {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .bundle-emoji {
+      font-size: 1.8rem;
+    }
+
+    .bundle-name {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #FFFFFF;
+    }
+
+    .bundle-tagline {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* Cards Grid */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 1.8rem;
+    }
+
+    /* Interactive Skill Card */
+    .skill-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--glass-border);
+      border-radius: 18px;
+      padding: 1.8rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .skill-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(0, 240, 255, 0.05), transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(0, 240, 255, 0.35);
+      box-shadow: 0 15px 30px rgba(0, 240, 255, 0.04);
+    }
+
+    .skill-card:hover::before {
+      opacity: 1;
+    }
+
+    .skill-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .skill-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      line-height: 1.3;
+      letter-spacing: -0.3px;
+    }
+
+    .risk-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 0.25rem 0.6rem;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    .risk-safe {
+      background: rgba(16, 185, 129, 0.1);
+      color: #10B981;
+      border: 1px solid rgba(16, 185, 129, 0.2);
+    }
+
+    .risk-unknown {
+      background: rgba(245, 158, 11, 0.1);
+      color: #F59E0B;
+      border: 1px solid rgba(245, 158, 11, 0.2);
+    }
+
+    .risk-high {
+      background: rgba(239, 68, 68, 0.1);
+      color: #EF6868;
+      border: 1px solid rgba(239, 68, 68, 0.2);
+    }
+
+    .skill-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      flex-grow: 1;
+    }
+
+    .skill-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .meta-tag {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--glass-border);
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      color: #94A3B8;
+    }
+
+    .action-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding-top: 1.2rem;
+      margin-top: auto;
+    }
+
+    .skill-id-badge {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      max-width: 180px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .install-btn {
+      background: linear-gradient(135deg, var(--neon-blue), var(--neon-indigo));
+      color: var(--bg-dark);
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      box-shadow: 0 4px 12px rgba(0, 240, 255, 0.2);
+    }
+
+    .install-btn:hover {
+      box-shadow: 0 6px 18px rgba(0, 240, 255, 0.4);
+      transform: translateY(-1px);
+    }
+
+    /* Modal dialog */
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(11, 15, 25, 0.8);
+      backdrop-filter: blur(12px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    .modal-content {
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      width: 600px;
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .modal-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #FFFFFF;
+    }
+
+    .code-box {
+      background: rgba(11, 15, 25, 0.7);
+      border: 1px solid var(--glass-border);
+      padding: 1.2rem;
+      border-radius: 12px;
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      color: var(--neon-blue);
+      position: relative;
+      cursor: pointer;
+    }
+
+    .code-copy-tip {
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .stats-btn {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--glass-border);
+      color: var(--text-main);
+      padding: 0.8rem 1.5rem;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .stats-btn:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+  </style>
+</head>
+<body>
+
+<div class="app-container">
+  <!-- Dynamic Sidebar -->
+  <aside class="sidebar">
+    <div class="brand-section">
+      <div class="brand-logo">🌱</div>
+      <div class="brand-title">Skills Hub</div>
+    </div>
+    
+    <nav>
+      <div class="nav-label">Categories</div>
+      <ul class="category-list" id="category-list">
+        <li class="category-item active" data-category="all">
+          <span>All Categories</span>
+          <span class="category-count" id="count-all">0</span>
+        </li>
+      </ul>
+    </nav>
+    
+    <div style="margin-top: auto; display: flex; flex-direction: column; gap: 1rem;">
+      <button class="stats-btn" onclick="openInstructions()">
+        <span>🔧 CLI Setup Guide</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Main Catalog -->
+  <main class="main-content">
+    <header class="header-section">
+      <div>
+        <h1 style="font-size: 2.2rem; font-weight: 800; letter-spacing: -1px; margin-bottom: 0.5rem;">
+          Unified Agentic Skills
+        </h1>
+        <p style="color: var(--text-muted); font-size: 1.05rem;">
+          Power up Claude Code, Gemini CLI, Cursor, and Antigravity instantly.
+        </p>
+      </div>
+
+      <div class="search-wrapper">
+        <svg class="search-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" class="search-input" id="search-box" placeholder="Search skills, triggers, platforms...">
+      </div>
+    </header>
+
+    <!-- Bundles row -->
+    <section class="bundles-container">
+      <h2 class="section-title">🎒 Curated <span>Editorial Bundles</span></h2>
+      <div class="bundles-grid" id="bundles-grid">
+        <!-- Rendered bundles -->
+      </div>
+    </section>
+
+    <!-- Grid Layout -->
+    <section>
+      <h2 class="section-title">🧬 Browse <span>Modular Skills</span></h2>
+      <div class="cards-grid" id="cards-grid">
+        <!-- Dynamic loading of skill cards -->
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- Modal Dialog -->
+<div class="modal" id="install-modal" onclick="closeModal(event)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <div class="modal-title" id="modal-title">Install Skill</div>
+    <p style="color: var(--text-muted); line-height: 1.5;" id="modal-desc">
+      To install this skill prompt directly to your environment, use our zero-dependency CLI installer:
+    </p>
+    <div class="code-box" onclick="copyInstallCmd()">
+      <span id="modal-code">npx aboalrejal-skills install seo-agent</span>
+      <span class="code-copy-tip">Click to Copy</span>
+    </div>
+    <div style="background: rgba(255,255,255,0.02); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--glass-border);">
+      <div style="font-weight: 700; margin-bottom: 0.5rem; color: #FFFFFF;">📋 Mappings:</div>
+      <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.4;">
+        • <strong>Claude Code</strong>: installs in <code>~/.claude/skills/</code><br>
+        • <strong>Antigravity</strong>: appends in <code>~/.gemini/config/plugins/</code><br>
+        • <strong>Cursor</strong>: generates custom rule in <code>.cursor/rules/</code>
+      </p>
+    </div>
+  </div>
+</div>
+
+<script>
+  let skillsData = [];
+  let currentCategory = "all";
+  let searchQuery = "";
+
+  const categoryLabels = {
+    "all": "All Categories",
+    "ai-and-agents": "AI & Agents",
+    "automation-and-saas": "SaaS & API Automation",
+    "backend-and-fullstack": "Backend & Fullstack",
+    "cloud-and-infrastructure": "Cloud & Infrastructure",
+    "design-and-creative": "Design & Creative",
+    "document-processing": "Document Processing",
+    "frontend-development": "Frontend Development",
+    "marketing-and-seo": "Marketing & SEO",
+    "science-and-bioinformatics": "Science & Bioinformatics",
+    "security-and-compliance": "Security & Compliance"
+  };
+
+  const bundlesData = [
+    { id: "essentials", name: "Essentials", emoji: "🚀", tagline: "Verification, plans & rules. For everyone." },
+    { id: "web-wizard", name: "Web Wizard", emoji: "🌐", tagline: "React, Tailwind, Shadcn-UI & Frontend Design." },
+    { id: "marketing-growth", name: "Marketing & Growth", emoji: "📈", tagline: "SEO, Copywriting & Experiment Setup." },
+    { id: "agent-architect", name: "Agent Architect", emoji: "🤖", tagline: "MCP development & agent prompting systems." }
+  ];
+
+  async function loadSkills() {
+    try {
+      const response = await fetch('skills.json');
+      skillsData = await response.json();
+      renderApp();
+    } catch (err) {
+      console.warn("Failed to load skills.json locally. Using mock fallback.", err);
+      // fallback mock data
+      skillsData = [
+        { id: "frontend-development/frontend-design", name: "Frontend Design Specialist", category: "frontend-development", description: "Create distinctive, premium frontend interfaces with modern best practices.", risk: "safe" },
+        { id: "marketing-and-seo/seo-agent", name: "GEO & SEO Auditor", category: "marketing-and-seo", description: "Automates search and generative engine optimization checks.", risk: "safe" }
+      ];
+      renderApp();
+    }
+  }
+
+  function renderApp() {
+    renderCategories();
+    renderBundles();
+    renderCards();
+  }
+
+  function renderCategories() {
+    const listEl = document.getElementById("category-list");
+    // Clear list but keep 'all'
+    listEl.innerHTML = `
+      <li class="category-item ${currentCategory === 'all' ? 'active' : ''}" data-category="all" onclick="setCategory('all')">
+        <span>All Categories</span>
+        <span class="category-count">${skillsData.length}</span>
+      </li>
+    `;
+
+    const counts = {};
+    skillsData.forEach(skill => {
+      counts[skill.category] = (counts[skill.category] || 0) + 1;
+    });
+
+    Object.keys(categoryLabels).forEach(key => {
+      if (key === "all") return;
+      const count = counts[key] || 0;
+      if (count > 0) {
+        const li = document.createElement("li");
+        li.className = `category-item ${currentCategory === key ? 'active' : ''}`;
+        li.innerHTML = `
+          <span>${categoryLabels[key]}</span>
+          <span class="category-count">${count}</span>
+        `;
+        li.onclick = () => setCategory(key);
+        listEl.appendChild(li);
+      }
+    });
+  }
+
+  function renderBundles() {
+    const grid = document.getElementById("bundles-grid");
+    grid.innerHTML = "";
+    bundlesData.forEach(bundle => {
+      const card = document.createElement("div");
+      card.className = "bundle-card";
+      card.innerHTML = `
+        <div class="bundle-header">
+          <span class="bundle-emoji">${bundle.emoji}</span>
+          <span class="bundle-name">${bundle.name}</span>
+        </div>
+        <div class="bundle-tagline">${bundle.tagline}</div>
+      `;
+      card.onclick = () => {
+        document.getElementById("search-box").value = bundle.name;
+        searchQuery = bundle.name.toLowerCase();
+        renderCards();
+      };
+      grid.appendChild(card);
+    });
+  }
+
+  function renderCards() {
+    const grid = document.getElementById("cards-grid");
+    grid.innerHTML = "";
+
+    const filtered = skillsData.filter(skill => {
+      const matchesCategory = (currentCategory === "all" || skill.category === currentCategory);
+      const matchesSearch = !searchQuery || 
+        skill.name.toLowerCase().includes(searchQuery) ||
+        skill.description.toLowerCase().includes(searchQuery) ||
+        skill.id.toLowerCase().includes(searchQuery);
+      return matchesCategory && matchesSearch;
+    });
+
+    if (filtered.length === 0) {
+      grid.innerHTML = `
+        <div style="grid-column: 1/-1; text-align: center; padding: 4rem; color: var(--text-muted);">
+          <div style="font-size: 3rem; margin-bottom: 1rem;">🔍</div>
+          <div>No skills found matching your active filter or search query.</div>
+        </div>
+      `;
+      return;
+    }
+
+    filtered.forEach(skill => {
+      const card = document.createElement("div");
+      card.className = "skill-card";
+      
+      const riskClass = skill.risk === "safe" ? "risk-safe" : (skill.risk === "high" ? "risk-high" : "risk-unknown");
+      
+      // Extract sub-dir name
+      const skillName = skill.id.split("/").pop();
+
+      card.innerHTML = `
+        <div class="skill-header">
+          <div class="skill-title">${skill.name}</div>
+          <span class="risk-badge ${riskClass}">${skill.risk}</span>
+        </div>
+        <div class="skill-desc">${skill.description}</div>
+        <div class="skill-meta">
+          <span class="meta-tag">🔑 /${skillName}</span>
+          <span class="meta-tag">🗂️ ${categoryLabels[skill.category] || skill.category}</span>
+        </div>
+        <div class="action-row">
+          <span class="skill-id-badge" title="${skill.id}">${skill.id}</span>
+          <button class="install-btn" onclick="openInstall('${skillName}')">
+            <span>Get Skill</span>
+          </button>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+  }
+
+  function setCategory(cat) {
+    currentCategory = cat;
+    renderApp();
+  }
+
+  document.getElementById("search-box").oninput = (e) => {
+    searchQuery = e.target.value.toLowerCase();
+    renderCards();
+  };
+
+  function openInstall(skillId) {
+    const modal = document.getElementById("install-modal");
+    document.getElementById("modal-title").innerText = `Install ${skillId}`;
+    document.getElementById("modal-code").innerText = `npx aboalrejal-skills install ${skillId}`;
+    modal.style.display = "flex";
+  }
+
+  function openInstructions() {
+    const modal = document.getElementById("install-modal");
+    document.getElementById("modal-title").innerText = `🔧 Global CLI Installer`;
+    document.getElementById("modal-code").innerText = `npm install -g aboalrejal-skills`;
+    document.getElementById("modal-desc").innerText = "Install our interactive CLI globally to run queries and manage skills offline directly from your terminal:";
+    modal.style.display = "flex";
+  }
+
+  function closeModal(e) {
+    document.getElementById("install-modal").style.display = "none";
+  }
+
+  function copyInstallCmd() {
+    const cmd = document.getElementById("modal-code").innerText;
+    navigator.clipboard.writeText(cmd);
+    alert("Copied to clipboard! Run this command inside your terminal.");
+  }
+
+  window.onload = loadSkills;
+</script>
+</body>
+</html>
