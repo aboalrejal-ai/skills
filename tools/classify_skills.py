@@ -438,6 +438,32 @@ Welcome to the **Unified Agent Skills Hub**! This registry alphabetically indexe
         except Exception as e:
             log_error(f"Failed to write skill registry: {e}")
 
+        # Generate a high-speed JSON registry for the CLI tool
+        import json
+        json_registry = {
+            "total_skills": total_skills,
+            "categories": list(CATEGORIES.keys()),
+            "skills": []
+        }
+        for cat, skills_list in cat_skills.items():
+            for s in skills_list:
+                json_registry["skills"].append({
+                    "name": s["name"],
+                    "category": cat,
+                    "version": s["version"],
+                    "description": s["description"],
+                    "class": s["class"],
+                    "path": f"skills/{cat}/{s['name']}/SKILL.md"
+                })
+        
+        json_path = os.path.join(self.docs_dir, "skills-registry.json")
+        try:
+            with open(json_path, "w", encoding="utf-8") as f:
+                json.dump(json_registry, f, indent=2, ensure_ascii=False)
+            log_success(f"Successfully generated JSON registry at {json_path}")
+        except Exception as e:
+            log_error(f"Failed to write JSON registry: {e}")
+
     def update_resolver_routes(self):
         """
         Updates the primary routes inside docs/skill-resolver.md to point to their new nested folder path.
