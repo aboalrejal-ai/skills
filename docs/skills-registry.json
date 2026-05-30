@@ -1,5 +1,5 @@
 {
-  "total_skills": 1738,
+  "total_skills": 1739,
   "categories": [
     "ai-and-agents",
     "automation-and-saas",
@@ -9996,6 +9996,14 @@
       "description": "Create, update, refactor, explain, or review Semantic Kernel solutions using shared guidance plus language-specific.",
       "class": "standard",
       "path": "skills/frontend-development/semantic-kernel/SKILL.md"
+    },
+    {
+      "name": "shadcn-ui",
+      "category": "frontend-development",
+      "version": "1.0.0",
+      "description": "Give your AI assistant deep knowledge of shadcn/ui components, patterns, and best practices.",
+      "class": "standard",
+      "path": "skills/frontend-development/shadcn-ui/SKILL.md"
     },
     {
       "name": "site-specification",

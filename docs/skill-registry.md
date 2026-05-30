@@ -1,6 +1,6 @@
 # Skills Registry & Catalog
 
-Welcome to the **Unified Agent Skills Hub**! This registry alphabetically indexes all **1738 active skills** currently supported, beautifully organized into **10 Canonical Categories** for easy access. Click any skill's name to navigate directly to its implementation directory and instruction block.
+Welcome to the **Unified Agent Skills Hub**! This registry alphabetically indexes all **1739 active skills** currently supported, beautifully organized into **10 Canonical Categories** for easy access. Click any skill's name to navigate directly to its implementation directory and instruction block.
 
 ---
 
@@ -9,7 +9,7 @@ Welcome to the **Unified Agent Skills Hub**! This registry alphabetically indexe
 *   **[# Automation And SaaS](#-automation-and-saas)** (868 Skills)
 *   **[# Design And Creative](#-design-and-creative)** (77 Skills)
 *   **[# Document Processing](#-document-processing)** (48 Skills)
-*   **[# Frontend Development](#-frontend-development)** (145 Skills)
+*   **[# Frontend Development](#-frontend-development)** (146 Skills)
 *   **[# Backend And Fullstack](#-backend-and-fullstack)** (249 Skills)
 *   **[# Marketing And SEO](#-marketing-and-seo)** (60 Skills)
 *   **[# Security And Compliance](#-security-and-compliance)** (18 Skills)
@@ -1176,7 +1176,7 @@ Welcome to the **Unified Agent Skills Hub**! This registry alphabetically indexe
 
 ---
 
-## 📁 Frontend Development (145 Skills)
+## 📁 Frontend Development (146 Skills)
 
 | Name | Class | Version | Description |
 |------|-------|---------|-------------|
@@ -1298,6 +1298,7 @@ Welcome to the **Unified Agent Skills Hub**! This registry alphabetically indexe
 | **[sandbox-sdk](../skills/frontend-development/sandbox-sdk/SKILL.md)** | Standard | v1.0.0 | Build sandboxed applications for secure code execution. |
 | **[scoutqa-test](../skills/frontend-development/scoutqa-test/SKILL.md)** | Standard | v1.0.0 | This skill should be used when the user asks to "test this website", "run exploratory testing", "check for. |
 | **[semantic-kernel](../skills/frontend-development/semantic-kernel/SKILL.md)** | Standard | v1.0.0 | Create, update, refactor, explain, or review Semantic Kernel solutions using shared guidance plus language-specific. |
+| **[shadcn-ui](../skills/frontend-development/shadcn-ui/SKILL.md)** | Standard | v1.0.0 | Give your AI assistant deep knowledge of shadcn/ui components, patterns, and best practices. |
 | **[site-specification](../skills/frontend-development/site-specification/SKILL.md)** | Standard | v1.0.0 | Extract comprehensive site specifications from simple descriptions. |
 | **[snowflake-semanticview](../skills/frontend-development/snowflake-semanticview/SKILL.md)** | Standard | v1.0.0 | Create, alter, and validate Snowflake semantic views using Snowflake CLI (snow). |
 | **[test-gap-analysis](../skills/frontend-development/test-gap-analysis/SKILL.md)** | Standard | v1.0.0 | Performs pseudo-mutation analysis on .NET production code to find gaps in existing test suites. |
