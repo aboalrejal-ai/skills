@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Explore and load 3,045+ premium modular skills for Claude Code, Cursor, Antigravity, and Gemini CLI. Fast, offline-first, and fully customizable.">
   <meta name="theme-color" content="#09090b">
-  <title>Abu Rajal Skills | High-Performance Agentic Skills Catalog</title>
+  <title>Abo Alrejal Skills | High-Performance Agentic Skills Catalog</title>
   
   <!-- Modern Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -57,19 +57,19 @@
       line-height: 1.5;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
-      /* Sleek futuristic glowing backdrop */
+      /* Futuristic background glow */
       background-image: 
         radial-gradient(circle at 50% -20%, rgba(120, 119, 198, 0.15) 0%, transparent 60%),
         radial-gradient(circle at 10% 40%, rgba(255, 255, 255, 0.015) 0%, transparent 40%),
-        radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.01) 0%, transparent 40%);
+        radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.015) 0%, transparent 40%);
       background-attachment: fixed;
     }
 
-    /* Layout Structure - Centered responsive container */
+    /* Centered responsive container with 50px margins left/right as requested */
     .container {
-      max-w: 1200px;
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 3rem 1.5rem;
+      padding: 3rem 50px;
       display: flex;
       flex-direction: column;
       gap: 2.5rem;
@@ -177,18 +177,20 @@
       font-size: 0.95rem;
     }
 
-    /* Search Console styling */
+    /* Search Console styling with AI Sparkle Button */
     .search-wrapper {
       position: relative;
       width: 100%;
-      max-width: 400px;
+      max-width: 420px;
+      display: flex;
+      align-items: center;
     }
 
     .search-input {
       width: 100%;
       background: rgba(255, 255, 255, 0.02);
       border: 1px solid hsl(var(--border));
-      padding: 0.85rem 1.25rem 0.85rem 3rem;
+      padding: 0.85rem 3.2rem 0.85rem 3rem;
       border-radius: 12px;
       color: hsl(var(--foreground));
       font-family: var(--font-figtree);
@@ -213,66 +215,200 @@
       pointer-events: none;
     }
 
-    /* Dynamic Horizontal Categories Badge bar */
-    .categories-bar {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      padding: 0.25rem 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-      padding-bottom: 1.5rem;
-    }
-
-    .category-badge {
+    .ai-search-toggle-btn {
+      position: absolute;
+      right: 0.75rem;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #fff;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      cursor: pointer;
       display: flex;
       align-items: center;
-      gap: 0.45rem;
-      padding: 0.45rem 1rem;
-      border-radius: 9999px;
-      background: hsl(var(--card));
+      justify-content: center;
+      font-size: 0.95rem;
+      transition: all 0.2s ease;
+    }
+
+    .ai-search-toggle-btn:hover {
+      background: #fff;
+      color: #000;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    }
+
+    /* Client-side Gemini AI Search Console */
+    .ai-console-container {
+      display: none;
+      flex-direction: column;
+      gap: 1.25rem;
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.01);
       border: 1px solid hsl(var(--border));
+      border-radius: 14px;
+      backdrop-filter: blur(12px);
+      animation: slideDown 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .ai-console-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .ai-console-title {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .ai-console-close-btn {
+      background: none;
+      border: none;
       color: hsl(var(--muted-foreground));
-      font-size: 0.82rem;
-      font-weight: 500;
+      font-size: 1.5rem;
       cursor: pointer;
-      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      line-height: 1;
     }
 
-    .category-badge:hover {
-      background: hsl(var(--accent));
-      color: hsl(var(--foreground));
-      border-color: rgba(255, 255, 255, 0.15);
+    .ai-console-close-btn:hover {
+      color: #fff;
     }
 
-    .category-badge.active {
-      background: hsl(var(--primary));
-      color: hsl(var(--primary-foreground));
-      border-color: hsl(var(--primary));
-      font-weight: 600;
-    }
-
-    .category-chip-count {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      background: rgba(255, 255, 255, 0.07);
-      padding: 0.1rem 0.45rem;
-      border-radius: 9999px;
+    .ai-console-description {
+      font-size: 0.85rem;
       color: hsl(var(--muted-foreground));
+      line-height: 1.5;
     }
 
-    .category-badge.active .category-chip-count {
-      background: rgba(0, 0, 0, 0.12);
-      color: hsl(var(--primary-foreground));
+    .ai-label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 0.4rem;
     }
 
-    /* Offline Dropzone container (CORS Bypass drop handler) */
+    .ai-input {
+      flex-grow: 1;
+      background: rgba(0, 0, 0, 0.2);
+      border: 1px solid hsl(var(--border));
+      padding: 0.55rem 0.8rem;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 0.85rem;
+      outline: none;
+      font-family: var(--font-figtree);
+    }
+
+    .ai-input:focus {
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .ai-key-save-btn {
+      background: hsl(var(--secondary));
+      color: #fff;
+      border: 1px solid hsl(var(--border));
+      padding: 0.55rem 1.2rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .ai-key-save-btn:hover {
+      background: hsl(var(--accent));
+    }
+
+    .ai-help-text {
+      display: block;
+      font-size: 0.72rem;
+      color: hsl(var(--muted-foreground));
+      margin-top: 0.35rem;
+    }
+
+    .ai-textarea {
+      width: 100%;
+      height: 80px;
+      background: rgba(0, 0, 0, 0.2);
+      border: 1px solid hsl(var(--border));
+      padding: 0.75rem;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 0.88rem;
+      font-family: var(--font-figtree);
+      outline: none;
+      resize: none;
+    }
+
+    .ai-textarea:focus {
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .ai-search-submit-btn {
+      background: #fff;
+      color: #000;
+      border: none;
+      padding: 0.75rem;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+
+    .ai-search-submit-btn:hover {
+      opacity: 0.95;
+    }
+
+    .ai-search-submit-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    /* AI Active Banner notification */
+    .ai-active-banner {
+      display: none;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid hsl(var(--border));
+      border-radius: 10px;
+      padding: 0.75rem 1.25rem;
+      font-size: 0.88rem;
+      color: #fff;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: -1rem;
+    }
+
+    .ai-exit-btn {
+      color: #ef4444;
+      font-weight: 600;
+      text-decoration: underline;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* Offline/Local CORS dropzone - hidden cleanly by default */
     .dropzone-container {
       display: none;
       flex-direction: column;
       align-items: center;
       text-align: center;
       gap: 1.2rem;
-      padding: 3rem 2rem;
+      padding: 2.5rem 2rem;
       border-radius: 16px;
       border: 2px dashed hsl(var(--border));
       background: rgba(255, 255, 255, 0.01);
@@ -281,18 +417,13 @@
       animation: slideDown 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
 
-    @keyframes slideDown {
-      from { opacity: 0; transform: translateY(-10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
     .dropzone-container.dragover {
       border-color: rgba(255, 255, 255, 0.4);
       background: rgba(255, 255, 255, 0.03);
     }
 
     .dropzone-title {
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       font-weight: 700;
       color: hsl(var(--foreground));
       display: flex;
@@ -348,6 +479,59 @@
 
     .hidden-input {
       display: none;
+    }
+
+    /* Centered Category navigation pills - wrapped elegantly */
+    .categories-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.6rem;
+      padding: 0.25rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+      padding-bottom: 1.5rem;
+    }
+
+    .category-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.45rem 1rem;
+      border-radius: 9999px;
+      background: hsl(var(--card));
+      border: 1px solid hsl(var(--border));
+      color: hsl(var(--muted-foreground));
+      font-size: 0.82rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .category-badge:hover {
+      background: hsl(var(--accent));
+      color: hsl(var(--foreground));
+      border-color: rgba(255, 255, 255, 0.15);
+    }
+
+    .category-badge.active {
+      background: hsl(var(--primary));
+      color: hsl(var(--primary-foreground));
+      border-color: hsl(var(--primary));
+      font-weight: 600;
+    }
+
+    .category-chip-count {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      background: rgba(255, 255, 255, 0.07);
+      padding: 0.1rem 0.45rem;
+      border-radius: 9999px;
+      color: hsl(var(--muted-foreground));
+    }
+
+    .category-badge.active .category-chip-count {
+      background: rgba(0, 0, 0, 0.12);
+      color: hsl(var(--primary-foreground));
     }
 
     /* Editorial Bundles Row */
@@ -419,7 +603,7 @@
     /* Cards Grid & Skill Cards */
     .cards-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
       gap: 1.5rem;
     }
 
@@ -536,7 +720,7 @@
       font-family: var(--font-mono);
       font-size: 0.78rem;
       color: hsl(var(--muted-foreground));
-      max-width: 170px;
+      max-width: 120px;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
@@ -546,7 +730,7 @@
       background: hsl(var(--primary));
       color: hsl(var(--primary-foreground));
       border: none;
-      padding: 0.5rem 1rem;
+      padding: 0.5rem 0.8rem;
       border-radius: 8px;
       font-weight: 600;
       font-size: 0.82rem;
@@ -559,6 +743,26 @@
 
     .install-btn:hover {
       opacity: 0.9;
+    }
+
+    .download-btn {
+      background: transparent;
+      border: 1px solid hsl(var(--border));
+      color: hsl(var(--foreground));
+      padding: 0.5rem 0.8rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.82rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .download-btn:hover {
+      background: hsl(var(--accent));
+      border-color: rgba(255, 255, 255, 0.25);
     }
 
     /* Modal Dialog */
@@ -694,9 +898,12 @@
       <span class="status-indicator status-online" id="status-indicator"></span>
       <span id="status-text">Loading skills database...</span>
     </div>
-    <button class="clear-cache-btn" id="clear-cache-btn" onclick="clearCache()" style="display: none;">
-      🗑️ Clear Local Cache
-    </button>
+    <div style="display: flex; gap: 1rem; align-items: center;">
+      <a href="#" id="offline-trigger" style="display: none; color: #38bdf8; text-decoration: underline; font-size: 0.8rem;" onclick="showDropzone(true)">🔌 Local Drag-and-Drop</a>
+      <button class="clear-cache-btn" id="clear-cache-btn" onclick="clearCache()" style="display: none;">
+        🗑️ Clear Cache
+      </button>
+    </div>
   </div>
 
   <!-- Premium Header & Branding -->
@@ -704,35 +911,73 @@
     <div class="brand-group">
       <div class="brand-logo-area">
         <div class="brand-logo">👑</div>
-        <h1 class="brand-title">Abu Rajal Skills</h1>
+        <h1 class="brand-title">Abo Alrejal Skills</h1>
       </div>
       <p class="brand-tagline">
         High-performance modular agentic skills for Claude Code, Cursor, Antigravity, and Gemini.
       </p>
     </div>
 
-    <!-- Main Centered Search Console -->
+    <!-- Main Centered Search Console with AI sparkle button -->
     <div class="search-wrapper">
       <svg class="search-icon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <circle cx="11" cy="11" r="8"></circle>
         <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
       </svg>
       <input type="text" class="search-input" id="search-box" placeholder="Search skills, triggers, platforms...">
+      <button class="ai-search-toggle-btn" id="ai-search-toggle-btn" onclick="toggleAISearchPanel()" title="AI Semantic Search">
+        ✨
+      </button>
     </div>
   </header>
 
-  <!-- Sleek Drag and Drop Zone for local / file preview CORS bypass -->
+  <!-- Client-side Gemini AI Search Console -->
+  <section class="ai-console-container" id="ai-console">
+    <div class="ai-console-header">
+      <div class="ai-console-title">✨ AI Semantic Search</div>
+      <button class="ai-console-close-btn" onclick="toggleAISearchPanel()">×</button>
+    </div>
+    <p class="ai-console-description">
+      Describe the project or specific skills you need in plain Arabic or English, and Gemini AI will match the most relevant modular skills directly.
+    </p>
+    
+    <div class="ai-key-wrapper" style="margin-top: 0.5rem;">
+      <label for="ai-api-key" class="ai-label">Gemini API Key:</label>
+      <div style="position: relative; display: flex; width: 100%; gap: 0.5rem;">
+        <input type="password" class="ai-input" id="ai-api-key" placeholder="Enter your Gemini API Key..." onchange="saveApiKey()">
+        <button class="ai-key-save-btn" onclick="saveApiKey()">Save</button>
+      </div>
+      <span class="ai-help-text">Your key is stored securely in your local browser only. Obtain a free key from <a href="https://aistudio.google.com/" target="_blank" style="color: #38bdf8; text-decoration: underline;">Google AI Studio</a>.</span>
+    </div>
+
+    <div class="ai-query-wrapper" style="margin-top: 0.5rem;">
+      <label for="ai-query-input" class="ai-label">What do you want to build?</label>
+      <textarea class="ai-textarea" id="ai-query-input" placeholder="e.g. أحتاج مهارات لمساعدتي في بناء واجهة مستخدم متطورة وسريعة باستخدام Tailwind"></textarea>
+    </div>
+
+    <button class="ai-search-submit-btn" id="ai-search-submit-btn" onclick="executeAISearch()">
+      🚀 Search with Gemini AI
+    </button>
+  </section>
+
+  <!-- AI Active Query Notice -->
+  <div class="ai-active-banner" id="ai-active-banner">
+    <div id="ai-banner-text"></div>
+    <button class="ai-exit-btn" onclick="exitAIMode()">Exit AI Search Mode</button>
+  </div>
+
+  <!-- Sleek Drag and Drop Zone for local Preview CORS bypass (Hidden by default, triggered on fallback) -->
   <section class="dropzone-container" id="dropzone">
-    <div class="dropzone-title">🔌 Local Preview Mode Enabled</div>
+    <div class="dropzone-title">🔌 Local Preview Mode Offline</div>
     <p class="dropzone-description">
       Opening this catalog directly via a local file protocol is subject to browser CORS limits.
       To view the complete collection of <strong>3,045+ skills</strong> offline, drag & drop the <code>skills_index.json</code> file (or <code>skills.json</code>) here, or browse from your system.
     </p>
     <div class="dropzone-btn-row">
       <button class="dropzone-btn" onclick="document.getElementById('file-loader').click()">Browse JSON File</button>
-      <button class="dropzone-btn-sec" onclick="dismissDropzone()">Ignore & Load Mock Fallback</button>
+      <button class="dropzone-btn-sec" onclick="dismissDropzone()">Ignore</button>
     </div>
-    <input type="file" id="file-loader" class="hidden-input" accept=".json" onchange="handleFileSelect(evt)">
+    <input type="file" id="file-loader" class="hidden-input" accept=".json">
   </section>
 
   <!-- Horizontal Filter Bar -->
@@ -763,7 +1008,7 @@
 
   <!-- Footer Actions -->
   <footer>
-    <div>Abu Rajal Skills Catalog © 2026 • Premium Developer Edition</div>
+    <div>Abo Alrejal Skills Catalog © 2026 • Premium Developer Edition</div>
     <div class="footer-actions">
       <button class="footer-btn" onclick="openInstructions()">
         <span>🔧 CLI Setup Guide</span>
@@ -778,7 +1023,7 @@
     <button class="modal-close" onclick="closeModal()">×</button>
     <div class="modal-title" id="modal-title">Install Skill</div>
     <p style="color: hsl(var(--muted-foreground)); line-height: 1.5; font-size: 0.9rem;" id="modal-desc">
-      To install this skill prompt directly into your local environment, use our CLI command:
+      To install this skill prompt directly into your local environment, copy and execute this terminal command:
     </p>
     <div class="code-box" id="code-box-el" onclick="copyInstallCmd()">
       <span id="modal-code">npx aboalrejal-skills install seo-agent</span>
@@ -799,6 +1044,14 @@
   let skillsData = [];
   let currentCategory = "all";
   let searchQuery = "";
+  
+  // AI semantic search states
+  let isAIMode = false;
+  let aiFilteredSkills = [];
+  let aiQueryText = "";
+  
+  // Pagination & Infinite Scroll states
+  let renderedCount = 20;
 
   const categoryLabels = {
     "all": "All Categories",
@@ -849,6 +1102,7 @@
         { id: "frontend-development/frontend-design", name: "Frontend Design Specialist", category: "frontend-development", description: "Create distinctive, premium frontend interfaces with modern best practices.", risk: "safe" },
         { id: "marketing-and-seo/seo-agent", name: "GEO & SEO Auditor", category: "marketing-and-seo", description: "Automates search and generative engine optimization checks.", risk: "safe" }
       ];
+      isAIMode = false;
       updateStatus(false, "Cache cleared");
       showDropzone(true);
       renderApp();
@@ -861,15 +1115,18 @@
     const indicator = document.getElementById("status-indicator");
     const statusText = document.getElementById("status-text");
     const clearBtn = document.getElementById("clear-cache-btn");
+    const offlineTrigger = document.getElementById("offline-trigger");
 
     if (loaded) {
       indicator.className = "status-indicator status-online";
-      statusText.innerHTML = `🟢 <strong>Abu Rajal Skills loaded</strong> (${skillsData.length} active skills available offline)`;
+      statusText.innerHTML = `🟢 <strong>Abo Alrejal Skills loaded</strong> (${skillsData.length} active skills available)`;
       clearBtn.style.display = "inline-block";
+      offlineTrigger.style.display = "none";
     } else {
       indicator.className = "status-indicator status-offline";
-      statusText.innerHTML = `⚠️ <strong>Local Preview Mode</strong> (${message || "Offline, drag & drop skills_index.json to see all"})`;
+      statusText.innerHTML = `⚠️ <strong>Local Preview Mode</strong> (${message || "Offline fallback"})`;
       clearBtn.style.display = "none";
+      offlineTrigger.style.display = "inline-block";
     }
   }
 
@@ -883,6 +1140,12 @@
   }
 
   async function loadSkills() {
+    // Load saved API key from localStorage
+    const savedKey = localStorage.getItem("aburajal_gemini_api_key");
+    if (savedKey) {
+      document.getElementById("ai-api-key").value = savedKey;
+    }
+
     // 1. Try local storage cache first
     const cached = getCachedSkills();
     if (cached && cached.length > 2) {
@@ -930,14 +1193,7 @@
     renderApp();
   }
 
-  // Handle manual files input selection
-  function handleFileSelect(evt) {
-    const files = evt.target.files;
-    if (files.length > 0) {
-      processFile(files[0]);
-    }
-  }
-
+  // Handle files input selection
   function processFile(file) {
     const reader = new FileReader();
     reader.onload = function(e) {
@@ -967,7 +1223,186 @@
     reader.readAsText(file);
   }
 
+  // AI Semantic Search Panel toggle
+  function toggleAISearchPanel() {
+    const consoleEl = document.getElementById("ai-console");
+    if (consoleEl.style.display === "flex") {
+      consoleEl.style.display = "none";
+    } else {
+      consoleEl.style.display = "flex";
+      // Auto focus query box
+      document.getElementById("ai-query-input").focus();
+    }
+  }
+
+  function saveApiKey() {
+    const key = document.getElementById("ai-api-key").value.trim();
+    if (key) {
+      localStorage.setItem("aburajal_gemini_api_key", key);
+      alert("Gemini API Key saved securely inside your browser.");
+    } else {
+      localStorage.removeItem("aburajal_gemini_api_key");
+      alert("API Key cleared.");
+    }
+  }
+
+  async function executeAISearch() {
+    const apiKey = document.getElementById("ai-api-key").value.trim();
+    if (!apiKey) {
+      alert("Please enter a valid Gemini API Key.");
+      return;
+    }
+    
+    const query = document.getElementById("ai-query-input").value.trim();
+    if (!query) {
+      alert("Please describe the skills or prompts you need.");
+      return;
+    }
+    
+    const btn = document.getElementById("ai-search-submit-btn");
+    btn.innerText = "⏳ Gemini AI is matches mapping... Please wait";
+    btn.disabled = true;
+
+    // Build lists of skills and categories
+    const list = skillsData.map(s => ({ id: s.id, name: s.name, cat: s.category }));
+    
+    const prompt = `You are the AI Assistant for Abo Alrejal Skills Hub.
+The user is describing their software project or prompt requirements.
+User prompt: "${query}"
+
+Here is the JSON list of all available skill IDs, names and categories in our repository:
+${JSON.stringify(list)}
+
+Analyze the user prompt and match it against the available skills array. 
+Select the top 5 to 15 most relevant skills that are helpful for their requirements.
+Return your response EXACTLY as a JSON array of matching skill IDs, like this example:
+["frontend-development/frontend-design", "marketing-and-seo/seo-agent"]
+Strictly output the JSON array only, without any Markdown backticks (\`\`\`json), explanations, comments, or surrounding text.`;
+
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
+    
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          contents: [{
+            parts: [{ text: prompt }]
+          }]
+        })
+      });
+      
+      if (!response.ok) {
+        throw new Error(`Google API returned status ${response.status}`);
+      }
+      
+      const resData = await response.json();
+      let text = resData.candidates[0].content.parts[0].text.trim();
+      
+      // Clean markdown blocks
+      if (text.startsWith("```")) {
+        text = text.replace(/^```json\s*/i, "").replace(/```$/, "").trim();
+      }
+      
+      const matchingIds = JSON.parse(text);
+      if (Array.isArray(matchingIds)) {
+        aiFilteredSkills = skillsData.filter(s => matchingIds.includes(s.id));
+        isAIMode = true;
+        aiQueryText = query;
+        
+        // Update AI active banner
+        document.getElementById("ai-banner-text").innerHTML = `✨ <strong>AI Semantic Search Active</strong> for: "${query}" (${aiFilteredSkills.length} matches found)`;
+        document.getElementById("ai-active-banner").style.display = "flex";
+        
+        // Hide panel
+        document.getElementById("ai-console").style.display = "none";
+        
+        btn.innerText = "🚀 Search with Gemini AI";
+        btn.disabled = false;
+        
+        // Rerender catalog
+        setCategory("all");
+      } else {
+        throw new Error("Invalid output formatting from Gemini API model.");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("AI Search Failed: " + err.message);
+      btn.innerText = "🚀 Search with Gemini AI";
+      btn.disabled = false;
+    }
+  }
+
+  function exitAIMode() {
+    isAIMode = false;
+    document.getElementById("ai-active-banner").style.display = "none";
+    document.getElementById("ai-query-input").value = "";
+    setCategory("all");
+  }
+
+  // Skill Download function - CORS-safe with dynamic client-side fallback
+  async function downloadSkill(skillId, skillName) {
+    try {
+      const url = `../../skills/${skillId}/SKILL.md`;
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error("File not found on relative host");
+      }
+      const text = await response.text();
+      triggerFileDownload(text, `${skillName}.md`);
+    } catch (err) {
+      console.warn("Failed to fetch SKILL.md. Generating formatted client markdown fallback.", err);
+      // Fallback generator in-memory
+      const skill = skillsData.find(s => s.id === skillId) || {};
+      const fallbackMD = `---
+name: ${skill.name || skillName}
+description: ${skill.description || ""}
+category: ${skill.category || ""}
+risk: ${skill.risk || "unknown"}
+source: ${skill.source || "unknown"}
+---
+
+# ${skill.name || skillName}
+
+This modular prompt asset is generated dynamically for offline local download.
+
+## Description:
+${skill.description || "No description provided."}
+
+## Installation Guide:
+To load this skill, copy these lines or run the command:
+\`npx aboalrejal-skills install ${skillId}\`
+`;
+      triggerFileDownload(fallbackMD, `${skillName}.md`);
+    }
+  }
+
+  function triggerFileDownload(content, filename) {
+    const blob = new Blob([content], { type: "text/markdown;charset=utf-8;" });
+    const downloadUrl = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = downloadUrl;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(downloadUrl);
+  }
+
+  function getFilteredSkills() {
+    const source = isAIMode ? aiFilteredSkills : skillsData;
+    return source.filter(skill => {
+      const matchesCategory = (currentCategory === "all" || skill.category === currentCategory);
+      const matchesSearch = !searchQuery || 
+        skill.name.toLowerCase().includes(searchQuery) ||
+        skill.description.toLowerCase().includes(searchQuery) ||
+        skill.id.toLowerCase().includes(searchQuery);
+      return matchesCategory && matchesSearch;
+    });
+  }
+
   function renderApp() {
+    renderedCount = 20; // reset pagination counts
     renderCategories();
     renderBundles();
     renderCards();
@@ -975,15 +1410,17 @@
 
   function renderCategories() {
     const listEl = document.getElementById("category-list");
+    const source = isAIMode ? aiFilteredSkills : skillsData;
+    
     listEl.innerHTML = `
       <li class="category-badge ${currentCategory === 'all' ? 'active' : ''}" data-category="all" onclick="setCategory('all')">
         <span>All Categories</span>
-        <span class="category-chip-count">${skillsData.length}</span>
+        <span class="category-chip-count">${source.length}</span>
       </li>
     `;
 
     const counts = {};
-    skillsData.forEach(skill => {
+    source.forEach(skill => {
       counts[skill.category] = (counts[skill.category] || 0) + 1;
     });
 
@@ -1019,7 +1456,9 @@
       card.onclick = () => {
         document.getElementById("search-box").value = bundle.name;
         searchQuery = bundle.name.toLowerCase();
-        renderCards();
+        isAIMode = false;
+        document.getElementById("ai-active-banner").style.display = "none";
+        renderApp();
       };
       grid.appendChild(card);
     });
@@ -1027,21 +1466,16 @@
 
   function renderCards() {
     const grid = document.getElementById("cards-grid");
-    grid.innerHTML = "";
-
-    const filtered = skillsData.filter(skill => {
-      const matchesCategory = (currentCategory === "all" || skill.category === currentCategory);
-      const matchesSearch = !searchQuery || 
-        skill.name.toLowerCase().includes(searchQuery) ||
-        skill.description.toLowerCase().includes(searchQuery) ||
-        skill.id.toLowerCase().includes(searchQuery);
-      return matchesCategory && matchesSearch;
-    });
-
+    const filtered = getFilteredSkills();
+    
     const activeCatLabel = categoryLabels[currentCategory] || currentCategory;
-    document.getElementById("catalog-title").innerHTML = `🧬 Browse <span>${activeCatLabel}</span> (${filtered.length})`;
+    let aiIndicatorText = isAIMode ? ` ✨ AI Match` : "";
+    document.getElementById("catalog-title").innerHTML = `🧬 Browse <span>${activeCatLabel}</span> (${filtered.length})${aiIndicatorText}`;
 
-    if (filtered.length === 0) {
+    // Slice array to renderedCount for Infinite Scroll pagination
+    const batch = filtered.slice(0, renderedCount);
+
+    if (batch.length === 0) {
       grid.innerHTML = `
         <div style="grid-column: 1/-1; text-align: center; padding: 5rem 2rem; color: hsl(var(--muted-foreground));">
           <div style="font-size: 3rem; margin-bottom: 1rem;">🔍</div>
@@ -1052,42 +1486,61 @@
       return;
     }
 
-    filtered.forEach(skill => {
-      const card = document.createElement("div");
-      card.className = "skill-card";
-      
+    let cardsHTML = "";
+    batch.forEach(skill => {
       const riskClass = skill.risk === "safe" ? "risk-safe" : (skill.risk === "high" ? "risk-high" : "risk-unknown");
       const skillName = skill.id.split("/").pop();
 
-      card.innerHTML = `
-        <div class="skill-card-glow"></div>
-        <div class="skill-header">
-          <div class="skill-title">${skill.name}</div>
-          <span class="risk-badge ${riskClass}">${skill.risk}</span>
-        </div>
-        <div class="skill-desc">${skill.description}</div>
-        <div class="skill-meta">
-          <span class="meta-tag">🔑 /${skillName}</span>
-          <span class="meta-tag">🗂️ ${categoryLabels[skill.category] || skill.category}</span>
-        </div>
-        <div class="action-row">
-          <span class="skill-id-badge" title="${skill.id}">${skill.id}</span>
-          <button class="install-btn" onclick="openInstall('${skillName}')">
-            <span>Get Skill</span>
-          </button>
+      cardsHTML += `
+        <div class="skill-card">
+          <div class="skill-card-glow"></div>
+          <div class="skill-header">
+            <div class="skill-title">${skill.name}</div>
+            <span class="risk-badge ${riskClass}">${skill.risk}</span>
+          </div>
+          <div class="skill-desc">${skill.description}</div>
+          <div class="skill-meta">
+            <span class="meta-tag">🔑 /${skillName}</span>
+            <span class="meta-tag">🗂️ ${categoryLabels[skill.category] || skill.category}</span>
+          </div>
+          <div class="action-row">
+            <span class="skill-id-badge" title="${skill.id}">${skill.id}</span>
+            <div style="display: flex; gap: 0.4rem;">
+              <button class="install-btn" onclick="openInstall('${skillName}')" style="padding: 0.5rem 0.8rem;">
+                <span>Get</span>
+              </button>
+              <button class="download-btn" onclick="downloadSkill('${skill.id}', '${skillName}')">
+                <span>Download</span>
+              </button>
+            </div>
+          </div>
         </div>
       `;
-      grid.appendChild(card);
     });
+    grid.innerHTML = cardsHTML;
   }
+
+  // Automatic Infinite scroll window listener
+  window.onscroll = () => {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 500) {
+      const filtered = getFilteredSkills();
+      if (renderedCount < filtered.length) {
+        renderedCount += 20;
+        renderCards();
+      }
+    }
+  };
 
   function setCategory(cat) {
     currentCategory = cat;
-    renderApp();
+    renderedCount = 20; // reset infinite scroll count
+    renderCategories();
+    renderCards();
   }
 
   document.getElementById("search-box").oninput = (e) => {
     searchQuery = e.target.value.toLowerCase();
+    renderedCount = 20; // reset pagination count
     renderCards();
   };
 
