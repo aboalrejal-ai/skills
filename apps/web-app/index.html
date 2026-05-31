@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Explore and load 3,045+ premium modular skills for Claude Code, Cursor, Antigravity, and Gemini CLI. Fast, offline-first, and fully customizable.">
+  <meta name="description"
+    content="Explore and load 3,045+ premium modular skills for Claude Code, Cursor, Antigravity, and Gemini CLI. Fast, offline-first, and fully customizable.">
   <meta name="theme-color" content="#09090b">
   <title>Abo Alrejal Skills | High-Performance Agentic Skills Catalog</title>
-  
+
   <!-- Modern Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+    rel="stylesheet">
+
   <!-- Premium Shadcn-UI styled Custom CSS (Preset bbVKFP6) -->
   <style>
     :root {
@@ -58,7 +62,7 @@
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
       /* Futuristic background glow */
-      background-image: 
+      background-image:
         radial-gradient(circle at 50% -20%, rgba(120, 119, 198, 0.15) 0%, transparent 60%),
         radial-gradient(circle at 10% 40%, rgba(255, 255, 255, 0.015) 0%, transparent 40%),
         radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.015) 0%, transparent 40%);
@@ -254,8 +258,15 @@
     }
 
     @keyframes slideDown {
-      from { opacity: 0; transform: translateY(-10px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .ai-console-header {
@@ -782,8 +793,13 @@
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
     }
 
     .modal-content {
@@ -797,7 +813,7 @@
       flex-direction: column;
       gap: 1.25rem;
       position: relative;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
     }
 
     .modal-close {
@@ -845,7 +861,7 @@
     .code-copy-tip {
       font-size: 0.72rem;
       color: hsl(var(--muted-foreground));
-      background: rgba(255,255,255,0.05);
+      background: rgba(255, 255, 255, 0.05);
       padding: 0.2rem 0.5rem;
       border-radius: 4px;
     }
@@ -889,384 +905,397 @@
     }
   </style>
 </head>
+
 <body>
 
-<div class="container">
-  <!-- Dynamic Status Bar -->
-  <div class="status-bar">
-    <div class="status-text">
-      <span class="status-indicator status-online" id="status-indicator"></span>
-      <span id="status-text">Loading skills database...</span>
-    </div>
-    <div style="display: flex; gap: 1rem; align-items: center;">
-      <a href="#" id="offline-trigger" style="display: none; color: #38bdf8; text-decoration: underline; font-size: 0.8rem;" onclick="showDropzone(true)">🔌 Local Drag-and-Drop</a>
-      <button class="clear-cache-btn" id="clear-cache-btn" onclick="clearCache()" style="display: none;">
-        🗑️ Clear Cache
-      </button>
-    </div>
-  </div>
-
-  <!-- Premium Header & Branding -->
-  <header class="header-section">
-    <div class="brand-group">
-      <div class="brand-logo-area">
-        <div class="brand-logo">👑</div>
-        <h1 class="brand-title">Abo Alrejal Skills</h1>
+  <div class="container">
+    <!-- Dynamic Status Bar -->
+    <div class="status-bar">
+      <div class="status-text">
+        <span class="status-indicator status-online" id="status-indicator"></span>
+        <span id="status-text">Loading skills database...</span>
       </div>
-      <p class="brand-tagline">
-        High-performance modular agentic skills for Claude Code, Cursor, Antigravity, and Gemini.
-      </p>
-    </div>
-
-    <!-- Main Centered Search Console with AI sparkle button -->
-    <div class="search-wrapper">
-      <svg class="search-icon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <circle cx="11" cy="11" r="8"></circle>
-        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-      </svg>
-      <input type="text" class="search-input" id="search-box" placeholder="Search skills, triggers, platforms...">
-      <button class="ai-search-toggle-btn" id="ai-search-toggle-btn" onclick="toggleAISearchPanel()" title="AI Semantic Search">
-        ✨
-      </button>
-    </div>
-  </header>
-
-  <!-- Client-side Gemini AI Search Console -->
-  <section class="ai-console-container" id="ai-console">
-    <div class="ai-console-header">
-      <div class="ai-console-title">✨ AI Semantic Search</div>
-      <button class="ai-console-close-btn" onclick="toggleAISearchPanel()">×</button>
-    </div>
-    <p class="ai-console-description">
-      Describe the project or specific skills you need in plain Arabic or English, and Gemini AI will match the most relevant modular skills directly.
-    </p>
-    
-    <div class="ai-key-wrapper" style="margin-top: 0.5rem;">
-      <label for="ai-api-key" class="ai-label">Gemini API Key:</label>
-      <div style="position: relative; display: flex; width: 100%; gap: 0.5rem;">
-        <input type="password" class="ai-input" id="ai-api-key" placeholder="Enter your Gemini API Key..." onchange="saveApiKey()">
-        <button class="ai-key-save-btn" onclick="saveApiKey()">Save</button>
+      <div style="display: flex; gap: 1rem; align-items: center;">
+        <a href="#" id="offline-trigger"
+          style="display: none; color: #38bdf8; text-decoration: underline; font-size: 0.8rem;"
+          onclick="showDropzone(true)">🔌 Local Drag-and-Drop</a>
+        <button class="clear-cache-btn" id="clear-cache-btn" onclick="clearCache()" style="display: none;">
+          🗑️ Clear Cache
+        </button>
       </div>
-      <span class="ai-help-text">Your key is stored securely in your local browser only. Obtain a free key from <a href="https://aistudio.google.com/" target="_blank" style="color: #38bdf8; text-decoration: underline;">Google AI Studio</a>.</span>
     </div>
 
-    <div class="ai-query-wrapper" style="margin-top: 0.5rem;">
-      <label for="ai-query-input" class="ai-label">What do you want to build?</label>
-      <textarea class="ai-textarea" id="ai-query-input" placeholder="e.g. أحتاج مهارات لمساعدتي في بناء واجهة مستخدم متطورة وسريعة باستخدام Tailwind"></textarea>
-    </div>
+    <!-- Premium Header & Branding -->
+    <header class="header-section">
+      <div class="brand-group">
+        <div class="brand-logo-area">
+          <div class="brand-logo">👑</div>
+          <h1 class="brand-title">Abo Alrejal Skills</h1>
+        </div>
+        <p class="brand-tagline">
+          High-performance modular agentic skills for Claude Code, Cursor, Antigravity, and Gemini.
+        </p>
+      </div>
 
-    <button class="ai-search-submit-btn" id="ai-search-submit-btn" onclick="executeAISearch()">
-      🚀 Search with Gemini AI
-    </button>
-  </section>
+      <!-- Main Centered Search Console with AI sparkle button -->
+      <div class="search-wrapper">
+        <svg class="search-icon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
+          viewBox="0 0 24 24">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" class="search-input" id="search-box" placeholder="Search skills, triggers, platforms...">
+        <button class="ai-search-toggle-btn" id="ai-search-toggle-btn" onclick="toggleAISearchPanel()"
+          title="AI Semantic Search">
+          ✨
+        </button>
+      </div>
+    </header>
 
-  <!-- AI Active Query Notice -->
-  <div class="ai-active-banner" id="ai-active-banner">
-    <div id="ai-banner-text"></div>
-    <button class="ai-exit-btn" onclick="exitAIMode()">Exit AI Search Mode</button>
-  </div>
-
-  <!-- Sleek Drag and Drop Zone for local Preview CORS bypass (Hidden by default, triggered on fallback) -->
-  <section class="dropzone-container" id="dropzone">
-    <div class="dropzone-title">🔌 Local Preview Mode Offline</div>
-    <p class="dropzone-description">
-      Opening this catalog directly via a local file protocol is subject to browser CORS limits.
-      To view the complete collection of <strong>3,045+ skills</strong> offline, drag & drop the <code>skills_index.json</code> file (or <code>skills.json</code>) here, or browse from your system.
-    </p>
-    <div class="dropzone-btn-row">
-      <button class="dropzone-btn" onclick="document.getElementById('file-loader').click()">Browse JSON File</button>
-      <button class="dropzone-btn-sec" onclick="dismissDropzone()">Ignore</button>
-    </div>
-    <input type="file" id="file-loader" class="hidden-input" accept=".json">
-  </section>
-
-  <!-- Horizontal Filter Bar -->
-  <nav>
-    <ul class="categories-bar" id="category-list">
-      <li class="category-badge active" data-category="all" onclick="setCategory('all')">
-        <span>All Categories</span>
-        <span class="category-count category-chip-count" id="count-all">0</span>
-      </li>
-    </ul>
-  </nav>
-
-  <!-- Curated Editorial Bundles Row -->
-  <section>
-    <h2 class="section-title">🎒 Editorial <span>Bundles</span></h2>
-    <div class="bundles-grid" id="bundles-grid">
-      <!-- Generated Bundles -->
-    </div>
-  </section>
-
-  <!-- Main Modular Skills Grid -->
-  <section>
-    <h2 class="section-title" id="catalog-title">🧬 Modular <span>Skills</span></h2>
-    <div class="cards-grid" id="cards-grid">
-      <!-- Dynamically generated cards -->
-    </div>
-  </section>
-
-  <!-- Footer Actions -->
-  <footer>
-    <div>Abo Alrejal Skills Catalog © 2026 • Premium Developer Edition</div>
-    <div class="footer-actions">
-      <button class="footer-btn" onclick="openInstructions()">
-        <span>🔧 CLI Setup Guide</span>
-      </button>
-    </div>
-  </footer>
-</div>
-
-<!-- Copy Command Modal Dialog -->
-<div class="modal" id="install-modal" onclick="closeModal(event)">
-  <div class="modal-content" onclick="event.stopPropagation()">
-    <button class="modal-close" onclick="closeModal()">×</button>
-    <div class="modal-title" id="modal-title">Install Skill</div>
-    <p style="color: hsl(var(--muted-foreground)); line-height: 1.5; font-size: 0.9rem;" id="modal-desc">
-      To install this skill prompt directly into your local environment, copy and execute this terminal command:
-    </p>
-    <div class="code-box" id="code-box-el" onclick="copyInstallCmd()">
-      <span id="modal-code">npx aboalrejal-skills install seo-agent</span>
-      <span class="code-copy-tip">Click to Copy</span>
-    </div>
-    <div style="background: rgba(255,255,255,0.01); padding: 1.25rem; border-radius: 10px; border: 1px solid hsl(var(--border));">
-      <div style="font-weight: 700; margin-bottom: 0.5rem; color: #FFFFFF; font-size: 0.85rem;">📋 Global Support:</div>
-      <p style="font-size: 0.82rem; color: hsl(var(--muted-foreground)); line-height: 1.55;">
-        • <strong>Claude Code</strong>: installs to <code>~/.claude/skills/</code><br>
-        • <strong>Antigravity</strong>: appends to <code>~/.gemini/config/plugins/</code><br>
-        • <strong>Cursor</strong>: generates custom rule in <code>.cursor/rules/</code>
+    <!-- Client-side Gemini AI Search Console -->
+    <section class="ai-console-container" id="ai-console">
+      <div class="ai-console-header">
+        <div class="ai-console-title">✨ AI Semantic Search</div>
+        <button class="ai-console-close-btn" onclick="toggleAISearchPanel()">×</button>
+      </div>
+      <p class="ai-console-description">
+        Describe the project or specific skills you need in plain Arabic or English, and Gemini AI will match the most
+        relevant modular skills directly.
       </p>
+
+      <div class="ai-key-wrapper" style="margin-top: 0.5rem;">
+        <label for="ai-api-key" class="ai-label">Gemini API Key:</label>
+        <div style="position: relative; display: flex; width: 100%; gap: 0.5rem;">
+          <input type="password" class="ai-input" id="ai-api-key" placeholder="Enter your Gemini API Key..."
+            onchange="saveApiKey()">
+          <button class="ai-key-save-btn" onclick="saveApiKey()">Save</button>
+        </div>
+        <span class="ai-help-text">Your key is stored securely in your local browser only. Obtain a free key from <a
+            href="https://aistudio.google.com/" target="_blank"
+            style="color: #38bdf8; text-decoration: underline;">Google AI Studio</a>.</span>
+      </div>
+
+      <div class="ai-query-wrapper" style="margin-top: 0.5rem;">
+        <label for="ai-query-input" class="ai-label">What do you want to build?</label>
+        <textarea class="ai-textarea" id="ai-query-input"
+          placeholder="e.g. أحتاج مهارات لمساعدتي في بناء واجهة مستخدم متطورة وسريعة باستخدام Tailwind"></textarea>
+      </div>
+
+      <button class="ai-search-submit-btn" id="ai-search-submit-btn" onclick="executeAISearch()">
+        🚀 Search with Gemini AI
+      </button>
+    </section>
+
+    <!-- AI Active Query Notice -->
+    <div class="ai-active-banner" id="ai-active-banner">
+      <div id="ai-banner-text"></div>
+      <button class="ai-exit-btn" onclick="exitAIMode()">Exit AI Search Mode</button>
+    </div>
+
+    <!-- Sleek Drag and Drop Zone for local Preview CORS bypass (Hidden by default, triggered on fallback) -->
+    <section class="dropzone-container" id="dropzone">
+      <div class="dropzone-title">🔌 Local Preview Mode Offline</div>
+      <p class="dropzone-description">
+        Opening this catalog directly via a local file protocol is subject to browser CORS limits.
+        To view the complete collection of <strong>3,045+ skills</strong> offline, drag & drop the
+        <code>skills_index.json</code> file (or <code>skills.json</code>) here, or browse from your system.
+      </p>
+      <div class="dropzone-btn-row">
+        <button class="dropzone-btn" onclick="document.getElementById('file-loader').click()">Browse JSON File</button>
+        <button class="dropzone-btn-sec" onclick="dismissDropzone()">Ignore</button>
+      </div>
+      <input type="file" id="file-loader" class="hidden-input" accept=".json">
+    </section>
+
+    <!-- Horizontal Filter Bar -->
+    <nav>
+      <ul class="categories-bar" id="category-list">
+        <li class="category-badge active" data-category="all" onclick="setCategory('all')">
+          <span>All</span>
+          <span class="category-count category-chip-count" id="count-all">0</span>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Curated Editorial Bundles Row -->
+    <section>
+      <h2 class="section-title">🎒 Editorial <span>Bundles</span></h2>
+      <div class="bundles-grid" id="bundles-grid">
+        <!-- Generated Bundles -->
+      </div>
+    </section>
+
+    <!-- Main Modular Skills Grid -->
+    <section>
+      <h2 class="section-title" id="catalog-title">🧬 Modular <span>Skills</span></h2>
+      <div class="cards-grid" id="cards-grid">
+        <!-- Dynamically generated cards -->
+      </div>
+    </section>
+
+    <!-- Footer Actions -->
+    <footer>
+      <div>Abo Alrejal Skills Catalog © 2026 • Premium Developer Edition</div>
+      <div class="footer-actions">
+        <button class="footer-btn" onclick="openInstructions()">
+          <span>🔧 CLI Setup Guide</span>
+        </button>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Copy Command Modal Dialog -->
+  <div class="modal" id="install-modal" onclick="closeModal(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal()">×</button>
+      <div class="modal-title" id="modal-title">Install Skill</div>
+      <p style="color: hsl(var(--muted-foreground)); line-height: 1.5; font-size: 0.9rem;" id="modal-desc">
+        To install this skill prompt directly into your local environment, copy and execute this terminal command:
+      </p>
+      <div class="code-box" id="code-box-el" onclick="copyInstallCmd()">
+        <span id="modal-code">npx aboalrejal-skills install seo-agent</span>
+        <span class="code-copy-tip">Click to Copy</span>
+      </div>
+      <div
+        style="background: rgba(255,255,255,0.01); padding: 1.25rem; border-radius: 10px; border: 1px solid hsl(var(--border));">
+        <div style="font-weight: 700; margin-bottom: 0.5rem; color: #FFFFFF; font-size: 0.85rem;">📋 Global Support:
+        </div>
+        <p style="font-size: 0.82rem; color: hsl(var(--muted-foreground)); line-height: 1.55;">
+          • <strong>Claude Code</strong>: installs to <code>~/.claude/skills/</code><br>
+          • <strong>Antigravity</strong>: appends to <code>~/.gemini/config/plugins/</code><br>
+          • <strong>Cursor</strong>: generates custom rule in <code>.cursor/rules/</code>
+        </p>
+      </div>
     </div>
   </div>
-</div>
 
-<script>
-  let skillsData = [];
-  let currentCategory = "all";
-  let searchQuery = "";
-  
-  // AI semantic search states
-  let isAIMode = false;
-  let aiFilteredSkills = [];
-  let aiQueryText = "";
-  
-  // Pagination & Infinite Scroll states
-  let renderedCount = 20;
+  <script>
+    let skillsData = [];
+    let currentCategory = "all";
+    let searchQuery = "";
 
-  const categoryLabels = {
-    "all": "All Categories",
-    "ai-and-agents": "AI & Agents",
-    "automation-and-saas": "SaaS & API Automation",
-    "backend-and-fullstack": "Backend & Fullstack",
-    "cloud-and-infrastructure": "Cloud & Infrastructure",
-    "design-and-creative": "Design & Creative",
-    "document-processing": "Document Processing",
-    "frontend-development": "Frontend Development",
-    "marketing-and-seo": "Marketing & SEO",
-    "science-and-bioinformatics": "Science & Bioinformatics",
-    "security-and-compliance": "Security & Compliance"
-  };
+    // AI semantic search states
+    let isAIMode = false;
+    let aiFilteredSkills = [];
+    let aiQueryText = "";
 
-  const bundlesData = [
-    { id: "essentials", name: "Essentials", emoji: "🚀", tagline: "Verification, plans & rules. For everyone." },
-    { id: "web-wizard", name: "Web Wizard", emoji: "🌐", tagline: "React, Tailwind, Shadcn-UI & Frontend Design." },
-    { id: "marketing-growth", name: "Marketing & Growth", emoji: "📈", tagline: "SEO, Copywriting & Experiment Setup." },
-    { id: "agent-architect", name: "Agent Architect", emoji: "🤖", tagline: "MCP development & agent prompting systems." }
-  ];
+    // Pagination & Infinite Scroll states
+    let renderedCount = 20;
 
-  // Retrieve cached local skills if any
-  function getCachedSkills() {
-    try {
-      const cached = localStorage.getItem("aburajal_skills_cache");
-      if (cached) {
-        return JSON.parse(cached);
+    const categoryLabels = {
+      "all": "All",
+      "ai-and-agents": "AI & Agents",
+      "automation-and-saas": "SaaS & API Automation",
+      "backend-and-fullstack": "Backend & Fullstack",
+      "cloud-and-infrastructure": "Cloud & Infrastructure",
+      "design-and-creative": "Design & Creative",
+      "document-processing": "Document Processing",
+      "frontend-development": "Frontend Development",
+      "marketing-and-seo": "Marketing & SEO",
+      "science-and-bioinformatics": "Science & Bioinformatics",
+      "security-and-compliance": "Security & Compliance"
+    };
+
+    const bundlesData = [
+      { id: "essentials", name: "Essentials", emoji: "🚀", tagline: "Verification, plans & rules. For everyone." },
+      { id: "web-wizard", name: "Web Wizard", emoji: "🌐", tagline: "React, Tailwind, Shadcn-UI & Frontend Design." },
+      { id: "marketing-growth", name: "Marketing & Growth", emoji: "📈", tagline: "SEO, Copywriting & Experiment Setup." },
+      { id: "agent-architect", name: "Agent Architect", emoji: "🤖", tagline: "MCP development & agent prompting systems." }
+    ];
+
+    // Retrieve cached local skills if any
+    function getCachedSkills() {
+      try {
+        const cached = localStorage.getItem("aburajal_skills_cache");
+        if (cached) {
+          return JSON.parse(cached);
+        }
+      } catch (e) {
+        console.error("Local storage access failed", e);
       }
-    } catch (e) {
-      console.error("Local storage access failed", e);
+      return null;
     }
-    return null;
-  }
 
-  function setCachedSkills(data) {
-    try {
-      localStorage.setItem("aburajal_skills_cache", JSON.stringify(data));
-    } catch (e) {
-      console.error("Failed to update local cache", e);
+    function setCachedSkills(data) {
+      try {
+        localStorage.setItem("aburajal_skills_cache", JSON.stringify(data));
+      } catch (e) {
+        console.error("Failed to update local cache", e);
+      }
     }
-  }
 
-  function clearCache() {
-    try {
-      localStorage.removeItem("aburajal_skills_cache");
+    function clearCache() {
+      try {
+        localStorage.removeItem("aburajal_skills_cache");
+        skillsData = [
+          { id: "frontend-development/frontend-design", name: "Frontend Design Specialist", category: "frontend-development", description: "Create distinctive, premium frontend interfaces with modern best practices.", risk: "safe" },
+          { id: "marketing-and-seo/seo-agent", name: "GEO & SEO Auditor", category: "marketing-and-seo", description: "Automates search and generative engine optimization checks.", risk: "safe" }
+        ];
+        isAIMode = false;
+        updateStatus(false, "Cache cleared");
+        showDropzone(true);
+        renderApp();
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
+    function updateStatus(loaded, message) {
+      const indicator = document.getElementById("status-indicator");
+      const statusText = document.getElementById("status-text");
+      const clearBtn = document.getElementById("clear-cache-btn");
+      const offlineTrigger = document.getElementById("offline-trigger");
+
+      if (loaded) {
+        indicator.className = "status-indicator status-online";
+        statusText.innerHTML = `🟢 <strong>Abo Alrejal Skills loaded</strong> (${skillsData.length} active skills available)`;
+        clearBtn.style.display = "inline-block";
+        offlineTrigger.style.display = "none";
+      } else {
+        indicator.className = "status-indicator status-offline";
+        statusText.innerHTML = `⚠️ <strong>Local Preview Mode</strong> (${message || "Offline fallback"})`;
+        clearBtn.style.display = "none";
+        offlineTrigger.style.display = "inline-block";
+      }
+    }
+
+    function showDropzone(show) {
+      const dz = document.getElementById("dropzone");
+      dz.style.display = show ? "flex" : "none";
+    }
+
+    function dismissDropzone() {
+      showDropzone(false);
+    }
+
+    async function loadSkills() {
+      // Load saved API key from localStorage
+      const savedKey = localStorage.getItem("aburajal_gemini_api_key");
+      if (savedKey) {
+        document.getElementById("ai-api-key").value = savedKey;
+      }
+
+      // 1. Try local storage cache first
+      const cached = getCachedSkills();
+      if (cached && cached.length > 2) {
+        skillsData = cached;
+        showDropzone(false);
+        updateStatus(true);
+        renderApp();
+        return;
+      }
+
+      // 2. Try fetching from relative endpoints
+      const urlsToTry = [
+        'skills.json',
+        'public/skills.json',
+        '../../skills_index.json',
+        '/skills.json'
+      ];
+
+      for (const url of urlsToTry) {
+        try {
+          const response = await fetch(url);
+          if (response.ok) {
+            skillsData = await response.json();
+            if (skillsData && skillsData.length > 2) {
+              setCachedSkills(skillsData);
+              showDropzone(false);
+              updateStatus(true);
+              renderApp();
+              return;
+            }
+          }
+        } catch (err) {
+          // quiet fail and try next relative path
+        }
+      }
+
+      // 3. Fallback mock setup if offline & uncached
+      console.warn("Failed to fetch skills.json locally. Presenting upload interface.");
       skillsData = [
         { id: "frontend-development/frontend-design", name: "Frontend Design Specialist", category: "frontend-development", description: "Create distinctive, premium frontend interfaces with modern best practices.", risk: "safe" },
         { id: "marketing-and-seo/seo-agent", name: "GEO & SEO Auditor", category: "marketing-and-seo", description: "Automates search and generative engine optimization checks.", risk: "safe" }
       ];
-      isAIMode = false;
-      updateStatus(false, "Cache cleared");
       showDropzone(true);
+      updateStatus(false);
       renderApp();
-    } catch (e) {
-      console.error(e);
-    }
-  }
-
-  function updateStatus(loaded, message) {
-    const indicator = document.getElementById("status-indicator");
-    const statusText = document.getElementById("status-text");
-    const clearBtn = document.getElementById("clear-cache-btn");
-    const offlineTrigger = document.getElementById("offline-trigger");
-
-    if (loaded) {
-      indicator.className = "status-indicator status-online";
-      statusText.innerHTML = `🟢 <strong>Abo Alrejal Skills loaded</strong> (${skillsData.length} active skills available)`;
-      clearBtn.style.display = "inline-block";
-      offlineTrigger.style.display = "none";
-    } else {
-      indicator.className = "status-indicator status-offline";
-      statusText.innerHTML = `⚠️ <strong>Local Preview Mode</strong> (${message || "Offline fallback"})`;
-      clearBtn.style.display = "none";
-      offlineTrigger.style.display = "inline-block";
-    }
-  }
-
-  function showDropzone(show) {
-    const dz = document.getElementById("dropzone");
-    dz.style.display = show ? "flex" : "none";
-  }
-
-  function dismissDropzone() {
-    showDropzone(false);
-  }
-
-  async function loadSkills() {
-    // Load saved API key from localStorage
-    const savedKey = localStorage.getItem("aburajal_gemini_api_key");
-    if (savedKey) {
-      document.getElementById("ai-api-key").value = savedKey;
     }
 
-    // 1. Try local storage cache first
-    const cached = getCachedSkills();
-    if (cached && cached.length > 2) {
-      skillsData = cached;
-      showDropzone(false);
-      updateStatus(true);
-      renderApp();
-      return;
-    }
+    // Handle files input selection
+    function processFile(file) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        try {
+          const parsed = JSON.parse(e.target.result);
+          let items = [];
+          if (Array.isArray(parsed)) {
+            items = parsed;
+          } else if (parsed && Array.isArray(parsed.skills)) {
+            items = parsed.skills;
+          } else {
+            alert("Invalid file structure. Please upload a valid skills index array.");
+            return;
+          }
 
-    // 2. Try fetching from relative endpoints
-    const urlsToTry = [
-      'skills.json',
-      'public/skills.json',
-      '../../skills_index.json',
-      '/skills.json'
-    ];
-
-    for (const url of urlsToTry) {
-      try {
-        const response = await fetch(url);
-        if (response.ok) {
-          skillsData = await response.json();
-          if (skillsData && skillsData.length > 2) {
+          if (items.length > 0) {
+            skillsData = items;
             setCachedSkills(skillsData);
             showDropzone(false);
             updateStatus(true);
             renderApp();
-            return;
           }
+        } catch (err) {
+          alert("Failed to parse JSON file: " + err.message);
         }
-      } catch (err) {
-        // quiet fail and try next relative path
+      };
+      reader.readAsText(file);
+    }
+
+    // AI Semantic Search Panel toggle
+    function toggleAISearchPanel() {
+      const consoleEl = document.getElementById("ai-console");
+      if (consoleEl.style.display === "flex") {
+        consoleEl.style.display = "none";
+      } else {
+        consoleEl.style.display = "flex";
+        // Auto focus query box
+        document.getElementById("ai-query-input").focus();
       }
     }
 
-    // 3. Fallback mock setup if offline & uncached
-    console.warn("Failed to fetch skills.json locally. Presenting upload interface.");
-    skillsData = [
-      { id: "frontend-development/frontend-design", name: "Frontend Design Specialist", category: "frontend-development", description: "Create distinctive, premium frontend interfaces with modern best practices.", risk: "safe" },
-      { id: "marketing-and-seo/seo-agent", name: "GEO & SEO Auditor", category: "marketing-and-seo", description: "Automates search and generative engine optimization checks.", risk: "safe" }
-    ];
-    showDropzone(true);
-    updateStatus(false);
-    renderApp();
-  }
-
-  // Handle files input selection
-  function processFile(file) {
-    const reader = new FileReader();
-    reader.onload = function(e) {
-      try {
-        const parsed = JSON.parse(e.target.result);
-        let items = [];
-        if (Array.isArray(parsed)) {
-          items = parsed;
-        } else if (parsed && Array.isArray(parsed.skills)) {
-          items = parsed.skills;
-        } else {
-          alert("Invalid file structure. Please upload a valid skills index array.");
-          return;
-        }
-        
-        if (items.length > 0) {
-          skillsData = items;
-          setCachedSkills(skillsData);
-          showDropzone(false);
-          updateStatus(true);
-          renderApp();
-        }
-      } catch (err) {
-        alert("Failed to parse JSON file: " + err.message);
+    function saveApiKey() {
+      const key = document.getElementById("ai-api-key").value.trim();
+      if (key) {
+        localStorage.setItem("aburajal_gemini_api_key", key);
+        alert("Gemini API Key saved securely inside your browser.");
+      } else {
+        localStorage.removeItem("aburajal_gemini_api_key");
+        alert("API Key cleared.");
       }
-    };
-    reader.readAsText(file);
-  }
-
-  // AI Semantic Search Panel toggle
-  function toggleAISearchPanel() {
-    const consoleEl = document.getElementById("ai-console");
-    if (consoleEl.style.display === "flex") {
-      consoleEl.style.display = "none";
-    } else {
-      consoleEl.style.display = "flex";
-      // Auto focus query box
-      document.getElementById("ai-query-input").focus();
     }
-  }
 
-  function saveApiKey() {
-    const key = document.getElementById("ai-api-key").value.trim();
-    if (key) {
-      localStorage.setItem("aburajal_gemini_api_key", key);
-      alert("Gemini API Key saved securely inside your browser.");
-    } else {
-      localStorage.removeItem("aburajal_gemini_api_key");
-      alert("API Key cleared.");
-    }
-  }
+    async function executeAISearch() {
+      const apiKey = document.getElementById("ai-api-key").value.trim();
+      if (!apiKey) {
+        alert("Please enter a valid Gemini API Key.");
+        return;
+      }
 
-  async function executeAISearch() {
-    const apiKey = document.getElementById("ai-api-key").value.trim();
-    if (!apiKey) {
-      alert("Please enter a valid Gemini API Key.");
-      return;
-    }
-    
-    const query = document.getElementById("ai-query-input").value.trim();
-    if (!query) {
-      alert("Please describe the skills or prompts you need.");
-      return;
-    }
-    
-    const btn = document.getElementById("ai-search-submit-btn");
-    btn.innerText = "⏳ Gemini AI is matches mapping... Please wait";
-    btn.disabled = true;
+      const query = document.getElementById("ai-query-input").value.trim();
+      if (!query) {
+        alert("Please describe the skills or prompts you need.");
+        return;
+      }
 
-    // Build lists of skills and categories
-    const list = skillsData.map(s => ({ id: s.id, name: s.name, cat: s.category }));
-    
-    const prompt = `You are the AI Assistant for Abo Alrejal Skills Hub.
+      const btn = document.getElementById("ai-search-submit-btn");
+      btn.innerText = "⏳ Gemini AI is matches mapping... Please wait";
+      btn.disabled = true;
+
+      // Build lists of skills and categories
+      const list = skillsData.map(s => ({ id: s.id, name: s.name, cat: s.category }));
+
+      const prompt = `You are the AI Assistant for Abo Alrejal Skills Hub.
 The user is describing their software project or prompt requirements.
 User prompt: "${query}"
 
@@ -1279,82 +1308,82 @@ Return your response EXACTLY as a JSON array of matching skill IDs, like this ex
 ["frontend-development/frontend-design", "marketing-and-seo/seo-agent"]
 Strictly output the JSON array only, without any Markdown backticks (\`\`\`json), explanations, comments, or surrounding text.`;
 
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
-    
-    try {
-      const response = await fetch(url, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          contents: [{
-            parts: [{ text: prompt }]
-          }]
-        })
-      });
-      
-      if (!response.ok) {
-        throw new Error(`Google API returned status ${response.status}`);
-      }
-      
-      const resData = await response.json();
-      let text = resData.candidates[0].content.parts[0].text.trim();
-      
-      // Clean markdown blocks
-      if (text.startsWith("```")) {
-        text = text.replace(/^```json\s*/i, "").replace(/```$/, "").trim();
-      }
-      
-      const matchingIds = JSON.parse(text);
-      if (Array.isArray(matchingIds)) {
-        aiFilteredSkills = skillsData.filter(s => matchingIds.includes(s.id));
-        isAIMode = true;
-        aiQueryText = query;
-        
-        // Update AI active banner
-        document.getElementById("ai-banner-text").innerHTML = `✨ <strong>AI Semantic Search Active</strong> for: "${query}" (${aiFilteredSkills.length} matches found)`;
-        document.getElementById("ai-active-banner").style.display = "flex";
-        
-        // Hide panel
-        document.getElementById("ai-console").style.display = "none";
-        
+      const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
+
+      try {
+        const response = await fetch(url, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            contents: [{
+              parts: [{ text: prompt }]
+            }]
+          })
+        });
+
+        if (!response.ok) {
+          throw new Error(`Google API returned status ${response.status}`);
+        }
+
+        const resData = await response.json();
+        let text = resData.candidates[0].content.parts[0].text.trim();
+
+        // Clean markdown blocks
+        if (text.startsWith("```")) {
+          text = text.replace(/^```json\s*/i, "").replace(/```$/, "").trim();
+        }
+
+        const matchingIds = JSON.parse(text);
+        if (Array.isArray(matchingIds)) {
+          aiFilteredSkills = skillsData.filter(s => matchingIds.includes(s.id));
+          isAIMode = true;
+          aiQueryText = query;
+
+          // Update AI active banner
+          document.getElementById("ai-banner-text").innerHTML = `✨ <strong>AI Semantic Search Active</strong> for: "${query}" (${aiFilteredSkills.length} matches found)`;
+          document.getElementById("ai-active-banner").style.display = "flex";
+
+          // Hide panel
+          document.getElementById("ai-console").style.display = "none";
+
+          btn.innerText = "🚀 Search with Gemini AI";
+          btn.disabled = false;
+
+          // Rerender catalog
+          setCategory("all");
+        } else {
+          throw new Error("Invalid output formatting from Gemini API model.");
+        }
+      } catch (err) {
+        console.error(err);
+        alert("AI Search Failed: " + err.message);
         btn.innerText = "🚀 Search with Gemini AI";
         btn.disabled = false;
-        
-        // Rerender catalog
-        setCategory("all");
-      } else {
-        throw new Error("Invalid output formatting from Gemini API model.");
       }
-    } catch (err) {
-      console.error(err);
-      alert("AI Search Failed: " + err.message);
-      btn.innerText = "🚀 Search with Gemini AI";
-      btn.disabled = false;
     }
-  }
 
-  function exitAIMode() {
-    isAIMode = false;
-    document.getElementById("ai-active-banner").style.display = "none";
-    document.getElementById("ai-query-input").value = "";
-    setCategory("all");
-  }
+    function exitAIMode() {
+      isAIMode = false;
+      document.getElementById("ai-active-banner").style.display = "none";
+      document.getElementById("ai-query-input").value = "";
+      setCategory("all");
+    }
 
-  // Skill Download function - CORS-safe with dynamic client-side fallback
-  async function downloadSkill(skillId, skillName) {
-    try {
-      const url = `../../skills/${skillId}/SKILL.md`;
-      const response = await fetch(url);
-      if (!response.ok) {
-        throw new Error("File not found on relative host");
-      }
-      const text = await response.text();
-      triggerFileDownload(text, `${skillName}.md`);
-    } catch (err) {
-      console.warn("Failed to fetch SKILL.md. Generating formatted client markdown fallback.", err);
-      // Fallback generator in-memory
-      const skill = skillsData.find(s => s.id === skillId) || {};
-      const fallbackMD = `---
+    // Skill Download function - CORS-safe with dynamic client-side fallback
+    async function downloadSkill(skillId, skillName) {
+      try {
+        const url = `../../skills/${skillId}/SKILL.md`;
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error("File not found on relative host");
+        }
+        const text = await response.text();
+        triggerFileDownload(text, `${skillName}.md`);
+      } catch (err) {
+        console.warn("Failed to fetch SKILL.md. Generating formatted client markdown fallback.", err);
+        // Fallback generator in-memory
+        const skill = skillsData.find(s => s.id === skillId) || {};
+        const fallbackMD = `---
 name: ${skill.name || skillName}
 description: ${skill.description || ""}
 category: ${skill.category || ""}
@@ -1373,125 +1402,125 @@ ${skill.description || "No description provided."}
 To load this skill, copy these lines or run the command:
 \`npx aboalrejal-skills install ${skillId}\`
 `;
-      triggerFileDownload(fallbackMD, `${skillName}.md`);
+        triggerFileDownload(fallbackMD, `${skillName}.md`);
+      }
     }
-  }
 
-  function triggerFileDownload(content, filename) {
-    const blob = new Blob([content], { type: "text/markdown;charset=utf-8;" });
-    const downloadUrl = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = downloadUrl;
-    a.download = filename;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(downloadUrl);
-  }
+    function triggerFileDownload(content, filename) {
+      const blob = new Blob([content], { type: "text/markdown;charset=utf-8;" });
+      const downloadUrl = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = downloadUrl;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(downloadUrl);
+    }
 
-  function getFilteredSkills() {
-    const source = isAIMode ? aiFilteredSkills : skillsData;
-    return source.filter(skill => {
-      const matchesCategory = (currentCategory === "all" || skill.category === currentCategory);
-      const matchesSearch = !searchQuery || 
-        skill.name.toLowerCase().includes(searchQuery) ||
-        skill.description.toLowerCase().includes(searchQuery) ||
-        skill.id.toLowerCase().includes(searchQuery);
-      return matchesCategory && matchesSearch;
-    });
-  }
+    function getFilteredSkills() {
+      const source = isAIMode ? aiFilteredSkills : skillsData;
+      return source.filter(skill => {
+        const matchesCategory = (currentCategory === "all" || skill.category === currentCategory);
+        const matchesSearch = !searchQuery ||
+          skill.name.toLowerCase().includes(searchQuery) ||
+          skill.description.toLowerCase().includes(searchQuery) ||
+          skill.id.toLowerCase().includes(searchQuery);
+        return matchesCategory && matchesSearch;
+      });
+    }
 
-  function renderApp() {
-    renderedCount = 20; // reset pagination counts
-    renderCategories();
-    renderBundles();
-    renderCards();
-  }
+    function renderApp() {
+      renderedCount = 20; // reset pagination counts
+      renderCategories();
+      renderBundles();
+      renderCards();
+    }
 
-  function renderCategories() {
-    const listEl = document.getElementById("category-list");
-    const source = isAIMode ? aiFilteredSkills : skillsData;
-    
-    listEl.innerHTML = `
+    function renderCategories() {
+      const listEl = document.getElementById("category-list");
+      const source = isAIMode ? aiFilteredSkills : skillsData;
+
+      listEl.innerHTML = `
       <li class="category-badge ${currentCategory === 'all' ? 'active' : ''}" data-category="all" onclick="setCategory('all')">
-        <span>All Categories</span>
+        <span>All</span>
         <span class="category-chip-count">${source.length}</span>
       </li>
     `;
 
-    const counts = {};
-    source.forEach(skill => {
-      counts[skill.category] = (counts[skill.category] || 0) + 1;
-    });
+      const counts = {};
+      source.forEach(skill => {
+        counts[skill.category] = (counts[skill.category] || 0) + 1;
+      });
 
-    Object.keys(categoryLabels).forEach(key => {
-      if (key === "all") return;
-      const count = counts[key] || 0;
-      if (count > 0) {
-        const li = document.createElement("li");
-        li.className = `category-badge ${currentCategory === key ? 'active' : ''}`;
-        li.innerHTML = `
+      Object.keys(categoryLabels).forEach(key => {
+        if (key === "all") return;
+        const count = counts[key] || 0;
+        if (count > 0) {
+          const li = document.createElement("li");
+          li.className = `category-badge ${currentCategory === key ? 'active' : ''}`;
+          li.innerHTML = `
           <span>${categoryLabels[key]}</span>
           <span class="category-chip-count">${count}</span>
         `;
-        li.onclick = () => setCategory(key);
-        listEl.appendChild(li);
-      }
-    });
-  }
+          li.onclick = () => setCategory(key);
+          listEl.appendChild(li);
+        }
+      });
+    }
 
-  function renderBundles() {
-    const grid = document.getElementById("bundles-grid");
-    grid.innerHTML = "";
-    bundlesData.forEach(bundle => {
-      const card = document.createElement("div");
-      card.className = "bundle-card";
-      card.innerHTML = `
+    function renderBundles() {
+      const grid = document.getElementById("bundles-grid");
+      grid.innerHTML = "";
+      bundlesData.forEach(bundle => {
+        const card = document.createElement("div");
+        card.className = "bundle-card";
+        card.innerHTML = `
         <div class="bundle-header">
           <span class="bundle-emoji">${bundle.emoji}</span>
           <span class="bundle-name">${bundle.name}</span>
         </div>
         <div class="bundle-tagline">${bundle.tagline}</div>
       `;
-      card.onclick = () => {
-        document.getElementById("search-box").value = bundle.name;
-        searchQuery = bundle.name.toLowerCase();
-        isAIMode = false;
-        document.getElementById("ai-active-banner").style.display = "none";
-        renderApp();
-      };
-      grid.appendChild(card);
-    });
-  }
+        card.onclick = () => {
+          document.getElementById("search-box").value = bundle.name;
+          searchQuery = bundle.name.toLowerCase();
+          isAIMode = false;
+          document.getElementById("ai-active-banner").style.display = "none";
+          renderApp();
+        };
+        grid.appendChild(card);
+      });
+    }
 
-  function renderCards() {
-    const grid = document.getElementById("cards-grid");
-    const filtered = getFilteredSkills();
-    
-    const activeCatLabel = categoryLabels[currentCategory] || currentCategory;
-    let aiIndicatorText = isAIMode ? ` ✨ AI Match` : "";
-    document.getElementById("catalog-title").innerHTML = `🧬 Browse <span>${activeCatLabel}</span> (${filtered.length})${aiIndicatorText}`;
+    function renderCards() {
+      const grid = document.getElementById("cards-grid");
+      const filtered = getFilteredSkills();
 
-    // Slice array to renderedCount for Infinite Scroll pagination
-    const batch = filtered.slice(0, renderedCount);
+      const activeCatLabel = categoryLabels[currentCategory] || currentCategory;
+      let aiIndicatorText = isAIMode ? ` ✨ AI Match` : "";
+      document.getElementById("catalog-title").innerHTML = `🧬 Browse <span>${activeCatLabel}</span> (${filtered.length})${aiIndicatorText}`;
 
-    if (batch.length === 0) {
-      grid.innerHTML = `
+      // Slice array to renderedCount for Infinite Scroll pagination
+      const batch = filtered.slice(0, renderedCount);
+
+      if (batch.length === 0) {
+        grid.innerHTML = `
         <div style="grid-column: 1/-1; text-align: center; padding: 5rem 2rem; color: hsl(var(--muted-foreground));">
           <div style="font-size: 3rem; margin-bottom: 1rem;">🔍</div>
           <div style="font-weight: 600; color: #fff; margin-bottom: 0.5rem;">No matching skills found</div>
           <div>Try adjusting your keywords or category filters.</div>
         </div>
       `;
-      return;
-    }
+        return;
+      }
 
-    let cardsHTML = "";
-    batch.forEach(skill => {
-      const riskClass = skill.risk === "safe" ? "risk-safe" : (skill.risk === "high" ? "risk-high" : "risk-unknown");
-      const skillName = skill.id.split("/").pop();
+      let cardsHTML = "";
+      batch.forEach(skill => {
+        const riskClass = skill.risk === "safe" ? "risk-safe" : (skill.risk === "high" ? "risk-high" : "risk-unknown");
+        const skillName = skill.id.split("/").pop();
 
-      cardsHTML += `
+        cardsHTML += `
         <div class="skill-card">
           <div class="skill-card-glow"></div>
           <div class="skill-header">
@@ -1516,103 +1545,104 @@ To load this skill, copy these lines or run the command:
           </div>
         </div>
       `;
-    });
-    grid.innerHTML = cardsHTML;
-  }
-
-  // Automatic Infinite scroll window listener
-  window.onscroll = () => {
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 500) {
-      const filtered = getFilteredSkills();
-      if (renderedCount < filtered.length) {
-        renderedCount += 20;
-        renderCards();
-      }
+      });
+      grid.innerHTML = cardsHTML;
     }
-  };
 
-  function setCategory(cat) {
-    currentCategory = cat;
-    renderedCount = 20; // reset infinite scroll count
-    renderCategories();
-    renderCards();
-  }
-
-  document.getElementById("search-box").oninput = (e) => {
-    searchQuery = e.target.value.toLowerCase();
-    renderedCount = 20; // reset pagination count
-    renderCards();
-  };
-
-  function openInstall(skillId) {
-    const modal = document.getElementById("install-modal");
-    document.getElementById("modal-title").innerText = `Install ${skillId}`;
-    document.getElementById("modal-code").innerText = `npx aboalrejal-skills install ${skillId}`;
-    document.getElementById("modal-desc").innerText = "To install this modular prompt directly into your developer workspace, copy and execute this terminal command:";
-    modal.style.display = "flex";
-  }
-
-  function openInstructions() {
-    const modal = document.getElementById("install-modal");
-    document.getElementById("modal-title").innerText = `🔧 CLI Setup Guide`;
-    document.getElementById("modal-code").innerText = `npm install -g aboalrejal-skills`;
-    document.getElementById("modal-desc").innerText = "Install our unified command-line utility globally to search, fetch, and configure skills offline:";
-    modal.style.display = "flex";
-  }
-
-  function closeModal(e) {
-    document.getElementById("install-modal").style.display = "none";
-  }
-
-  function copyInstallCmd() {
-    const cmd = document.getElementById("modal-code").innerText;
-    navigator.clipboard.writeText(cmd);
-    
-    // Sleek tooltip confirmation
-    const tip = document.querySelector("#code-box-el .code-copy-tip");
-    const originalText = tip.innerText;
-    tip.innerText = "✓ Copied!";
-    tip.style.background = "rgba(16, 185, 129, 0.15)";
-    tip.style.color = "#10B981";
-    setTimeout(() => {
-      tip.innerText = originalText;
-      tip.style.background = "rgba(255,255,255,0.05)";
-      tip.style.color = "hsl(var(--muted-foreground))";
-    }, 2000);
-  }
-
-  // Dynamic window drop files logic
-  window.addEventListener('DOMContentLoaded', () => {
-    const dropzone = document.getElementById("dropzone");
-    
-    dropzone.addEventListener('dragover', (e) => {
-      e.preventDefault();
-      dropzone.classList.add('dragover');
-    });
-
-    dropzone.addEventListener('dragleave', (e) => {
-      e.preventDefault();
-      dropzone.classList.remove('dragover');
-    });
-
-    dropzone.addEventListener('drop', (e) => {
-      e.preventDefault();
-      dropzone.classList.remove('dragover');
-      const files = e.dataTransfer.files;
-      if (files.length > 0) {
-        processFile(files[0]);
+    // Automatic Infinite scroll window listener
+    window.onscroll = () => {
+      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 500) {
+        const filtered = getFilteredSkills();
+        if (renderedCount < filtered.length) {
+          renderedCount += 20;
+          renderCards();
+        }
       }
+    };
+
+    function setCategory(cat) {
+      currentCategory = cat;
+      renderedCount = 20; // reset infinite scroll count
+      renderCategories();
+      renderCards();
+    }
+
+    document.getElementById("search-box").oninput = (e) => {
+      searchQuery = e.target.value.toLowerCase();
+      renderedCount = 20; // reset pagination count
+      renderCards();
+    };
+
+    function openInstall(skillId) {
+      const modal = document.getElementById("install-modal");
+      document.getElementById("modal-title").innerText = `Install ${skillId}`;
+      document.getElementById("modal-code").innerText = `npx aboalrejal-skills install ${skillId}`;
+      document.getElementById("modal-desc").innerText = "To install this modular prompt directly into your developer workspace, copy and execute this terminal command:";
+      modal.style.display = "flex";
+    }
+
+    function openInstructions() {
+      const modal = document.getElementById("install-modal");
+      document.getElementById("modal-title").innerText = `🔧 CLI Setup Guide`;
+      document.getElementById("modal-code").innerText = `npm install -g aboalrejal-skills`;
+      document.getElementById("modal-desc").innerText = "Install our unified command-line utility globally to search, fetch, and configure skills offline:";
+      modal.style.display = "flex";
+    }
+
+    function closeModal(e) {
+      document.getElementById("install-modal").style.display = "none";
+    }
+
+    function copyInstallCmd() {
+      const cmd = document.getElementById("modal-code").innerText;
+      navigator.clipboard.writeText(cmd);
+
+      // Sleek tooltip confirmation
+      const tip = document.querySelector("#code-box-el .code-copy-tip");
+      const originalText = tip.innerText;
+      tip.innerText = "✓ Copied!";
+      tip.style.background = "rgba(16, 185, 129, 0.15)";
+      tip.style.color = "#10B981";
+      setTimeout(() => {
+        tip.innerText = originalText;
+        tip.style.background = "rgba(255,255,255,0.05)";
+        tip.style.color = "hsl(var(--muted-foreground))";
+      }, 2000);
+    }
+
+    // Dynamic window drop files logic
+    window.addEventListener('DOMContentLoaded', () => {
+      const dropzone = document.getElementById("dropzone");
+
+      dropzone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropzone.classList.add('dragover');
+      });
+
+      dropzone.addEventListener('dragleave', (e) => {
+        e.preventDefault();
+        dropzone.classList.remove('dragover');
+      });
+
+      dropzone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropzone.classList.remove('dragover');
+        const files = e.dataTransfer.files;
+        if (files.length > 0) {
+          processFile(files[0]);
+        }
+      });
+
+      // Wire manually triggered input loader
+      document.getElementById("file-loader").addEventListener('change', (e) => {
+        if (e.target.files.length > 0) {
+          processFile(e.target.files[0]);
+        }
+      });
     });
 
-    // Wire manually triggered input loader
-    document.getElementById("file-loader").addEventListener('change', (e) => {
-      if (e.target.files.length > 0) {
-        processFile(e.target.files[0]);
-      }
-    });
-  });
-
-  window.onload = loadSkills;
-</script>
+    window.onload = loadSkills;
+  </script>
 </body>
+
 </html>
