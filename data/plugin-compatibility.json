@@ -1,6 +1,63 @@
 {
   "skills": [
     {
+      "id": "ai-and-agents/Dispatching Parallel Agents",
+      "path": "skills/ai-and-agents/Dispatching Parallel Agents",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "ai-and-agents/Subagent-Driven Development",
+      "path": "skills/ai-and-agents/Subagent-Driven Development",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "ai-and-agents/Testing Skills With Subagents",
+      "path": "skills/ai-and-agents/Testing Skills With Subagents",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
       "id": "ai-and-agents/acreadiness-assess",
       "path": "skills/ai-and-agents/acreadiness-assess",
       "targets": {
@@ -2472,25 +2529,6 @@
     {
       "id": "ai-and-agents/directory-submissions",
       "path": "skills/ai-and-agents/directory-submissions",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
-      "id": "ai-and-agents/Dispatching Parallel Agents",
-      "path": "skills/ai-and-agents/Dispatching Parallel Agents",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -5506,25 +5544,6 @@
       "runtime_files": []
     },
     {
-      "id": "ai-and-agents/Subagent-Driven Development",
-      "path": "skills/ai-and-agents/Subagent-Driven Development",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
       "id": "ai-and-agents/subagent-driven-development",
       "path": "skills/ai-and-agents/subagent-driven-development",
       "targets": {
@@ -5679,25 +5698,6 @@
     {
       "id": "ai-and-agents/template-skill",
       "path": "skills/ai-and-agents/template-skill",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
-      "id": "ai-and-agents/Testing Skills With Subagents",
-      "path": "skills/ai-and-agents/Testing Skills With Subagents",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -6132,6 +6132,1108 @@
     {
       "id": "automation-and-saas/-2chat-automation",
       "path": "skills/automation-and-saas/-2chat-automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/Apify Automation",
+      "path": "skills/automation-and-saas/Apify Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/Apollo Automation",
+      "path": "skills/automation-and-saas/Apollo Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/Ashby Automation",
+      "path": "skills/automation-and-saas/Ashby Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/Attio Automation",
+      "path": "skills/automation-and-saas/Attio Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/Braintree Automation",
+      "path": "skills/automation-and-saas/Braintree Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/Capsule CRM Automation",
+      "path": "skills/automation-and-saas/Capsule CRM Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/Clockify Automation",
+      "path": "skills/automation-and-saas/Clockify Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/Coinbase Automation",
+      "path": "skills/automation-and-saas/Coinbase Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/Contentful Automation",
+      "path": "skills/automation-and-saas/Contentful Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/Customer.io Automation",
+      "path": "skills/automation-and-saas/Customer.io Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/Docker Hub Automation",
+      "path": "skills/automation-and-saas/Docker Hub Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/Dynamics 365 Automation",
+      "path": "skills/automation-and-saas/Dynamics 365 Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/Eventbrite Automation",
+      "path": "skills/automation-and-saas/Eventbrite Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/Facebook Automation",
+      "path": "skills/automation-and-saas/Facebook Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/Firecrawl Automation",
+      "path": "skills/automation-and-saas/Firecrawl Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/FreshBooks Automation",
+      "path": "skills/automation-and-saas/FreshBooks Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/Gong Automation",
+      "path": "skills/automation-and-saas/Gong Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/Gorgias Automation",
+      "path": "skills/automation-and-saas/Gorgias Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/GroqCloud Automation",
+      "path": "skills/automation-and-saas/GroqCloud Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/Gumroad Automation",
+      "path": "skills/automation-and-saas/Gumroad Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/Harvest Automation",
+      "path": "skills/automation-and-saas/Harvest Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/Hunter Automation",
+      "path": "skills/automation-and-saas/Hunter Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/Instantly Automation",
+      "path": "skills/automation-and-saas/Instantly Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/Jotform Automation",
+      "path": "skills/automation-and-saas/Jotform Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/Kommo Automation",
+      "path": "skills/automation-and-saas/Kommo Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/LaunchDarkly Automation",
+      "path": "skills/automation-and-saas/LaunchDarkly Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/Lemlist Automation",
+      "path": "skills/automation-and-saas/Lemlist Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/Lemon Squeezy Automation",
+      "path": "skills/automation-and-saas/Lemon Squeezy Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/Lever Automation",
+      "path": "skills/automation-and-saas/Lever Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/MailerLite Automation",
+      "path": "skills/automation-and-saas/MailerLite Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/Microsoft Clarity Automation",
+      "path": "skills/automation-and-saas/Microsoft Clarity Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/Mistral AI Automation",
+      "path": "skills/automation-and-saas/Mistral AI Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/Neon Automation",
+      "path": "skills/automation-and-saas/Neon Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/NetSuite Automation",
+      "path": "skills/automation-and-saas/NetSuite Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/New Relic Automation",
+      "path": "skills/automation-and-saas/New Relic Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/Omnisend Automation",
+      "path": "skills/automation-and-saas/Omnisend Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/OpenAI Automation",
+      "path": "skills/automation-and-saas/OpenAI Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/PandaDoc Automation",
+      "path": "skills/automation-and-saas/PandaDoc Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/PhantomBuster Automation",
+      "path": "skills/automation-and-saas/PhantomBuster Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/Prismic Automation",
+      "path": "skills/automation-and-saas/Prismic Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/Productboard Automation",
+      "path": "skills/automation-and-saas/Productboard Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/QuickBooks Automation",
+      "path": "skills/automation-and-saas/QuickBooks Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/Ramp Automation",
+      "path": "skills/automation-and-saas/Ramp Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/Replicate Automation",
+      "path": "skills/automation-and-saas/Replicate Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/RingCentral Automation",
+      "path": "skills/automation-and-saas/RingCentral Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/SharePoint Automation",
+      "path": "skills/automation-and-saas/SharePoint Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/Shortcut Automation",
+      "path": "skills/automation-and-saas/Shortcut Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/Snowflake Automation",
+      "path": "skills/automation-and-saas/Snowflake Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/Spotify Automation",
+      "path": "skills/automation-and-saas/Spotify Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/SurveyMonkey Automation",
+      "path": "skills/automation-and-saas/SurveyMonkey Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/Toggl Automation",
+      "path": "skills/automation-and-saas/Toggl Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/Uploadcare Automation",
+      "path": "skills/automation-and-saas/Uploadcare Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/Wave Accounting Automation",
+      "path": "skills/automation-and-saas/Wave Accounting Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/Webex Automation",
+      "path": "skills/automation-and-saas/Webex Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/Workday Automation",
+      "path": "skills/automation-and-saas/Workday Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/Xero Automation",
+      "path": "skills/automation-and-saas/Xero Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/Zoho Books Automation",
+      "path": "skills/automation-and-saas/Zoho Books Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "automation-and-saas/Zoho Desk Automation",
+      "path": "skills/automation-and-saas/Zoho Desk Automation",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -7251,25 +8353,6 @@
       "runtime_files": []
     },
     {
-      "id": "automation-and-saas/Apify Automation",
-      "path": "skills/automation-and-saas/Apify Automation",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
       "id": "automation-and-saas/apify-actor-development",
       "path": "skills/automation-and-saas/apify-actor-development",
       "targets": {
@@ -7521,25 +8604,6 @@
       "runtime_files": []
     },
     {
-      "id": "automation-and-saas/Apollo Automation",
-      "path": "skills/automation-and-saas/Apollo Automation",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
       "id": "automation-and-saas/appcircle-automation",
       "path": "skills/automation-and-saas/appcircle-automation",
       "targets": {
@@ -7730,25 +8794,6 @@
       "runtime_files": []
     },
     {
-      "id": "automation-and-saas/Ashby Automation",
-      "path": "skills/automation-and-saas/Ashby Automation",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
       "id": "automation-and-saas/asin-data-api-automation",
       "path": "skills/automation-and-saas/asin-data-api-automation",
       "targets": {
@@ -7827,25 +8872,6 @@
     {
       "id": "automation-and-saas/atlassian-automation",
       "path": "skills/automation-and-saas/atlassian-automation",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
-      "id": "automation-and-saas/Attio Automation",
-      "path": "skills/automation-and-saas/Attio Automation",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -9028,25 +10054,6 @@
       "runtime_files": []
     },
     {
-      "id": "automation-and-saas/Braintree Automation",
-      "path": "skills/automation-and-saas/Braintree Automation",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
       "id": "automation-and-saas/brandfetch-automation",
       "path": "skills/automation-and-saas/brandfetch-automation",
       "targets": {
@@ -9750,25 +10757,6 @@
       "runtime_files": []
     },
     {
-      "id": "automation-and-saas/Capsule CRM Automation",
-      "path": "skills/automation-and-saas/Capsule CRM Automation",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
       "id": "automation-and-saas/capsule_crm-automation",
       "path": "skills/automation-and-saas/capsule_crm-automation",
       "targets": {
@@ -10225,25 +11213,6 @@
       "runtime_files": []
     },
     {
-      "id": "automation-and-saas/Clockify Automation",
-      "path": "skills/automation-and-saas/Clockify Automation",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
       "id": "automation-and-saas/close-automation",
       "path": "skills/automation-and-saas/close-automation",
       "targets": {
@@ -10510,25 +11479,6 @@
       "runtime_files": []
     },
     {
-      "id": "automation-and-saas/Coinbase Automation",
-      "path": "skills/automation-and-saas/Coinbase Automation",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
       "id": "automation-and-saas/coinmarketcal-automation",
       "path": "skills/automation-and-saas/coinmarketcal-automation",
       "targets": {
@@ -10721,25 +11671,6 @@
     {
       "id": "automation-and-saas/content-management-systems",
       "path": "skills/automation-and-saas/content-management-systems",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
-      "id": "automation-and-saas/Contentful Automation",
-      "path": "skills/automation-and-saas/Contentful Automation",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -11063,25 +11994,6 @@
     {
       "id": "automation-and-saas/currents-api-automation",
       "path": "skills/automation-and-saas/currents-api-automation",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
-      "id": "automation-and-saas/Customer.io Automation",
-      "path": "skills/automation-and-saas/Customer.io Automation",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -11612,25 +12524,6 @@
       "runtime_files": []
     },
     {
-      "id": "automation-and-saas/Docker Hub Automation",
-      "path": "skills/automation-and-saas/Docker Hub Automation",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
       "id": "automation-and-saas/docker_hub-automation",
       "path": "skills/automation-and-saas/docker_hub-automation",
       "targets": {
@@ -12144,25 +13037,6 @@
       "runtime_files": []
     },
     {
-      "id": "automation-and-saas/Dynamics 365 Automation",
-      "path": "skills/automation-and-saas/Dynamics 365 Automation",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
       "id": "automation-and-saas/echtpost-automation",
       "path": "skills/automation-and-saas/echtpost-automation",
       "targets": {
@@ -12543,25 +13417,6 @@
       "runtime_files": []
     },
     {
-      "id": "automation-and-saas/Eventbrite Automation",
-      "path": "skills/automation-and-saas/Eventbrite Automation",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
       "id": "automation-and-saas/eventee-automation",
       "path": "skills/automation-and-saas/eventee-automation",
       "targets": {
@@ -12754,25 +13609,6 @@
     {
       "id": "automation-and-saas/extracta-ai-automation",
       "path": "skills/automation-and-saas/extracta-ai-automation",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
-      "id": "automation-and-saas/Facebook Automation",
-      "path": "skills/automation-and-saas/Facebook Automation",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -13153,25 +13989,6 @@
     {
       "id": "automation-and-saas/fireberry-automation",
       "path": "skills/automation-and-saas/fireberry-automation",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
-      "id": "automation-and-saas/Firecrawl Automation",
-      "path": "skills/automation-and-saas/Firecrawl Automation",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -13609,25 +14426,6 @@
     {
       "id": "automation-and-saas/freecad-scripts",
       "path": "skills/automation-and-saas/freecad-scripts",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
-      "id": "automation-and-saas/FreshBooks Automation",
-      "path": "skills/automation-and-saas/FreshBooks Automation",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -14291,25 +15089,6 @@
       "runtime_files": []
     },
     {
-      "id": "automation-and-saas/Gong Automation",
-      "path": "skills/automation-and-saas/Gong Automation",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
       "id": "automation-and-saas/goodbits-automation",
       "path": "skills/automation-and-saas/goodbits-automation",
       "targets": {
@@ -14823,25 +15602,6 @@
       "runtime_files": []
     },
     {
-      "id": "automation-and-saas/Gorgias Automation",
-      "path": "skills/automation-and-saas/Gorgias Automation",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
       "id": "automation-and-saas/gosquared-automation",
       "path": "skills/automation-and-saas/gosquared-automation",
       "targets": {
@@ -14937,44 +15697,6 @@
       "runtime_files": []
     },
     {
-      "id": "automation-and-saas/GroqCloud Automation",
-      "path": "skills/automation-and-saas/GroqCloud Automation",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
-      "id": "automation-and-saas/Gumroad Automation",
-      "path": "skills/automation-and-saas/Gumroad Automation",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
       "id": "automation-and-saas/habitica-automation",
       "path": "skills/automation-and-saas/habitica-automation",
       "targets": {
@@ -15015,25 +15737,6 @@
     {
       "id": "automation-and-saas/happy-scribe-automation",
       "path": "skills/automation-and-saas/happy-scribe-automation",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
-      "id": "automation-and-saas/Harvest Automation",
-      "path": "skills/automation-and-saas/Harvest Automation",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -15532,25 +16235,6 @@
       "runtime_files": []
     },
     {
-      "id": "automation-and-saas/Hunter Automation",
-      "path": "skills/automation-and-saas/Hunter Automation",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
       "id": "automation-and-saas/hypeauditor-automation",
       "path": "skills/automation-and-saas/hypeauditor-automation",
       "targets": {
@@ -15893,25 +16577,6 @@
       "runtime_files": []
     },
     {
-      "id": "automation-and-saas/Instantly Automation",
-      "path": "skills/automation-and-saas/Instantly Automation",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
       "id": "automation-and-saas/integrate-context-matic",
       "path": "skills/automation-and-saas/integrate-context-matic",
       "targets": {
@@ -16161,25 +16826,6 @@
     {
       "id": "automation-and-saas/jobnimbus-automation",
       "path": "skills/automation-and-saas/jobnimbus-automation",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
-      "id": "automation-and-saas/Jotform Automation",
-      "path": "skills/automation-and-saas/Jotform Automation",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -16463,25 +17109,6 @@
       "runtime_files": []
     },
     {
-      "id": "automation-and-saas/Kommo Automation",
-      "path": "skills/automation-and-saas/Kommo Automation",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
       "id": "automation-and-saas/kontent-ai-automation",
       "path": "skills/automation-and-saas/kontent-ai-automation",
       "targets": {
@@ -16634,25 +17261,6 @@
       "runtime_files": []
     },
     {
-      "id": "automation-and-saas/LaunchDarkly Automation",
-      "path": "skills/automation-and-saas/LaunchDarkly Automation",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
       "id": "automation-and-saas/leadfeeder-automation",
       "path": "skills/automation-and-saas/leadfeeder-automation",
       "targets": {
@@ -16710,44 +17318,6 @@
       "runtime_files": []
     },
     {
-      "id": "automation-and-saas/Lemlist Automation",
-      "path": "skills/automation-and-saas/Lemlist Automation",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
-      "id": "automation-and-saas/Lemon Squeezy Automation",
-      "path": "skills/automation-and-saas/Lemon Squeezy Automation",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
       "id": "automation-and-saas/lemon_squeezy-automation",
       "path": "skills/automation-and-saas/lemon_squeezy-automation",
       "targets": {
@@ -16769,25 +17339,6 @@
     {
       "id": "automation-and-saas/lessonspace-automation",
       "path": "skills/automation-and-saas/lessonspace-automation",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
-      "id": "automation-and-saas/Lever Automation",
-      "path": "skills/automation-and-saas/Lever Automation",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -17223,25 +17774,6 @@
       "runtime_files": []
     },
     {
-      "id": "automation-and-saas/MailerLite Automation",
-      "path": "skills/automation-and-saas/MailerLite Automation",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
       "id": "automation-and-saas/mailersend-automation",
       "path": "skills/automation-and-saas/mailersend-automation",
       "targets": {
@@ -17622,25 +18154,6 @@
       "runtime_files": []
     },
     {
-      "id": "automation-and-saas/Microsoft Clarity Automation",
-      "path": "skills/automation-and-saas/Microsoft Clarity Automation",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
       "id": "automation-and-saas/microsoft-teams-automation",
       "path": "skills/automation-and-saas/microsoft-teams-automation",
       "targets": {
@@ -17776,25 +18289,6 @@
     {
       "id": "automation-and-saas/missive-automation",
       "path": "skills/automation-and-saas/missive-automation",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
-      "id": "automation-and-saas/Mistral AI Automation",
-      "path": "skills/automation-and-saas/Mistral AI Automation",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -18325,44 +18819,6 @@
       "runtime_files": []
     },
     {
-      "id": "automation-and-saas/Neon Automation",
-      "path": "skills/automation-and-saas/Neon Automation",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
-      "id": "automation-and-saas/NetSuite Automation",
-      "path": "skills/automation-and-saas/NetSuite Automation",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
       "id": "automation-and-saas/neuronwriter-automation",
       "path": "skills/automation-and-saas/neuronwriter-automation",
       "targets": {
@@ -18403,25 +18859,6 @@
     {
       "id": "automation-and-saas/neverbounce-automation",
       "path": "skills/automation-and-saas/neverbounce-automation",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
-      "id": "automation-and-saas/New Relic Automation",
-      "path": "skills/automation-and-saas/New Relic Automation",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -18762,25 +19199,6 @@
       "runtime_files": []
     },
     {
-      "id": "automation-and-saas/Omnisend Automation",
-      "path": "skills/automation-and-saas/Omnisend Automation",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
       "id": "automation-and-saas/oncehub-automation",
       "path": "skills/automation-and-saas/oncehub-automation",
       "targets": {
@@ -18916,25 +19334,6 @@
     {
       "id": "automation-and-saas/open-sea-automation",
       "path": "skills/automation-and-saas/open-sea-automation",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
-      "id": "automation-and-saas/OpenAI Automation",
-      "path": "skills/automation-and-saas/OpenAI Automation",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -19201,25 +19600,6 @@
     {
       "id": "automation-and-saas/pakistan-payments-stack",
       "path": "skills/automation-and-saas/pakistan-payments-stack",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
-      "id": "automation-and-saas/PandaDoc Automation",
-      "path": "skills/automation-and-saas/PandaDoc Automation",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -19657,25 +20037,6 @@
     {
       "id": "automation-and-saas/pexels-automation",
       "path": "skills/automation-and-saas/pexels-automation",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
-      "id": "automation-and-saas/PhantomBuster Automation",
-      "path": "skills/automation-and-saas/PhantomBuster Automation",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -20212,25 +20573,6 @@
       "runtime_files": []
     },
     {
-      "id": "automation-and-saas/Prismic Automation",
-      "path": "skills/automation-and-saas/Prismic Automation",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
       "id": "automation-and-saas/process-street-automation",
       "path": "skills/automation-and-saas/process-street-automation",
       "targets": {
@@ -20252,25 +20594,6 @@
     {
       "id": "automation-and-saas/procfu-automation",
       "path": "skills/automation-and-saas/procfu-automation",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
-      "id": "automation-and-saas/Productboard Automation",
-      "path": "skills/automation-and-saas/Productboard Automation",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -20516,25 +20839,6 @@
       "runtime_files": []
     },
     {
-      "id": "automation-and-saas/QuickBooks Automation",
-      "path": "skills/automation-and-saas/QuickBooks Automation",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
       "id": "automation-and-saas/radar-automation",
       "path": "skills/automation-and-saas/radar-automation",
       "targets": {
@@ -20594,25 +20898,6 @@
     {
       "id": "automation-and-saas/raisely-automation",
       "path": "skills/automation-and-saas/raisely-automation",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
-      "id": "automation-and-saas/Ramp Automation",
-      "path": "skills/automation-and-saas/Ramp Automation",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -20896,25 +21181,6 @@
       "runtime_files": []
     },
     {
-      "id": "automation-and-saas/Replicate Automation",
-      "path": "skills/automation-and-saas/Replicate Automation",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
       "id": "automation-and-saas/reply-automation",
       "path": "skills/automation-and-saas/reply-automation",
       "targets": {
@@ -21088,25 +21354,6 @@
     {
       "id": "automation-and-saas/ring_central-automation",
       "path": "skills/automation-and-saas/ring_central-automation",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
-      "id": "automation-and-saas/RingCentral Automation",
-      "path": "skills/automation-and-saas/RingCentral Automation",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -22093,25 +22340,6 @@
       "runtime_files": []
     },
     {
-      "id": "automation-and-saas/SharePoint Automation",
-      "path": "skills/automation-and-saas/SharePoint Automation",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
       "id": "automation-and-saas/shipengine-automation",
       "path": "skills/automation-and-saas/shipengine-automation",
       "targets": {
@@ -22190,25 +22418,6 @@
     {
       "id": "automation-and-saas/short-menu-automation",
       "path": "skills/automation-and-saas/short-menu-automation",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
-      "id": "automation-and-saas/Shortcut Automation",
-      "path": "skills/automation-and-saas/Shortcut Automation",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -22663,25 +22872,6 @@
       "runtime_files": []
     },
     {
-      "id": "automation-and-saas/Snowflake Automation",
-      "path": "skills/automation-and-saas/Snowflake Automation",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
       "id": "automation-and-saas/sourcegraph-automation",
       "path": "skills/automation-and-saas/sourcegraph-automation",
       "targets": {
@@ -22760,25 +22950,6 @@
     {
       "id": "automation-and-saas/spondyr-automation",
       "path": "skills/automation-and-saas/spondyr-automation",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
-      "id": "automation-and-saas/Spotify Automation",
-      "path": "skills/automation-and-saas/Spotify Automation",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -23216,25 +23387,6 @@
     {
       "id": "automation-and-saas/survey_monkey-automation",
       "path": "skills/automation-and-saas/survey_monkey-automation",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
-      "id": "automation-and-saas/SurveyMonkey Automation",
-      "path": "skills/automation-and-saas/SurveyMonkey Automation",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -23955,25 +24107,6 @@
       "runtime_files": []
     },
     {
-      "id": "automation-and-saas/Toggl Automation",
-      "path": "skills/automation-and-saas/Toggl Automation",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
       "id": "automation-and-saas/token-metrics-automation",
       "path": "skills/automation-and-saas/token-metrics-automation",
       "targets": {
@@ -24430,25 +24563,6 @@
       "runtime_files": []
     },
     {
-      "id": "automation-and-saas/Uploadcare Automation",
-      "path": "skills/automation-and-saas/Uploadcare Automation",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
       "id": "automation-and-saas/uptimerobot-automation",
       "path": "skills/automation-and-saas/uptimerobot-automation",
       "targets": {
@@ -24772,25 +24886,6 @@
       "runtime_files": []
     },
     {
-      "id": "automation-and-saas/Wave Accounting Automation",
-      "path": "skills/automation-and-saas/Wave Accounting Automation",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
       "id": "automation-and-saas/wave_accounting-automation",
       "path": "skills/automation-and-saas/wave_accounting-automation",
       "targets": {
@@ -24850,25 +24945,6 @@
     {
       "id": "automation-and-saas/web-scraper",
       "path": "skills/automation-and-saas/web-scraper",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
-      "id": "automation-and-saas/Webex Automation",
-      "path": "skills/automation-and-saas/Webex Automation",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -25152,25 +25228,6 @@
       "runtime_files": []
     },
     {
-      "id": "automation-and-saas/Workday Automation",
-      "path": "skills/automation-and-saas/Workday Automation",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
       "id": "automation-and-saas/workflow-automation",
       "path": "skills/automation-and-saas/workflow-automation",
       "targets": {
@@ -25287,25 +25344,6 @@
     {
       "id": "automation-and-saas/x-twitter-scraper",
       "path": "skills/automation-and-saas/x-twitter-scraper",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
-      "id": "automation-and-saas/Xero Automation",
-      "path": "skills/automation-and-saas/Xero Automation",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -25553,44 +25591,6 @@
     {
       "id": "automation-and-saas/zerobounce-automation",
       "path": "skills/automation-and-saas/zerobounce-automation",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
-      "id": "automation-and-saas/Zoho Books Automation",
-      "path": "skills/automation-and-saas/Zoho Books Automation",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
-      "id": "automation-and-saas/Zoho Desk Automation",
-      "path": "skills/automation-and-saas/Zoho Desk Automation",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -25895,6 +25895,303 @@
     {
       "id": "automation-and-saas/zyte-api-automation",
       "path": "skills/automation-and-saas/zyte-api-automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "backend-and-fullstack/Code Review Reception",
+      "path": "skills/backend-and-fullstack/Code Review Reception",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "backend-and-fullstack/Collision-Zone Thinking",
+      "path": "skills/backend-and-fullstack/Collision-Zone Thinking",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "backend-and-fullstack/Condition-Based Waiting",
+      "path": "skills/backend-and-fullstack/Condition-Based Waiting",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "backend-and-fullstack/Finishing a Development Branch",
+      "path": "skills/backend-and-fullstack/Finishing a Development Branch",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "backend-and-fullstack/Preserving Productive Tensions",
+      "path": "skills/backend-and-fullstack/Preserving Productive Tensions",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "backend-and-fullstack/Root Cause Tracing",
+      "path": "skills/backend-and-fullstack/Root Cause Tracing",
+      "targets": {
+        "codex": "blocked",
+        "claude": "blocked"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [
+        "absolute_host_path"
+      ],
+      "blocked_reasons": {
+        "codex": [
+          "absolute_host_path"
+        ],
+        "claude": [
+          "absolute_host_path"
+        ]
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "backend-and-fullstack/Scale Game",
+      "path": "skills/backend-and-fullstack/Scale Game",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "backend-and-fullstack/Sharing Skills",
+      "path": "skills/backend-and-fullstack/Sharing Skills",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "backend-and-fullstack/Systematic Debugging",
+      "path": "skills/backend-and-fullstack/Systematic Debugging",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "backend-and-fullstack/Test-Driven Development (TDD)",
+      "path": "skills/backend-and-fullstack/Test-Driven Development (TDD)",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "backend-and-fullstack/Testing Anti-Patterns",
+      "path": "skills/backend-and-fullstack/Testing Anti-Patterns",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "backend-and-fullstack/Tracing Knowledge Lineages",
+      "path": "skills/backend-and-fullstack/Tracing Knowledge Lineages",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "backend-and-fullstack/Using Git Worktrees",
+      "path": "skills/backend-and-fullstack/Using Git Worktrees",
+      "targets": {
+        "codex": "blocked",
+        "claude": "blocked"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [
+        "absolute_host_path"
+      ],
+      "blocked_reasons": {
+        "codex": [
+          "absolute_host_path"
+        ],
+        "claude": [
+          "absolute_host_path"
+        ]
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "backend-and-fullstack/Verification Before Completion",
+      "path": "skills/backend-and-fullstack/Verification Before Completion",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "backend-and-fullstack/When Stuck - Problem-Solving Dispatch",
+      "path": "skills/backend-and-fullstack/When Stuck - Problem-Solving Dispatch",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -27860,25 +28157,6 @@
       "runtime_files": []
     },
     {
-      "id": "backend-and-fullstack/Code Review Reception",
-      "path": "skills/backend-and-fullstack/Code Review Reception",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
       "id": "backend-and-fullstack/code-refactoring-context-restore",
       "path": "skills/backend-and-fullstack/code-refactoring-context-restore",
       "targets": {
@@ -28050,25 +28328,6 @@
       "runtime_files": []
     },
     {
-      "id": "backend-and-fullstack/Collision-Zone Thinking",
-      "path": "skills/backend-and-fullstack/Collision-Zone Thinking",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
       "id": "backend-and-fullstack/commit",
       "path": "skills/backend-and-fullstack/commit",
       "targets": {
@@ -28166,25 +28425,6 @@
     {
       "id": "backend-and-fullstack/computer-vision-expert",
       "path": "skills/backend-and-fullstack/computer-vision-expert",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
-      "id": "backend-and-fullstack/Condition-Based Waiting",
-      "path": "skills/backend-and-fullstack/Condition-Based Waiting",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -30169,25 +30409,6 @@
     {
       "id": "backend-and-fullstack/filter-syntax",
       "path": "skills/backend-and-fullstack/filter-syntax",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
-      "id": "backend-and-fullstack/Finishing a Development Branch",
-      "path": "skills/backend-and-fullstack/Finishing a Development Branch",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -33797,25 +34018,6 @@
       "runtime_files": []
     },
     {
-      "id": "backend-and-fullstack/Preserving Productive Tensions",
-      "path": "skills/backend-and-fullstack/Preserving Productive Tensions",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
       "id": "backend-and-fullstack/price-psychology-strategist",
       "path": "skills/backend-and-fullstack/price-psychology-strategist",
       "targets": {
@@ -34485,31 +34687,6 @@
       "runtime_files": []
     },
     {
-      "id": "backend-and-fullstack/Root Cause Tracing",
-      "path": "skills/backend-and-fullstack/Root Cause Tracing",
-      "targets": {
-        "codex": "blocked",
-        "claude": "blocked"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [
-        "absolute_host_path"
-      ],
-      "blocked_reasons": {
-        "codex": [
-          "absolute_host_path"
-        ],
-        "claude": [
-          "absolute_host_path"
-        ]
-      },
-      "runtime_files": []
-    },
-    {
       "id": "backend-and-fullstack/ruby-pro",
       "path": "skills/backend-and-fullstack/ruby-pro",
       "targets": {
@@ -34702,25 +34879,6 @@
     {
       "id": "backend-and-fullstack/scaffolding-oracle-to-postgres-migration-test-project",
       "path": "skills/backend-and-fullstack/scaffolding-oracle-to-postgres-migration-test-project",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
-      "id": "backend-and-fullstack/Scale Game",
-      "path": "skills/backend-and-fullstack/Scale Game",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -35011,25 +35169,6 @@
     {
       "id": "backend-and-fullstack/sexual-health-analyzer",
       "path": "skills/backend-and-fullstack/sexual-health-analyzer",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
-      "id": "backend-and-fullstack/Sharing Skills",
-      "path": "skills/backend-and-fullstack/Sharing Skills",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -35640,25 +35779,6 @@
       "runtime_files": []
     },
     {
-      "id": "backend-and-fullstack/Systematic Debugging",
-      "path": "skills/backend-and-fullstack/Systematic Debugging",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
       "id": "backend-and-fullstack/systematic-debugging",
       "path": "skills/backend-and-fullstack/systematic-debugging",
       "targets": {
@@ -35925,25 +36045,6 @@
       "runtime_files": []
     },
     {
-      "id": "backend-and-fullstack/Test-Driven Development (TDD)",
-      "path": "skills/backend-and-fullstack/Test-Driven Development (TDD)",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
       "id": "backend-and-fullstack/test-driven-development",
       "path": "skills/backend-and-fullstack/test-driven-development",
       "targets": {
@@ -35965,25 +36066,6 @@
     {
       "id": "backend-and-fullstack/test-smell-detection",
       "path": "skills/backend-and-fullstack/test-smell-detection",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
-      "id": "backend-and-fullstack/Testing Anti-Patterns",
-      "path": "skills/backend-and-fullstack/Testing Anti-Patterns",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -36155,25 +36237,6 @@
     {
       "id": "backend-and-fullstack/tool-use-guardian",
       "path": "skills/backend-and-fullstack/tool-use-guardian",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
-      "id": "backend-and-fullstack/Tracing Knowledge Lineages",
-      "path": "skills/backend-and-fullstack/Tracing Knowledge Lineages",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -36444,31 +36507,6 @@
       "runtime_files": []
     },
     {
-      "id": "backend-and-fullstack/Using Git Worktrees",
-      "path": "skills/backend-and-fullstack/Using Git Worktrees",
-      "targets": {
-        "codex": "blocked",
-        "claude": "blocked"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [
-        "absolute_host_path"
-      ],
-      "blocked_reasons": {
-        "codex": [
-          "absolute_host_path"
-        ],
-        "claude": [
-          "absolute_host_path"
-        ]
-      },
-      "runtime_files": []
-    },
-    {
       "id": "backend-and-fullstack/using-git-worktrees",
       "path": "skills/backend-and-fullstack/using-git-worktrees",
       "targets": {
@@ -36585,25 +36623,6 @@
     {
       "id": "backend-and-fullstack/vercel-composition-patterns",
       "path": "skills/backend-and-fullstack/vercel-composition-patterns",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
-      "id": "backend-and-fullstack/Verification Before Completion",
-      "path": "skills/backend-and-fullstack/Verification Before Completion",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -36775,25 +36794,6 @@
     {
       "id": "backend-and-fullstack/what-context-needed",
       "path": "skills/backend-and-fullstack/what-context-needed",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
-      "id": "backend-and-fullstack/When Stuck - Problem-Solving Dispatch",
-      "path": "skills/backend-and-fullstack/When Stuck - Problem-Solving Dispatch",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -37256,6 +37256,44 @@
     {
       "id": "backend-and-fullstack/yann-lecun-tecnico",
       "path": "skills/backend-and-fullstack/yann-lecun-tecnico",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "cloud-and-infrastructure/Cloudinary Automation",
+      "path": "skills/cloud-and-infrastructure/Cloudinary Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "cloud-and-infrastructure/Writing Skills",
+      "path": "skills/cloud-and-infrastructure/Writing Skills",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -39103,25 +39141,6 @@
       "runtime_files": []
     },
     {
-      "id": "cloud-and-infrastructure/Cloudinary Automation",
-      "path": "skills/cloud-and-infrastructure/Cloudinary Automation",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
       "id": "cloud-and-infrastructure/cost-optimization",
       "path": "skills/cloud-and-infrastructure/cost-optimization",
       "targets": {
@@ -40238,25 +40257,6 @@
       "runtime_files": []
     },
     {
-      "id": "cloud-and-infrastructure/Writing Skills",
-      "path": "skills/cloud-and-infrastructure/Writing Skills",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
       "id": "cloud-and-infrastructure/writing-skills",
       "path": "skills/cloud-and-infrastructure/writing-skills",
       "targets": {
@@ -40275,6 +40275,158 @@
         "codex": [
           "target_specific_home_path"
         ],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "design-and-creative/Brainstorming Ideas Into Designs",
+      "path": "skills/design-and-creative/Brainstorming Ideas Into Designs",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "design-and-creative/ElevenLabs Automation",
+      "path": "skills/design-and-creative/ElevenLabs Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "design-and-creative/Executing Plans",
+      "path": "skills/design-and-creative/Executing Plans",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "design-and-creative/Getting Started with Skills",
+      "path": "skills/design-and-creative/Getting Started with Skills",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "design-and-creative/HeyGen Automation",
+      "path": "skills/design-and-creative/HeyGen Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "design-and-creative/Pulling Updates from Skills Repository",
+      "path": "skills/design-and-creative/Pulling Updates from Skills Repository",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "design-and-creative/Remembering Conversations",
+      "path": "skills/design-and-creative/Remembering Conversations",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "design-and-creative/Writing Plans",
+      "path": "skills/design-and-creative/Writing Plans",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
         "claude": []
       },
       "runtime_files": []
@@ -40617,25 +40769,6 @@
     {
       "id": "design-and-creative/brainstorming",
       "path": "skills/design-and-creative/brainstorming",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
-      "id": "design-and-creative/Brainstorming Ideas Into Designs",
-      "path": "skills/design-and-creative/Brainstorming Ideas Into Designs",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -41356,25 +41489,6 @@
       "runtime_files": []
     },
     {
-      "id": "design-and-creative/ElevenLabs Automation",
-      "path": "skills/design-and-creative/ElevenLabs Automation",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
       "id": "design-and-creative/emotional-arc-designer",
       "path": "skills/design-and-creative/emotional-arc-designer",
       "targets": {
@@ -41453,25 +41567,6 @@
     {
       "id": "design-and-creative/event-store-design",
       "path": "skills/design-and-creative/event-store-design",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
-      "id": "design-and-creative/Executing Plans",
-      "path": "skills/design-and-creative/Executing Plans",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -41605,25 +41700,6 @@
     {
       "id": "design-and-creative/game-engine",
       "path": "skills/design-and-creative/game-engine",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
-      "id": "design-and-creative/Getting Started with Skills",
-      "path": "skills/design-and-creative/Getting Started with Skills",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -41814,25 +41890,6 @@
     {
       "id": "design-and-creative/helm-chart-scaffolding",
       "path": "skills/design-and-creative/helm-chart-scaffolding",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
-      "id": "design-and-creative/HeyGen Automation",
-      "path": "skills/design-and-creative/HeyGen Automation",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -42895,25 +42952,6 @@
       "runtime_files": []
     },
     {
-      "id": "design-and-creative/Pulling Updates from Skills Repository",
-      "path": "skills/design-and-creative/Pulling Updates from Skills Repository",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
       "id": "design-and-creative/puzzle-activity-planner",
       "path": "skills/design-and-creative/puzzle-activity-planner",
       "targets": {
@@ -42992,25 +43030,6 @@
     {
       "id": "design-and-creative/refactor-plan",
       "path": "skills/design-and-creative/refactor-plan",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
-      "id": "design-and-creative/Remembering Conversations",
-      "path": "skills/design-and-creative/Remembering Conversations",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -43265,24 +43284,18 @@
       "id": "design-and-creative/site-architecture",
       "path": "skills/design-and-creative/site-architecture",
       "targets": {
-        "codex": "blocked",
-        "claude": "blocked"
+        "codex": "supported",
+        "claude": "supported"
       },
       "setup": {
         "type": "none",
         "summary": "",
         "docs": null
       },
-      "reasons": [
-        "escaped_local_reference"
-      ],
+      "reasons": [],
       "blocked_reasons": {
-        "codex": [
-          "escaped_local_reference"
-        ],
-        "claude": [
-          "escaped_local_reference"
-        ]
+        "codex": [],
+        "claude": []
       },
       "runtime_files": []
     },
@@ -44099,25 +44112,6 @@
       "runtime_files": []
     },
     {
-      "id": "design-and-creative/Writing Plans",
-      "path": "skills/design-and-creative/Writing Plans",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
       "id": "design-and-creative/x-article-publisher-skill",
       "path": "skills/design-and-creative/x-article-publisher-skill",
       "targets": {
@@ -44158,6 +44152,25 @@
     {
       "id": "design-and-creative/youtube-summarizer",
       "path": "skills/design-and-creative/youtube-summarizer",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "document-processing/Excel Automation",
+      "path": "skills/document-processing/Excel Automation",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -44829,25 +44842,6 @@
     {
       "id": "document-processing/error-handling-patterns",
       "path": "skills/document-processing/error-handling-patterns",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
-      "id": "document-processing/Excel Automation",
-      "path": "skills/document-processing/Excel Automation",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -45888,6 +45882,44 @@
     {
       "id": "frontend-development/3d-web-experience",
       "path": "skills/frontend-development/3d-web-experience",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "frontend-development/Requesting Code Review",
+      "path": "skills/frontend-development/Requesting Code Review",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "frontend-development/Simplification Cascades",
+      "path": "skills/frontend-development/Simplification Cascades",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -51595,25 +51627,6 @@
       "runtime_files": []
     },
     {
-      "id": "frontend-development/Requesting Code Review",
-      "path": "skills/frontend-development/Requesting Code Review",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
       "id": "frontend-development/requesting-code-review",
       "path": "skills/frontend-development/requesting-code-review",
       "targets": {
@@ -51977,25 +51990,6 @@
     {
       "id": "frontend-development/similarity-search-patterns",
       "path": "skills/frontend-development/similarity-search-patterns",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
-      "id": "frontend-development/Simplification Cascades",
-      "path": "skills/frontend-development/Simplification Cascades",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -52757,24 +52751,18 @@
       "id": "frontend-development/update-specification",
       "path": "skills/frontend-development/update-specification",
       "targets": {
-        "codex": "blocked",
-        "claude": "blocked"
+        "codex": "supported",
+        "claude": "supported"
       },
       "setup": {
         "type": "none",
         "summary": "",
         "docs": null
       },
-      "reasons": [
-        "escaped_local_reference"
-      ],
+      "reasons": [],
       "blocked_reasons": {
-        "codex": [
-          "escaped_local_reference"
-        ],
-        "claude": [
-          "escaped_local_reference"
-        ]
+        "codex": [],
+        "claude": []
       },
       "runtime_files": []
     },
@@ -53421,8 +53409,8 @@
       "runtime_files": []
     },
     {
-      "id": "marketing-and-seo/ab-test-setup",
-      "path": "skills/marketing-and-seo/ab-test-setup",
+      "id": "marketing-and-seo/Ahrefs Automation",
+      "path": "skills/marketing-and-seo/Ahrefs Automation",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -53440,8 +53428,69 @@
       "runtime_files": []
     },
     {
-      "id": "marketing-and-seo/Ahrefs Automation",
-      "path": "skills/marketing-and-seo/Ahrefs Automation",
+      "id": "marketing-and-seo/Gardening Skills Wiki",
+      "path": "skills/marketing-and-seo/Gardening Skills Wiki",
+      "targets": {
+        "codex": "blocked",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [
+        "target_specific_home_path"
+      ],
+      "blocked_reasons": {
+        "codex": [
+          "target_specific_home_path"
+        ],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "marketing-and-seo/Meta-Pattern Recognition",
+      "path": "skills/marketing-and-seo/Meta-Pattern Recognition",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "marketing-and-seo/SEMrush Automation",
+      "path": "skills/marketing-and-seo/SEMrush Automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "marketing-and-seo/ab-test-setup",
+      "path": "skills/marketing-and-seo/ab-test-setup",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -54015,29 +54064,6 @@
       "runtime_files": []
     },
     {
-      "id": "marketing-and-seo/Gardening Skills Wiki",
-      "path": "skills/marketing-and-seo/Gardening Skills Wiki",
-      "targets": {
-        "codex": "blocked",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [
-        "target_specific_home_path"
-      ],
-      "blocked_reasons": {
-        "codex": [
-          "target_specific_home_path"
-        ],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
       "id": "marketing-and-seo/golang-pro",
       "path": "skills/marketing-and-seo/golang-pro",
       "targets": {
@@ -54375,25 +54401,6 @@
     {
       "id": "marketing-and-seo/marketing-psychology",
       "path": "skills/marketing-and-seo/marketing-psychology",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
-      "id": "marketing-and-seo/Meta-Pattern Recognition",
-      "path": "skills/marketing-and-seo/Meta-Pattern Recognition",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -55018,25 +55025,6 @@
     {
       "id": "marketing-and-seo/scroll-experience",
       "path": "skills/marketing-and-seo/scroll-experience",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
-      "id": "marketing-and-seo/SEMrush Automation",
-      "path": "skills/marketing-and-seo/SEMrush Automation",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -55913,6 +55901,25 @@
       "runtime_files": []
     },
     {
+      "id": "science-and-bioinformatics/Inversion Exercise",
+      "path": "skills/science-and-bioinformatics/Inversion Exercise",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
       "id": "science-and-bioinformatics/acreadiness-generate-instructions",
       "path": "skills/science-and-bioinformatics/acreadiness-generate-instructions",
       "targets": {
@@ -56125,24 +56132,18 @@
       "id": "science-and-bioinformatics/create-specification",
       "path": "skills/science-and-bioinformatics/create-specification",
       "targets": {
-        "codex": "blocked",
-        "claude": "blocked"
+        "codex": "supported",
+        "claude": "supported"
       },
       "setup": {
         "type": "none",
         "summary": "",
         "docs": null
       },
-      "reasons": [
-        "escaped_local_reference"
-      ],
+      "reasons": [],
       "blocked_reasons": {
-        "codex": [
-          "escaped_local_reference"
-        ],
-        "claude": [
-          "escaped_local_reference"
-        ]
+        "codex": [],
+        "claude": []
       },
       "runtime_files": []
     },
@@ -56491,25 +56492,6 @@
     {
       "id": "science-and-bioinformatics/internal-comms-community",
       "path": "skills/science-and-bioinformatics/internal-comms-community",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
-      "id": "science-and-bioinformatics/Inversion Exercise",
-      "path": "skills/science-and-bioinformatics/Inversion Exercise",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -57021,6 +57003,25 @@
       "runtime_files": []
     },
     {
+      "id": "security-and-compliance/Defense-in-Depth Validation",
+      "path": "skills/security-and-compliance/Defense-in-Depth Validation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
       "id": "security-and-compliance/accessibility-compliance-accessibility-audit",
       "path": "skills/security-and-compliance/accessibility-compliance-accessibility-audit",
       "targets": {
@@ -57314,25 +57315,6 @@
     {
       "id": "security-and-compliance/data-breach-blast-radius",
       "path": "skills/security-and-compliance/data-breach-blast-radius",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
-      "id": "security-and-compliance/Defense-in-Depth Validation",
-      "path": "skills/security-and-compliance/Defense-in-Depth Validation",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -58569,12 +58551,12 @@
   "summary": {
     "total_skills": 3045,
     "supported": {
-      "codex": 2925,
-      "claude": 2943
+      "codex": 2928,
+      "claude": 2946
     },
     "blocked": {
-      "codex": 120,
-      "claude": 102
+      "codex": 117,
+      "claude": 99
     },
     "manual_setup": 4
   }

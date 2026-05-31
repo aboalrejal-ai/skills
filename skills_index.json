@@ -17834,17 +17834,15 @@
     "date_added": null,
     "plugin": {
       "targets": {
-        "codex": "blocked",
-        "claude": "blocked"
+        "codex": "supported",
+        "claude": "supported"
       },
       "setup": {
         "type": "none",
         "summary": "",
         "docs": null
       },
-      "reasons": [
-        "escaped_local_reference"
-      ]
+      "reasons": []
     }
   },
   {
@@ -55727,17 +55725,15 @@
     "date_added": null,
     "plugin": {
       "targets": {
-        "codex": "blocked",
-        "claude": "blocked"
+        "codex": "supported",
+        "claude": "supported"
       },
       "setup": {
         "type": "none",
         "summary": "",
         "docs": null
       },
-      "reasons": [
-        "escaped_local_reference"
-      ]
+      "reasons": []
     }
   },
   {
@@ -62487,17 +62483,15 @@
     "date_added": null,
     "plugin": {
       "targets": {
-        "codex": "blocked",
-        "claude": "blocked"
+        "codex": "supported",
+        "claude": "supported"
       },
       "setup": {
         "type": "none",
         "summary": "",
         "docs": null
       },
-      "reasons": [
-        "escaped_local_reference"
-      ]
+      "reasons": []
     }
   },
   {

@@ -16,7 +16,7 @@
     "sync:all": "npm run chain"
   },
   "dependencies": {
-    "yaml": "^2.8.2"
+    "yaml": "^2.9.0"
   },
   "repository": {
     "type": "git",
