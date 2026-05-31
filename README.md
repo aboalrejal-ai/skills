@@ -14,7 +14,7 @@
   <a href="https://github.com/aboalrejal-ai/skills"><img src="https://img.shields.io/github/v/release/aboalrejal-ai/skills?color=blue&logo=github&style=flat-square" alt="Release" /></a>
   <a href="https://github.com/aboalrejal-ai/skills/stargazers"><img src="https://img.shields.io/github/stars/aboalrejal-ai/skills?style=social" alt="Stars" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="License" /></a>
-  <a href="docs/skill-registry.md"><img src="https://img.shields.io/badge/docs-GitHub_Pages-blue?style=flat-square" alt="Docs" /></a>
+  <a href="https://aboalrejal-ai.github.io/skills/"><img src="https://img.shields.io/badge/docs-GitHub_Pages-blue?style=flat-square" alt="Docs" /></a>
 </p>
 
 ---

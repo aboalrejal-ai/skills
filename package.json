@@ -11,6 +11,7 @@
     "app:setup": "node tools/scripts/setup_web.js",
     "app:dev": "npm run app:setup && cd apps/web-app && npm run dev",
     "app:build": "npm run app:setup && cd apps/web-app && npm run build",
+    "deploy": "node tools/scripts/deploy.js",
     "chain": "npm run validate && npm run index && npm run bundles:sync && npm run readme",
     "sync:all": "npm run chain"
   },
