@@ -4,269 +4,460 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abo Alrejal Skills | High-Performance Agentic Skills Catalog</title>
+  <!-- SEO Meta Tags -->
   <meta name="description"
     content="Explore and load 3,045+ premium modular skills for Claude Code, Cursor, Antigravity, and Gemini CLI. Fast, offline-first, and fully customizable.">
-  <meta name="theme-color" content="#09090b">
-  <title>Abo Alrejal Skills | High-Performance Agentic Skills Catalog</title>
+  <meta name="theme-color" content="#141413">
 
-  <!-- Modern Google Fonts -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet">
 
-  <!-- Premium Shadcn-UI styled Custom CSS (Preset bbVKFP6) -->
-  <style>
-    :root {
-      /* Shadcn Neutral Base Palette */
-      --background: 240 10% 3.9%;
-      --foreground: 0 0% 98%;
-      --card: 240 10% 5.9%;
-      --card-foreground: 0 0% 98%;
-      --popover: 240 10% 3.9%;
-      --popover-foreground: 0 0% 98%;
-      --primary: 0 0% 98%;
-      --primary-foreground: 240 5.9% 10%;
-      --secondary: 240 3.7% 15.9%;
-      --secondary-foreground: 0 0% 98%;
-      --muted: 240 3.7% 12%;
-      --muted-foreground: 240 5% 64.9%;
-      --accent: 240 3.7% 15.9%;
-      --accent-foreground: 0 0% 98%;
-      --destructive: 0 62.8% 30.6%;
-      --destructive-foreground: 0 0% 98%;
-      --border: 240 3.7% 15.9%;
-      --input: 240 3.7% 15.9%;
-      --ring: 240 4.9% 83.9%;
-      --radius: 0.75rem;
+  <!-- FontAwesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-      --font-figtree: 'Figtree', sans-serif;
+  <!-- Premium Style Theme matching design-md -->
+  <style>
+    /* ==========================================================================
+       Design System Tokens (Anthropic Brand Theme)
+       ========================================================================== */
+    :root {
+      /* Color Palette */
+      --anthropic-dark: #141413;
+      --anthropic-light: #faf9f5;
+      --anthropic-mid-gray: #b0aea5;
+      --anthropic-light-gray: #e8e6dc;
+
+      /* Accents */
+      --accent-orange: #d97757;
+      --accent-blue: #6a9bcc;
+      --accent-green: #788c5d;
+      --accent-orange-hover: #c86343;
+
+      /* Shadows */
+      --shadow-sm: 0 1px 2px rgba(20, 20, 19, 0.05);
+      --shadow-md: 0 4px 12px rgba(20, 20, 19, 0.06);
+      --shadow-lg: 0 16px 32px rgba(20, 20, 19, 0.12);
+
+      /* Transitions */
+      --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-normal: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+      /* Typography */
+      --font-headings: 'Poppins', -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+      --font-body: 'Lora', Georgia, serif;
       --font-mono: 'JetBrains Mono', monospace;
+
+      /* Light Mode Variables (Default) */
+      --bg-primary: var(--anthropic-light);
+      --bg-secondary: #ffffff;
+      --bg-tertiary: var(--anthropic-light-gray);
+      --text-primary: var(--anthropic-dark);
+      --text-secondary: #575754;
+      --text-muted: #8c8a82;
+      --border-color: var(--anthropic-light-gray);
+      --border-hover: var(--anthropic-mid-gray);
+      --header-bg: rgba(250, 249, 245, 0.85);
+      --card-shadow: var(--shadow-sm);
+      --card-shadow-hover: var(--shadow-md);
+      --code-bg: #f5f4ef;
     }
 
+    body.dark-mode {
+      /* Dark Mode Overrides */
+      --bg-primary: var(--anthropic-dark);
+      --bg-secondary: #1d1d1c;
+      --bg-tertiary: #2e2e2c;
+      --text-primary: var(--anthropic-light);
+      --text-secondary: #dcdbd5;
+      --text-muted: #a1a097;
+      --border-color: #2e2e2c;
+      --border-hover: #4a4a47;
+      --header-bg: rgba(20, 20, 19, 0.85);
+      --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      --card-shadow-hover: 0 12px 24px rgba(0, 0, 0, 0.4);
+      --code-bg: #282827;
+    }
+
+    /* ==========================================================================
+       Base & Reset
+       ========================================================================== */
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
       scrollbar-width: thin;
-      scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
+      scrollbar-color: var(--border-hover) transparent;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
     }
 
     body {
-      background-color: hsl(var(--background));
-      color: hsl(var(--foreground));
-      font-family: var(--font-figtree);
-      min-height: 100vh;
-      line-height: 1.5;
-      -webkit-font-smoothing: antialiased;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      transition: background-color var(--transition-normal), color var(--transition-normal);
       overflow-x: hidden;
-      /* Futuristic background glow */
-      background-image:
-        radial-gradient(circle at 50% -20%, rgba(120, 119, 198, 0.15) 0%, transparent 60%),
-        radial-gradient(circle at 10% 40%, rgba(255, 255, 255, 0.015) 0%, transparent 40%),
-        radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.015) 0%, transparent 40%);
-      background-attachment: fixed;
     }
 
-    /* Centered responsive container with 50px margins left/right as requested */
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 3rem 50px;
-      display: flex;
-      flex-direction: column;
-      gap: 2.5rem;
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-headings);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--text-primary);
     }
 
-    /* Status Bar */
-    .status-bar {
-      display: flex;
-      justify-content: space-between;
+    a {
+      color: var(--accent-blue);
+      text-decoration: none;
+      transition: color var(--transition-fast);
+    }
+
+    a:hover {
+      color: var(--accent-orange);
+    }
+
+    /* ==========================================================================
+       Buttons & Inputs
+       ========================================================================== */
+    .btn {
+      display: inline-flex;
       align-items: center;
-      background: rgba(255, 255, 255, 0.02);
-      border: 1px solid hsl(var(--border));
-      padding: 0.75rem 1.25rem;
-      border-radius: 12px;
-      font-size: 0.85rem;
-      backdrop-filter: blur(10px);
-    }
-
-    .status-text {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: hsl(var(--muted-foreground));
-    }
-
-    .status-indicator {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      display: inline-block;
-    }
-
-    .status-online {
-      background: #10b981;
-      box-shadow: 0 0 8px #10b981;
-    }
-
-    .status-offline {
-      background: #f59e0b;
-      box-shadow: 0 0 8px #f59e0b;
-    }
-
-    .clear-cache-btn {
-      background: none;
+      justify-content: center;
+      gap: 8px;
+      font-family: var(--font-headings);
+      font-weight: 600;
+      padding: 10px 20px;
+      border-radius: 8px;
       border: none;
-      color: hsl(var(--muted-foreground));
-      font-size: 0.8rem;
       cursor: pointer;
-      text-decoration: underline;
-      transition: color 0.2s ease;
-      font-weight: 500;
+      font-size: 0.95rem;
+      transition: all var(--transition-fast);
     }
 
-    .clear-cache-btn:hover {
-      color: #ef4444;
+    .btn-primary {
+      background-color: var(--accent-orange);
+      color: #ffffff;
     }
 
-    /* Premium Header layout (Unified Top Search) */
-    .header-section {
+    .btn-primary:hover {
+      background-color: var(--accent-orange-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(217, 119, 87, 0.3);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--text-primary);
+      background-color: var(--bg-tertiary);
+      color: var(--text-primary);
+    }
+
+    .btn-sm {
+      padding: 6px 12px;
+      font-size: 0.85rem;
+      border-radius: 6px;
+    }
+
+    /* ==========================================================================
+       Header Layout
+       ========================================================================== */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      background-color: var(--header-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+      transition: background-color var(--transition-normal), border-color var(--transition-normal);
+    }
+
+    .header-container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 14px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid hsl(var(--border));
-      padding-bottom: 2.5rem;
-      flex-wrap: wrap;
-      gap: 2rem;
     }
 
-    .brand-group {
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-    }
-
-    .brand-logo-area {
+    .logo-area {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
+      gap: 12px;
+      cursor: pointer;
     }
 
-    .brand-logo {
+    .logo-icon {
+      font-size: 1.6rem;
+      color: var(--accent-orange);
+      transition: transform var(--transition-normal);
+      position: relative;
+    }
+
+    .status-dot {
+      position: absolute;
+      bottom: -2px;
+      right: -2px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 2px solid var(--bg-secondary);
+      background-color: var(--accent-green);
+      box-shadow: 0 0 6px var(--accent-green);
+      transition: all var(--transition-fast);
+    }
+
+    .status-dot.offline {
+      background-color: var(--accent-orange);
+      box-shadow: 0 0 6px var(--accent-orange);
+    }
+
+    .logo-area:hover .logo-icon {
+      transform: scale(1.1);
+    }
+
+    .logo-text h1 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .logo-text span {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-family: var(--font-headings);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .curator-tag {
+      font-family: var(--font-headings);
+      font-size: 0.8rem;
+      background-color: var(--bg-tertiary);
+      color: var(--text-secondary);
+      padding: 6px 12px;
+      border-radius: 20px;
+      border: 1px solid var(--border-color);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .theme-btn {
+      background: none;
+      border: 1px solid var(--border-color);
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      color: var(--text-primary);
+      cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 42px;
-      height: 42px;
-      background: linear-gradient(135deg, #ffffff 0%, #a3a3a3 100%);
-      border-radius: 10px;
-      font-size: 1.35rem;
-      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all var(--transition-fast);
     }
 
-    .brand-title {
-      font-size: 2.2rem;
+    .theme-btn:hover {
+      border-color: var(--text-primary);
+      background-color: var(--bg-tertiary);
+      transform: scale(1.05);
+    }
+
+    /* ==========================================================================
+       Hero Section & Dashboard
+       ========================================================================== */
+    .main-content {
+      max-width: 1300px;
+      margin: 80px auto 0 auto;
+      padding: 40px 24px;
+    }
+
+    .hero-section {
+      text-align: center;
+      max-width: 800px;
+      margin: 40px auto 40px auto;
+      animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-headings);
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--accent-orange);
+      background-color: rgba(217, 119, 87, 0.1);
+      padding: 6px 14px;
+      border-radius: 30px;
+      margin-bottom: 20px;
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      background-color: var(--accent-orange);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    .hero-section h2 {
+      font-size: 3rem;
       font-weight: 800;
-      letter-spacing: -0.05em;
-      background: linear-gradient(180deg, #FFFFFF 0%, #c3c3c3 100%);
+      letter-spacing: -1.5px;
+      margin-bottom: 20px;
+    }
+
+    .hero-section .highlight {
+      background: linear-gradient(120deg, var(--accent-orange) 0%, var(--accent-blue) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    .brand-tagline {
-      color: hsl(var(--muted-foreground));
-      font-size: 0.95rem;
+    .hero-desc {
+      font-size: 1.15rem;
+      color: var(--text-secondary);
+      margin-bottom: 35px;
     }
 
-    /* Search Console styling with AI Sparkle Button */
+    .filter-box {
+      margin: 0 auto;
+      max-width: 600px;
+      position: relative;
+      z-index: 10;
+    }
+
     .search-wrapper {
       position: relative;
-      width: 100%;
-      max-width: 420px;
       display: flex;
       align-items: center;
-    }
-
-    .search-input {
-      width: 100%;
-      background: rgba(255, 255, 255, 0.02);
-      border: 1px solid hsl(var(--border));
-      padding: 0.85rem 3.2rem 0.85rem 3rem;
-      border-radius: 12px;
-      color: hsl(var(--foreground));
-      font-family: var(--font-figtree);
-      font-size: 0.95rem;
-      outline: none;
-      transition: all 0.2s ease;
-      backdrop-filter: blur(8px);
-    }
-
-    .search-input:focus {
-      border-color: rgba(255, 255, 255, 0.3);
-      box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.05);
-      background: rgba(255, 255, 255, 0.04);
     }
 
     .search-icon {
       position: absolute;
-      left: 1rem;
-      top: 50%;
-      transform: translateY(-50%);
-      color: hsl(var(--muted-foreground));
+      left: 20px;
+      color: var(--text-muted);
+      font-size: 1.1rem;
       pointer-events: none;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 16px 85px 16px 52px;
+      font-family: var(--font-headings);
+      font-size: 1rem;
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 30px;
+      color: var(--text-primary);
+      box-shadow: var(--shadow-sm);
+      outline: none;
+      transition: all var(--transition-fast);
+    }
+
+    .search-input:focus {
+      border-color: var(--accent-orange);
+      box-shadow: 0 0 0 4px rgba(217, 119, 87, 0.15), var(--shadow-md);
     }
 
     .ai-search-toggle-btn {
       position: absolute;
-      right: 0.75rem;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      color: #fff;
+      right: 48px;
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
       width: 32px;
       height: 32px;
-      border-radius: 8px;
+      border-radius: 50%;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.95rem;
-      transition: all 0.2s ease;
+      font-size: 0.9rem;
+      transition: all var(--transition-fast);
     }
 
     .ai-search-toggle-btn:hover {
-      background: #fff;
-      color: #000;
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+      background: var(--accent-orange);
+      color: #ffffff;
+      border-color: var(--accent-orange);
     }
 
-    /* Client-side Gemini AI Search Console */
+    .clear-btn {
+      position: absolute;
+      right: 14px;
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 1.1rem;
+      padding: 4px;
+    }
+
+    .clear-btn:hover {
+      color: var(--text-primary);
+    }
+
+    .stats-row {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 30px;
+    }
+
+    .stat-pill {
+      font-family: var(--font-headings);
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      padding: 6px 16px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* ==========================================================================
+       AI Console Panel & dropzone
+       ========================================================================== */
     .ai-console-container {
       display: none;
       flex-direction: column;
       gap: 1.25rem;
-      padding: 1.5rem;
-      background: rgba(255, 255, 255, 0.01);
-      border: 1px solid hsl(var(--border));
-      border-radius: 14px;
-      backdrop-filter: blur(12px);
-      animation: slideDown 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    }
-
-    @keyframes slideDown {
-      from {
-        opacity: 0;
-        transform: translateY(-10px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      padding: 2rem;
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      box-shadow: var(--card-shadow);
+      margin: 0 auto 2rem auto;
+      max-width: 680px;
+      animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
 
     .ai-console-header {
@@ -276,9 +467,10 @@
     }
 
     .ai-console-title {
+      font-family: var(--font-headings);
       font-weight: 700;
-      font-size: 1.05rem;
-      color: #fff;
+      font-size: 1.25rem;
+      color: var(--text-primary);
       display: flex;
       align-items: center;
       gap: 0.5rem;
@@ -287,101 +479,104 @@
     .ai-console-close-btn {
       background: none;
       border: none;
-      color: hsl(var(--muted-foreground));
+      color: var(--text-muted);
       font-size: 1.5rem;
       cursor: pointer;
       line-height: 1;
     }
 
     .ai-console-close-btn:hover {
-      color: #fff;
+      color: var(--text-primary);
     }
 
     .ai-console-description {
-      font-size: 0.85rem;
-      color: hsl(var(--muted-foreground));
-      line-height: 1.5;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
     }
 
     .ai-label {
       display: block;
-      font-size: 0.8rem;
+      font-family: var(--font-headings);
+      font-size: 0.85rem;
       font-weight: 600;
-      color: #fff;
+      color: var(--text-primary);
       margin-bottom: 0.4rem;
     }
 
     .ai-input {
-      flex-grow: 1;
-      background: rgba(0, 0, 0, 0.2);
-      border: 1px solid hsl(var(--border));
-      padding: 0.55rem 0.8rem;
+      width: 100%;
+      background-color: var(--bg-primary);
+      border: 1px solid var(--border-color);
+      padding: 10px 14px;
       border-radius: 8px;
-      color: #fff;
-      font-size: 0.85rem;
+      color: var(--text-primary);
+      font-size: 0.9rem;
       outline: none;
-      font-family: var(--font-figtree);
+      font-family: var(--font-body);
+      transition: border-color var(--transition-fast);
     }
 
     .ai-input:focus {
-      border-color: rgba(255, 255, 255, 0.2);
+      border-color: var(--accent-orange);
     }
 
     .ai-key-save-btn {
-      background: hsl(var(--secondary));
-      color: #fff;
-      border: 1px solid hsl(var(--border));
-      padding: 0.55rem 1.2rem;
+      background-color: var(--accent-orange);
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
       border-radius: 8px;
-      font-size: 0.85rem;
+      font-family: var(--font-headings);
       font-weight: 600;
       cursor: pointer;
-      transition: background 0.2s;
+      transition: background-color var(--transition-fast);
     }
 
     .ai-key-save-btn:hover {
-      background: hsl(var(--accent));
+      background-color: var(--accent-orange-hover);
     }
 
     .ai-help-text {
       display: block;
       font-size: 0.72rem;
-      color: hsl(var(--muted-foreground));
+      color: var(--text-muted);
       margin-top: 0.35rem;
     }
 
     .ai-textarea {
       width: 100%;
-      height: 80px;
-      background: rgba(0, 0, 0, 0.2);
-      border: 1px solid hsl(var(--border));
-      padding: 0.75rem;
+      height: 90px;
+      background-color: var(--bg-primary);
+      border: 1px solid var(--border-color);
+      padding: 12px;
       border-radius: 8px;
-      color: #fff;
-      font-size: 0.88rem;
-      font-family: var(--font-figtree);
+      color: var(--text-primary);
+      font-size: 0.9rem;
+      font-family: var(--font-body);
       outline: none;
       resize: none;
+      transition: border-color var(--transition-fast);
     }
 
     .ai-textarea:focus {
-      border-color: rgba(255, 255, 255, 0.2);
+      border-color: var(--accent-orange);
     }
 
     .ai-search-submit-btn {
-      background: #fff;
-      color: #000;
+      background-color: var(--text-primary);
+      color: var(--bg-primary);
       border: none;
-      padding: 0.75rem;
+      padding: 12px;
       border-radius: 8px;
+      font-family: var(--font-headings);
       font-weight: 700;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       cursor: pointer;
-      transition: opacity 0.2s;
+      transition: opacity var(--transition-fast);
     }
 
     .ai-search-submit-btn:hover {
-      opacity: 0.95;
+      opacity: 0.9;
     }
 
     .ai-search-submit-btn:disabled {
@@ -389,18 +584,20 @@
       cursor: not-allowed;
     }
 
-    /* AI Active Banner notification */
+    /* Active Banner */
     .ai-active-banner {
       display: none;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid hsl(var(--border));
-      border-radius: 10px;
-      padding: 0.75rem 1.25rem;
-      font-size: 0.88rem;
-      color: #fff;
+      background-color: rgba(217, 119, 87, 0.08);
+      border: 1px dashed var(--accent-orange);
+      border-radius: 12px;
+      padding: 12px 20px;
+      font-size: 0.9rem;
+      color: var(--text-primary);
       justify-content: space-between;
       align-items: center;
-      margin-top: -1rem;
+      margin: 0 auto 2rem auto;
+      max-width: 680px;
+      animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
 
     .ai-exit-btn {
@@ -412,7 +609,7 @@
       cursor: pointer;
     }
 
-    /* Offline/Local CORS dropzone - hidden cleanly by default */
+    /* Dropzone */
     .dropzone-container {
       display: none;
       flex-direction: column;
@@ -420,215 +617,205 @@
       text-align: center;
       gap: 1.2rem;
       padding: 2.5rem 2rem;
-      border-radius: 16px;
-      border: 2px dashed hsl(var(--border));
-      background: rgba(255, 255, 255, 0.01);
-      backdrop-filter: blur(10px);
-      transition: all 0.25s ease;
-      animation: slideDown 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      border-radius: 12px;
+      border: 2px dashed var(--border-color);
+      background-color: var(--bg-secondary);
+      box-shadow: var(--card-shadow);
+      margin: 0 auto 2rem auto;
+      max-width: 680px;
+      transition: all var(--transition-fast);
+      animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
 
     .dropzone-container.dragover {
-      border-color: rgba(255, 255, 255, 0.4);
-      background: rgba(255, 255, 255, 0.03);
+      border-color: var(--accent-orange);
+      background-color: rgba(217, 119, 87, 0.05);
     }
 
     .dropzone-title {
+      font-family: var(--font-headings);
       font-size: 1.1rem;
       font-weight: 700;
-      color: hsl(var(--foreground));
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
+      color: var(--text-primary);
     }
 
     .dropzone-description {
-      font-size: 0.88rem;
-      color: hsl(var(--muted-foreground));
+      font-size: 0.9rem;
+      color: var(--text-secondary);
       max-width: 520px;
-      line-height: 1.6;
     }
 
     .dropzone-btn-row {
       display: flex;
-      gap: 1rem;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .dropzone-btn {
-      background: hsl(var(--primary));
-      color: hsl(var(--primary-foreground));
-      border: none;
-      padding: 0.6rem 1.4rem;
-      border-radius: 8px;
-      font-weight: 600;
-      cursor: pointer;
-      font-size: 0.88rem;
-      transition: opacity 0.2s ease;
-    }
-
-    .dropzone-btn:hover {
-      opacity: 0.9;
-    }
-
-    .dropzone-btn-sec {
-      background: transparent;
-      color: hsl(var(--foreground));
-      border: 1px solid hsl(var(--border));
-      padding: 0.6rem 1.4rem;
-      border-radius: 8px;
-      font-weight: 600;
-      cursor: pointer;
-      font-size: 0.88rem;
-      transition: background 0.2s ease;
-    }
-
-    .dropzone-btn-sec:hover {
-      background: hsl(var(--accent));
+      gap: 12px;
     }
 
     .hidden-input {
       display: none;
     }
 
-    /* Centered Category navigation pills - wrapped elegantly */
-    .categories-bar {
+    /* ==========================================================================
+       Category Pills
+       ========================================================================== */
+    .category-pills-container {
+      margin-bottom: 40px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 16px;
+    }
+
+    .category-pills {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 0.6rem;
-      padding: 0.25rem 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-      padding-bottom: 1.5rem;
+      gap: 10px;
     }
 
-    .category-badge {
+    .pill-btn {
+      font-family: var(--font-headings);
+      font-weight: 600;
+      font-size: 0.85rem;
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      color: var(--text-secondary);
+      padding: 8px 16px;
+      border-radius: 20px;
+      cursor: pointer;
       display: flex;
       align-items: center;
-      gap: 0.45rem;
-      padding: 0.45rem 1rem;
-      border-radius: 9999px;
-      background: hsl(var(--card));
-      border: 1px solid hsl(var(--border));
-      color: hsl(var(--muted-foreground));
-      font-size: 0.82rem;
-      font-weight: 500;
-      cursor: pointer;
-      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      gap: 8px;
+      transition: all var(--transition-fast);
     }
 
-    .category-badge:hover {
-      background: hsl(var(--accent));
-      color: hsl(var(--foreground));
-      border-color: rgba(255, 255, 255, 0.15);
+    .pill-btn:hover {
+      border-color: var(--text-primary);
+      color: var(--text-primary);
     }
 
-    .category-badge.active {
-      background: hsl(var(--primary));
-      color: hsl(var(--primary-foreground));
-      border-color: hsl(var(--primary));
-      font-weight: 600;
+    .pill-btn.active {
+      background-color: var(--text-primary);
+      color: var(--bg-primary);
+      border-color: var(--text-primary);
     }
 
     .category-chip-count {
       font-family: var(--font-mono);
-      font-size: 0.72rem;
-      background: rgba(255, 255, 255, 0.07);
-      padding: 0.1rem 0.45rem;
-      border-radius: 9999px;
-      color: hsl(var(--muted-foreground));
+      font-size: 0.7rem;
+      background-color: rgba(20, 20, 19, 0.05);
+      padding: 1px 6px;
+      border-radius: 20px;
+      color: var(--text-secondary);
     }
 
-    .category-badge.active .category-chip-count {
-      background: rgba(0, 0, 0, 0.12);
-      color: hsl(var(--primary-foreground));
+    body.dark-mode .category-chip-count {
+      background-color: rgba(255, 255, 255, 0.05);
+      color: var(--text-secondary);
     }
 
-    /* Editorial Bundles Row */
+    .pill-btn.active .category-chip-count {
+      background-color: rgba(255, 255, 255, 0.15);
+      color: var(--bg-primary);
+    }
+
+    body.dark-mode .pill-btn.active .category-chip-count {
+      background-color: rgba(0, 0, 0, 0.15);
+      color: var(--bg-primary);
+    }
+
+    /* ==========================================================================
+       Bundles Grid
+       ========================================================================== */
     .section-title {
-      font-size: 1.35rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      margin-bottom: 1.25rem;
+      font-family: var(--font-headings);
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 24px;
       display: flex;
       align-items: center;
-      gap: 0.6rem;
-      color: hsl(var(--foreground));
+      gap: 10px;
     }
 
     .section-title span {
-      color: hsl(var(--muted-foreground));
+      color: var(--text-muted);
       font-weight: 400;
     }
 
     .bundles-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.2rem;
+      gap: 24px;
+      margin-bottom: 48px;
     }
 
     .bundle-card {
-      background: hsl(var(--card));
-      border: 1px solid hsl(var(--border));
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border-color);
       border-radius: 12px;
-      padding: 1.5rem;
+      padding: 24px;
       cursor: pointer;
-      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all var(--transition-normal);
       display: flex;
       flex-direction: column;
-      gap: 0.75rem;
+      gap: 10px;
+      box-shadow: var(--card-shadow);
     }
 
     .bundle-card:hover {
-      transform: translateY(-2px);
-      border-color: rgba(255, 255, 255, 0.2);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      transform: translateY(-4px);
+      border-color: var(--border-hover);
+      box-shadow: var(--card-shadow-hover);
     }
 
     .bundle-header {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
+      gap: 12px;
     }
 
     .bundle-emoji {
-      font-size: 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      font-size: 1.6rem;
     }
 
     .bundle-name {
-      font-size: 1.05rem;
+      font-family: var(--font-headings);
+      font-size: 1.15rem;
       font-weight: 700;
-      color: hsl(var(--foreground));
+      color: var(--text-primary);
     }
 
     .bundle-tagline {
-      font-size: 0.85rem;
-      color: hsl(var(--muted-foreground));
-      line-height: 1.4;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
     }
 
-    /* Cards Grid & Skill Cards */
-    .cards-grid {
+    /* ==========================================================================
+       Cards Grid & Brand/Skill Cards
+       ========================================================================== */
+    .brands-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
+      min-height: 200px;
     }
 
     .skill-card {
-      background: hsl(var(--card));
-      border: 1px solid hsl(var(--border));
-      border-radius: 14px;
-      padding: 1.75rem;
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 24px;
       display: flex;
       flex-direction: column;
-      gap: 1.2rem;
-      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: var(--card-shadow);
+      transition: all var(--transition-normal);
       position: relative;
       overflow: hidden;
+      animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-hover);
+      box-shadow: var(--card-shadow-hover);
     }
 
     .skill-card-glow {
@@ -637,183 +824,150 @@
       left: 0;
       width: 100%;
       height: 3px;
-      background: linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0.2) 100%);
+      background: linear-gradient(90deg, var(--accent-orange) 0%, rgba(217, 119, 87, 0.2) 100%);
       opacity: 0;
-      transition: opacity 0.25s ease;
-    }
-
-    .skill-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(255, 255, 255, 0.25);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
+      transition: opacity var(--transition-fast) ease;
     }
 
     .skill-card:hover .skill-card-glow {
       opacity: 1;
     }
 
+    .skill-category {
+      font-family: var(--font-headings);
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
     .skill-header {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      gap: 1rem;
+      gap: 12px;
+      margin-bottom: 10px;
     }
 
     .skill-title {
-      font-size: 1.15rem;
+      font-size: 1.25rem;
       font-weight: 700;
-      color: hsl(var(--foreground));
-      line-height: 1.35;
-      letter-spacing: -0.01em;
-    }
-
-    .risk-badge {
-      font-size: 0.7rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      padding: 0.2rem 0.5rem;
-      border-radius: 20px;
-      letter-spacing: 0.05em;
-    }
-
-    .risk-safe {
-      background: rgba(16, 185, 129, 0.1);
-      color: #10B981;
-      border: 1px solid rgba(16, 185, 129, 0.15);
-    }
-
-    .risk-unknown {
-      background: rgba(245, 158, 11, 0.1);
-      color: #F59E0B;
-      border: 1px solid rgba(245, 158, 11, 0.15);
-    }
-
-    .risk-high {
-      background: rgba(239, 68, 68, 0.1);
-      color: #EF4444;
-      border: 1px solid rgba(239, 68, 68, 0.15);
+      color: var(--text-primary);
+      letter-spacing: -0.5px;
+      line-height: 1.3;
     }
 
     .skill-desc {
-      font-size: 0.88rem;
-      color: hsl(var(--muted-foreground));
-      line-height: 1.5;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-bottom: 24px;
       flex-grow: 1;
+      line-height: 1.5;
     }
 
     .skill-meta {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.4rem;
+      gap: 6px;
+      margin-bottom: 16px;
     }
 
     .meta-tag {
       font-family: var(--font-mono);
       font-size: 0.72rem;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid hsl(var(--border));
-      padding: 0.2rem 0.5rem;
+      background-color: var(--bg-tertiary);
+      border: 1px solid var(--border-color);
+      padding: 3px 8px;
       border-radius: 6px;
-      color: hsl(var(--muted-foreground));
+      color: var(--text-secondary);
     }
 
-    .action-row {
+    .card-footer {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
-      padding-top: 1rem;
+      flex-direction: column;
+      gap: 10px;
+      border-top: 1px solid var(--border-color);
+      padding-top: 16px;
+      width: 100%;
       margin-top: auto;
-      gap: 1rem;
     }
 
     .skill-id-badge {
       font-family: var(--font-mono);
       font-size: 0.78rem;
-      color: hsl(var(--muted-foreground));
-      max-width: 120px;
+      color: var(--text-muted);
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
+      margin-bottom: 4px;
     }
 
-    .install-btn {
-      background: hsl(var(--primary));
-      color: hsl(var(--primary-foreground));
-      border: none;
-      padding: 0.5rem 0.8rem;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 0.82rem;
-      cursor: pointer;
-      transition: opacity 0.2s ease;
+    .card-action-row {
       display: flex;
-      align-items: center;
-      gap: 0.35rem;
+      gap: 8px;
+      width: 100%;
     }
 
-    .install-btn:hover {
-      opacity: 0.9;
+    .btn-card-action {
+      width: 100%;
+      justify-content: space-between;
+      background-color: var(--bg-tertiary);
+      color: var(--text-primary);
     }
 
-    .download-btn {
-      background: transparent;
-      border: 1px solid hsl(var(--border));
-      color: hsl(var(--foreground));
-      padding: 0.5rem 0.8rem;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 0.82rem;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      display: flex;
-      align-items: center;
-      gap: 0.35rem;
+    .skill-card:hover .btn-card-action {
+      background-color: var(--accent-orange);
+      color: #ffffff;
+      border-color: var(--accent-orange);
     }
 
-    .download-btn:hover {
-      background: hsl(var(--accent));
-      border-color: rgba(255, 255, 255, 0.25);
+    .btn-card-secondary {
+      flex: 1;
+      font-size: 0.8rem;
+      padding: 8px 12px;
+      border-radius: 6px;
+      background-color: transparent;
+      border: 1px solid var(--border-color);
+      color: var(--text-secondary);
+      justify-content: center;
     }
 
-    /* Modal Dialog */
+    .btn-card-secondary:hover {
+      border-color: var(--text-primary);
+      background-color: var(--bg-tertiary);
+      color: var(--text-primary);
+    }
+
+    /* Modals */
     .modal {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.7);
-      backdrop-filter: blur(8px);
+      background-color: rgba(20, 20, 19, 0.4);
+      backdrop-filter: blur(4px);
       display: none;
       align-items: center;
       justify-content: center;
       z-index: 1000;
-      animation: fadeIn 0.2s ease-out;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-
-      to {
-        opacity: 1;
-      }
     }
 
     .modal-content {
-      background: hsl(var(--card));
-      border: 1px solid hsl(var(--border));
-      border-radius: 16px;
-      width: 100%;
-      max-width: 540px;
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      width: 90%;
+      max-width: 500px;
       padding: 2rem;
       display: flex;
       flex-direction: column;
       gap: 1.25rem;
       position: relative;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+      box-shadow: var(--shadow-lg);
+      animation: fadeInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
 
     .modal-close {
@@ -822,140 +976,300 @@
       right: 1.2rem;
       background: none;
       border: none;
-      color: hsl(var(--muted-foreground));
+      color: var(--text-muted);
       font-size: 1.35rem;
       cursor: pointer;
-      transition: color 0.2s ease;
+      transition: color var(--transition-fast);
     }
 
     .modal-close:hover {
-      color: hsl(var(--foreground));
+      color: var(--text-primary);
     }
 
     .modal-title {
-      font-size: 1.35rem;
-      font-weight: 800;
-      color: hsl(var(--foreground));
+      font-family: var(--font-headings);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text-primary);
     }
 
     .code-box {
-      background: rgba(0, 0, 0, 0.3);
-      border: 1px solid hsl(var(--border));
-      padding: 1rem 1.2rem;
-      border-radius: 10px;
+      background-color: var(--anthropic-dark);
+      border: 1px solid var(--border-color);
+      padding: 14px 20px;
+      border-radius: 8px;
       font-family: var(--font-mono);
-      font-size: 0.85rem;
-      color: #38bdf8;
+      font-size: 0.9rem;
+      color: var(--accent-orange);
       position: relative;
       cursor: pointer;
-      transition: border-color 0.2s ease;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
     .code-box:hover {
-      border-color: rgba(255, 255, 255, 0.15);
+      border-color: var(--accent-orange);
     }
 
     .code-copy-tip {
+      font-family: var(--font-headings);
       font-size: 0.72rem;
-      color: hsl(var(--muted-foreground));
-      background: rgba(255, 255, 255, 0.05);
-      padding: 0.2rem 0.5rem;
+      color: var(--anthropic-mid-gray);
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 3px 8px;
       border-radius: 4px;
     }
 
-    /* Footer structure */
-    footer {
-      border-top: 1px solid hsl(var(--border));
-      padding-top: 2rem;
-      margin-top: 4rem;
+    /* Toast */
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background-color: var(--anthropic-dark);
+      color: #ffffff;
+      padding: 12px 24px;
+      border-radius: 30px;
+      box-shadow: var(--shadow-lg);
+      font-family: var(--font-headings);
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      z-index: 1100;
+      opacity: 0;
+      pointer-events: none;
+      transition: transform var(--transition-normal), opacity var(--transition-normal);
+    }
+
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    body.dark-mode .toast {
+      background-color: var(--anthropic-light);
+      color: var(--anthropic-dark);
+    }
+
+    /* Footer */
+    .site-footer {
+      border-top: 1px solid var(--border-color);
+      padding: 40px 24px;
+      margin-top: 60px;
+      background-color: var(--bg-secondary);
+    }
+
+    .footer-container {
+      max-width: 1300px;
+      margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 1rem;
-      color: hsl(var(--muted-foreground));
-      font-size: 0.85rem;
+      gap: 20px;
     }
 
-    .footer-actions {
+    .footer-logo {
+      font-family: var(--font-headings);
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 6px;
       display: flex;
-      gap: 1rem;
+      align-items: center;
+      gap: 8px;
     }
 
-    .footer-btn {
-      background: transparent;
-      border: 1px solid hsl(var(--border));
-      color: hsl(var(--foreground));
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
+    .footer-left p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .footer-right {
+      text-align: right;
+    }
+
+    .copyright {
       font-size: 0.8rem;
-      font-weight: 500;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .footer-actions-row {
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .footer-link-btn {
+      font-family: var(--font-headings);
+      font-size: 0.8rem;
+      font-weight: 600;
+      background: none;
+      border: 1px solid var(--border-color);
+      color: var(--text-secondary);
+      padding: 6px 12px;
+      border-radius: 6px;
       cursor: pointer;
       display: flex;
       align-items: center;
-      gap: 0.4rem;
-      transition: background 0.2s ease;
+      gap: 6px;
+      transition: all var(--transition-fast);
     }
 
-    .footer-btn:hover {
-      background: hsl(var(--accent));
+    .footer-link-btn:hover {
+      border-color: var(--text-primary);
+      color: var(--text-primary);
+      background-color: var(--bg-tertiary);
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: flex-end;
+      gap: 14px;
+      margin-top: 10px;
+    }
+
+    .social-icons a {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+
+    .social-icons a:hover {
+      color: var(--text-primary);
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(217, 119, 87, 0.4);
+      }
+
+      70% {
+        box-shadow: 0 0 0 8px rgba(217, 119, 87, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(217, 119, 87, 0);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-section h2 {
+        font-size: 2.2rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .nav-links .curator-tag {
+        display: none;
+      }
+
+      .footer-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-right {
+        text-align: center;
+      }
+
+      .footer-actions-row {
+        justify-content: center;
+      }
+
+      .social-icons {
+        justify-content: center;
+      }
     }
   </style>
 </head>
 
-<body>
+<body class="light-mode">
 
-  <div class="container">
-    <!-- Dynamic Status Bar -->
-    <div class="status-bar">
-      <div class="status-text">
-        <span class="status-indicator status-online" id="status-indicator"></span>
-        <span id="status-text">Loading skills database...</span>
-      </div>
-      <div style="display: flex; gap: 1rem; align-items: center;">
-        <a href="#" id="offline-trigger"
-          style="display: none; color: #38bdf8; text-decoration: underline; font-size: 0.8rem;"
-          onclick="showDropzone(true)">🔌 Local Drag-and-Drop</a>
-        <button class="clear-cache-btn" id="clear-cache-btn" onclick="clearCache()" style="display: none;">
-          🗑️ Clear Cache
-        </button>
-      </div>
-    </div>
-
-    <!-- Premium Header & Branding -->
-    <header class="header-section">
-      <div class="brand-group">
-        <div class="brand-logo-area">
-          <div class="brand-logo">👑</div>
-          <h1 class="brand-title">Abo Alrejal Skills</h1>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <div class="logo-area" onclick="location.reload()">
+        <div class="logo-icon">
+          <i class="fa-solid fa-brain"></i>
+          <span class="status-dot" id="status-dot"></span>
         </div>
-        <p class="brand-tagline">
-          High-performance modular agentic skills for Claude Code, Cursor, Antigravity, and Gemini.
-        </p>
+        <div class="logo-text">
+          <h1>Abo Alrejal Skills</h1>
+          <span>High-Performance AI Specs</span>
+        </div>
       </div>
 
-      <!-- Main Centered Search Console with AI sparkle button -->
-      <div class="search-wrapper">
-        <svg class="search-icon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
-          viewBox="0 0 24 24">
-          <circle cx="11" cy="11" r="8"></circle>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-        </svg>
-        <input type="text" class="search-input" id="search-box" placeholder="Search skills, triggers, platforms...">
-        <button class="ai-search-toggle-btn" id="ai-search-toggle-btn" onclick="toggleAISearchPanel()"
-          title="AI Semantic Search">
-          ✨
+      <nav class="nav-links">
+        <span class="curator-tag">
+          <i class="fa-solid fa-user-check"></i> Curated by <strong>Mohammed Abo Alrejal</strong>
+        </span>
+        <a href="https://github.com/aboalrejal-ai/skills" target="_blank" class="btn btn-outline btn-sm">
+          <i class="fa-brands fa-github"></i> Star on GitHub
+        </a>
+        <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme">
+          <i class="fa-solid fa-moon"></i>
         </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="main-content">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-badge">
+        <span class="pulse-dot"></span> Open Source Visual Intelligence Catalog
       </div>
-    </header>
+      <h2>Modular Agentic Skills <br><span class="highlight">Tailored for AI Coding</span></h2>
+      <p class="hero-desc">
+        Explore and fetch <strong>3,045+ production-grade modular skills</strong> for Claude Code, Cursor, Antigravity, and Gemini. Keep your prompts offline, highly structured, and optimized.
+      </p>
+
+      <!-- Search & Filtering Box -->
+      <div class="filter-box">
+        <div class="search-wrapper">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input type="text" class="search-input" id="search-box"
+            placeholder="Search skills, triggers, platforms (e.g. seo, react, compose)..." autocomplete="off">
+          <button class="ai-search-toggle-btn" id="ai-search-toggle-btn" onclick="toggleAISearchPanel()"
+            title="AI Semantic Search">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+          </button>
+          <button id="clear-search" class="clear-btn" style="display:none;"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+      </div>
+
+      <!-- Stats Row -->
+      <div class="stats-row">
+        <div class="stat-pill"><i class="fa-solid fa-folder-open"></i> <span id="stat-count">0</span> Skills</div>
+        <div class="stat-pill"><i class="fa-solid fa-shapes"></i> <span id="stat-cat-count">0</span> Categories</div>
+        <div class="stat-pill"><i class="fa-solid fa-code"></i> Offline Ready</div>
+      </div>
+    </section>
 
     <!-- Client-side Gemini AI Search Console -->
     <section class="ai-console-container" id="ai-console">
       <div class="ai-console-header">
-        <div class="ai-console-title">✨ AI Semantic Search</div>
+        <div class="ai-console-title"><i class="fa-solid fa-wand-magic-sparkles"></i> AI Semantic Search</div>
         <button class="ai-console-close-btn" onclick="toggleAISearchPanel()">×</button>
       </div>
       <p class="ai-console-description">
@@ -963,7 +1277,7 @@
         relevant modular skills directly.
       </p>
 
-      <div class="ai-key-wrapper" style="margin-top: 0.5rem;">
+      <div class="ai-key-wrapper" style="margin-top: 0.5rem; text-align: left;">
         <label for="ai-api-key" class="ai-label">Gemini API Key:</label>
         <div style="position: relative; display: flex; width: 100%; gap: 0.5rem;">
           <input type="password" class="ai-input" id="ai-api-key" placeholder="Enter your Gemini API Key..."
@@ -972,10 +1286,10 @@
         </div>
         <span class="ai-help-text">Your key is stored securely in your local browser only. Obtain a free key from <a
             href="https://aistudio.google.com/" target="_blank"
-            style="color: #38bdf8; text-decoration: underline;">Google AI Studio</a>.</span>
+            style="color: var(--accent-blue); text-decoration: underline;">Google AI Studio</a>.</span>
       </div>
 
-      <div class="ai-query-wrapper" style="margin-top: 0.5rem;">
+      <div class="ai-query-wrapper" style="margin-top: 0.5rem; text-align: left;">
         <label for="ai-query-input" class="ai-label">What do you want to build?</label>
         <textarea class="ai-textarea" id="ai-query-input"
           placeholder="e.g. أحتاج مهارات لمساعدتي في بناء واجهة مستخدم متطورة وسريعة باستخدام Tailwind"></textarea>
@@ -992,7 +1306,7 @@
       <button class="ai-exit-btn" onclick="exitAIMode()">Exit AI Search Mode</button>
     </div>
 
-    <!-- Sleek Drag and Drop Zone for local Preview CORS bypass (Hidden by default, triggered on fallback) -->
+    <!-- Drag and Drop Zone for local Preview CORS bypass -->
     <section class="dropzone-container" id="dropzone">
       <div class="dropzone-title">🔌 Local Preview Mode Offline</div>
       <p class="dropzone-description">
@@ -1001,25 +1315,24 @@
         <code>skills_index.json</code> file (or <code>skills.json</code>) here, or browse from your system.
       </p>
       <div class="dropzone-btn-row">
-        <button class="dropzone-btn" onclick="document.getElementById('file-loader').click()">Browse JSON File</button>
-        <button class="dropzone-btn-sec" onclick="dismissDropzone()">Ignore</button>
+        <button class="btn btn-primary" onclick="document.getElementById('file-loader').click()">Browse JSON File</button>
+        <button class="btn btn-outline" onclick="dismissDropzone()">Ignore</button>
       </div>
       <input type="file" id="file-loader" class="hidden-input" accept=".json">
     </section>
 
-    <!-- Horizontal Filter Bar -->
-    <nav>
-      <ul class="categories-bar" id="category-list">
-        <li class="category-badge active" data-category="all" onclick="setCategory('all')">
-          <span>All</span>
-          <span class="category-count category-chip-count" id="count-all">0</span>
-        </li>
-      </ul>
-    </nav>
+    <!-- Categories Pills Navigation -->
+    <section class="category-pills-container">
+      <div class="category-pills" id="category-list">
+        <button class="pill-btn active" onclick="setCategory('all')" data-category="all">
+          All <span class="category-chip-count" id="count-all">0</span>
+        </button>
+      </div>
+    </section>
 
     <!-- Curated Editorial Bundles Row -->
-    <section>
-      <h2 class="section-title">🎒 Editorial <span>Bundles</span></h2>
+    <section style="margin-bottom: 48px;">
+      <h2 class="section-title"><i class="fa-solid fa-cubes"></i> Editorial <span>Bundles</span></h2>
       <div class="bundles-grid" id="bundles-grid">
         <!-- Generated Bundles -->
       </div>
@@ -1027,29 +1340,48 @@
 
     <!-- Main Modular Skills Grid -->
     <section>
-      <h2 class="section-title" id="catalog-title">🧬 Modular <span>Skills</span></h2>
-      <div class="cards-grid" id="cards-grid">
+      <h2 class="section-title" id="catalog-title"><i class="fa-solid fa-dna"></i> Browse <span>Skills</span></h2>
+      <div class="brands-grid" id="cards-grid">
         <!-- Dynamically generated cards -->
       </div>
     </section>
+  </main>
 
-    <!-- Footer Actions -->
-    <footer>
-      <div>Abo Alrejal Skills Catalog © 2026 • Premium Developer Edition</div>
-      <div class="footer-actions">
-        <button class="footer-btn" onclick="openInstructions()">
-          <span>🔧 CLI Setup Guide</span>
-        </button>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="footer-logo">
+          <i class="fa-solid fa-palette"></i> Abo Alrejal Skills
+        </div>
+        <p>Curating modular agentic skills and prompt protocols for AI workflows.</p>
       </div>
-    </footer>
-  </div>
+      <div class="footer-right">
+        <p class="copyright">&copy; 2026 Mohammed Abo Alrejal. Released under the MIT License.</p>
+        <div class="footer-actions-row">
+          <button class="footer-link-btn" onclick="openInstructions()">
+            <i class="fa-solid fa-terminal"></i> CLI Setup Guide
+          </button>
+          <button class="footer-link-btn" id="clear-cache-btn" onclick="clearCache()" style="display: none;">
+            <i class="fa-solid fa-trash-can"></i> Reset Cache
+          </button>
+        </div>
+        <div class="social-icons">
+          <a href="https://github.com/aboalrejal-ai" target="_blank" aria-label="GitHub Profile"><i
+              class="fa-brands fa-github"></i></a>
+          <a href="mailto:mohammed.abualrejal@gmail.com" aria-label="Contact Email"><i
+              class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <!-- Copy Command Modal Dialog -->
   <div class="modal" id="install-modal" onclick="closeModal(event)">
     <div class="modal-content" onclick="event.stopPropagation()">
       <button class="modal-close" onclick="closeModal()">×</button>
       <div class="modal-title" id="modal-title">Install Skill</div>
-      <p style="color: hsl(var(--muted-foreground)); line-height: 1.5; font-size: 0.9rem;" id="modal-desc">
+      <p style="color: var(--text-secondary); line-height: 1.6; font-size: 0.95rem;" id="modal-desc">
         To install this skill prompt directly into your local environment, copy and execute this terminal command:
       </p>
       <div class="code-box" id="code-box-el" onclick="copyInstallCmd()">
@@ -1057,16 +1389,21 @@
         <span class="code-copy-tip">Click to Copy</span>
       </div>
       <div
-        style="background: rgba(255,255,255,0.01); padding: 1.25rem; border-radius: 10px; border: 1px solid hsl(var(--border));">
-        <div style="font-weight: 700; margin-bottom: 0.5rem; color: #FFFFFF; font-size: 0.85rem;">📋 Global Support:
+        style="background: var(--bg-primary); padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border-color);">
+        <div style="font-weight: 700; margin-bottom: 0.5rem; color: var(--text-primary); font-size: 0.88rem;">📋 Global Support:
         </div>
-        <p style="font-size: 0.82rem; color: hsl(var(--muted-foreground)); line-height: 1.55;">
+        <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.65;">
           • <strong>Claude Code</strong>: installs to <code>~/.claude/skills/</code><br>
           • <strong>Antigravity</strong>: appends to <code>~/.gemini/config/plugins/</code><br>
           • <strong>Cursor</strong>: generates custom rule in <code>.cursor/rules/</code>
         </p>
       </div>
     </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast">
+    <i class="fa-solid fa-check-circle"></i> <span id="toast-message">Copied to clipboard!</span>
   </div>
 
   <script>
@@ -1103,6 +1440,54 @@
       { id: "agent-architect", name: "Agent Architect", emoji: "🤖", tagline: "MCP development & agent prompting systems." }
     ];
 
+    /* ==========================================================================
+       Theme Management
+       ========================================================================== */
+    const themeToggleBtn = document.getElementById('theme-toggle');
+
+    function initTheme() {
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      if (savedTheme === 'dark') {
+        document.body.classList.remove('light-mode');
+        document.body.classList.add('dark-mode');
+        themeToggleBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
+      } else {
+        document.body.classList.remove('dark-mode');
+        document.body.classList.add('light-mode');
+        themeToggleBtn.innerHTML = '<i class="fa-solid fa-moon"></i>';
+      }
+    }
+
+    themeToggleBtn.addEventListener('click', () => {
+      if (document.body.classList.contains('light-mode')) {
+        document.body.classList.remove('light-mode');
+        document.body.classList.add('dark-mode');
+        themeToggleBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
+        localStorage.setItem('theme', 'dark');
+        showToast('Dark Mode Activated');
+      } else {
+        document.body.classList.remove('dark-mode');
+        document.body.classList.add('light-mode');
+        themeToggleBtn.innerHTML = '<i class="fa-solid fa-moon"></i>';
+        localStorage.setItem('theme', 'light');
+        showToast('Light Mode Activated');
+      }
+    });
+
+    /* ==========================================================================
+       Toast Notifications
+       ========================================================================== */
+    const toast = document.getElementById('toast');
+    const toastMessage = document.getElementById('toast-message');
+
+    function showToast(message) {
+      toastMessage.textContent = message;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2500);
+    }
+
     // Retrieve cached local skills if any
     function getCachedSkills() {
       try {
@@ -1135,27 +1520,22 @@
         updateStatus(false, "Cache cleared");
         showDropzone(true);
         renderApp();
+        showToast('Cache cleared successfully!');
       } catch (e) {
         console.error(e);
       }
     }
 
     function updateStatus(loaded, message) {
-      const indicator = document.getElementById("status-indicator");
-      const statusText = document.getElementById("status-text");
+      const dot = document.getElementById("status-dot");
       const clearBtn = document.getElementById("clear-cache-btn");
-      const offlineTrigger = document.getElementById("offline-trigger");
 
       if (loaded) {
-        indicator.className = "status-indicator status-online";
-        statusText.innerHTML = `🟢 <strong>Abo Alrejal Skills loaded</strong> (${skillsData.length} active skills available)`;
-        clearBtn.style.display = "inline-block";
-        offlineTrigger.style.display = "none";
+        dot.className = "status-dot"; // active green by default
+        clearBtn.style.display = "inline-flex";
       } else {
-        indicator.className = "status-indicator status-offline";
-        statusText.innerHTML = `⚠️ <strong>Local Preview Mode</strong> (${message || "Offline fallback"})`;
+        dot.className = "status-dot offline";
         clearBtn.style.display = "none";
-        offlineTrigger.style.display = "inline-block";
       }
     }
 
@@ -1244,6 +1624,7 @@
             showDropzone(false);
             updateStatus(true);
             renderApp();
+            showToast("Successfully loaded " + items.length + " skills!");
           }
         } catch (err) {
           alert("Failed to parse JSON file: " + err.message);
@@ -1259,7 +1640,6 @@
         consoleEl.style.display = "none";
       } else {
         consoleEl.style.display = "flex";
-        // Auto focus query box
         document.getElementById("ai-query-input").focus();
       }
     }
@@ -1268,10 +1648,10 @@
       const key = document.getElementById("ai-api-key").value.trim();
       if (key) {
         localStorage.setItem("aburajal_gemini_api_key", key);
-        alert("Gemini API Key saved securely inside your browser.");
+        showToast("Gemini API Key saved inside your browser.");
       } else {
         localStorage.removeItem("aburajal_gemini_api_key");
-        alert("API Key cleared.");
+        showToast("API Key cleared.");
       }
     }
 
@@ -1289,10 +1669,9 @@
       }
 
       const btn = document.getElementById("ai-search-submit-btn");
-      btn.innerText = "⏳ Gemini AI is matches mapping... Please wait";
+      btn.innerText = "⏳ Matching skills... Please wait";
       btn.disabled = true;
 
-      // Build lists of skills and categories
       const list = skillsData.map(s => ({ id: s.id, name: s.name, cat: s.category }));
 
       const prompt = `You are the AI Assistant for Abo Alrejal Skills Hub.
@@ -1328,7 +1707,6 @@ Strictly output the JSON array only, without any Markdown backticks (\`\`\`json)
         const resData = await response.json();
         let text = resData.candidates[0].content.parts[0].text.trim();
 
-        // Clean markdown blocks
         if (text.startsWith("```")) {
           text = text.replace(/^```json\s*/i, "").replace(/```$/, "").trim();
         }
@@ -1339,18 +1717,15 @@ Strictly output the JSON array only, without any Markdown backticks (\`\`\`json)
           isAIMode = true;
           aiQueryText = query;
 
-          // Update AI active banner
           document.getElementById("ai-banner-text").innerHTML = `✨ <strong>AI Semantic Search Active</strong> for: "${query}" (${aiFilteredSkills.length} matches found)`;
           document.getElementById("ai-active-banner").style.display = "flex";
-
-          // Hide panel
           document.getElementById("ai-console").style.display = "none";
 
           btn.innerText = "🚀 Search with Gemini AI";
           btn.disabled = false;
 
-          // Rerender catalog
           setCategory("all");
+          showToast("AI Search matched " + aiFilteredSkills.length + " skills!");
         } else {
           throw new Error("Invalid output formatting from Gemini API model.");
         }
@@ -1367,9 +1742,9 @@ Strictly output the JSON array only, without any Markdown backticks (\`\`\`json)
       document.getElementById("ai-active-banner").style.display = "none";
       document.getElementById("ai-query-input").value = "";
       setCategory("all");
+      showToast("Exited AI Search Mode");
     }
 
-    // Skill Download function - CORS-safe with dynamic client-side fallback
     async function downloadSkill(skillId, skillName) {
       try {
         const url = `../../skills/${skillId}/SKILL.md`;
@@ -1381,7 +1756,6 @@ Strictly output the JSON array only, without any Markdown backticks (\`\`\`json)
         triggerFileDownload(text, `${skillName}.md`);
       } catch (err) {
         console.warn("Failed to fetch SKILL.md. Generating formatted client markdown fallback.", err);
-        // Fallback generator in-memory
         const skill = skillsData.find(s => s.id === skillId) || {};
         const fallbackMD = `---
 name: ${skill.name || skillName}
@@ -1416,6 +1790,7 @@ To load this skill, copy these lines or run the command:
       a.click();
       document.body.removeChild(a);
       URL.revokeObjectURL(downloadUrl);
+      showToast("Downloaded " + filename);
     }
 
     function getFilteredSkills() {
@@ -1431,7 +1806,7 @@ To load this skill, copy these lines or run the command:
     }
 
     function renderApp() {
-      renderedCount = 20; // reset pagination counts
+      renderedCount = 20; 
       renderCategories();
       renderBundles();
       renderCards();
@@ -1442,29 +1817,30 @@ To load this skill, copy these lines or run the command:
       const source = isAIMode ? aiFilteredSkills : skillsData;
 
       listEl.innerHTML = `
-      <li class="category-badge ${currentCategory === 'all' ? 'active' : ''}" data-category="all" onclick="setCategory('all')">
-        <span>All</span>
-        <span class="category-chip-count">${source.length}</span>
-      </li>
-    `;
+        <button class="pill-btn ${currentCategory === 'all' ? 'active' : ''}" onclick="setCategory('all')">
+          All <span class="category-chip-count">${source.length}</span>
+        </button>
+      `;
 
       const counts = {};
       source.forEach(skill => {
         counts[skill.category] = (counts[skill.category] || 0) + 1;
       });
 
+      // Update categories count pill in hero
+      document.getElementById("stat-cat-count").textContent = Object.keys(counts).length;
+
       Object.keys(categoryLabels).forEach(key => {
         if (key === "all") return;
         const count = counts[key] || 0;
         if (count > 0) {
-          const li = document.createElement("li");
-          li.className = `category-badge ${currentCategory === key ? 'active' : ''}`;
-          li.innerHTML = `
-          <span>${categoryLabels[key]}</span>
-          <span class="category-chip-count">${count}</span>
-        `;
-          li.onclick = () => setCategory(key);
-          listEl.appendChild(li);
+          const btn = document.createElement("button");
+          btn.className = `pill-btn ${currentCategory === key ? 'active' : ''}`;
+          btn.innerHTML = `
+            ${categoryLabels[key]} <span class="category-chip-count">${count}</span>
+          `;
+          btn.onclick = () => setCategory(key);
+          listEl.appendChild(btn);
         }
       });
     }
@@ -1476,17 +1852,18 @@ To load this skill, copy these lines or run the command:
         const card = document.createElement("div");
         card.className = "bundle-card";
         card.innerHTML = `
-        <div class="bundle-header">
-          <span class="bundle-emoji">${bundle.emoji}</span>
-          <span class="bundle-name">${bundle.name}</span>
-        </div>
-        <div class="bundle-tagline">${bundle.tagline}</div>
-      `;
+          <div class="bundle-header">
+            <span class="bundle-emoji">${bundle.emoji}</span>
+            <span class="bundle-name">${bundle.name}</span>
+          </div>
+          <div class="bundle-tagline">${bundle.tagline}</div>
+        `;
         card.onclick = () => {
           document.getElementById("search-box").value = bundle.name;
           searchQuery = bundle.name.toLowerCase();
           isAIMode = false;
           document.getElementById("ai-active-banner").style.display = "none";
+          document.getElementById("clear-search").style.display = "block";
           renderApp();
         };
         grid.appendChild(card);
@@ -1499,19 +1876,21 @@ To load this skill, copy these lines or run the command:
 
       const activeCatLabel = categoryLabels[currentCategory] || currentCategory;
       let aiIndicatorText = isAIMode ? ` ✨ AI Match` : "";
-      document.getElementById("catalog-title").innerHTML = `🧬 Browse <span>${activeCatLabel}</span> (${filtered.length})${aiIndicatorText}`;
+      document.getElementById("catalog-title").innerHTML = `<i class="fa-solid fa-dna"></i> Browse <span>${activeCatLabel}</span> (${filtered.length})${aiIndicatorText}`;
 
-      // Slice array to renderedCount for Infinite Scroll pagination
+      // Update main count in hero
+      document.getElementById("stat-count").textContent = filtered.length;
+
       const batch = filtered.slice(0, renderedCount);
 
       if (batch.length === 0) {
         grid.innerHTML = `
-        <div style="grid-column: 1/-1; text-align: center; padding: 5rem 2rem; color: hsl(var(--muted-foreground));">
-          <div style="font-size: 3rem; margin-bottom: 1rem;">🔍</div>
-          <div style="font-weight: 600; color: #fff; margin-bottom: 0.5rem;">No matching skills found</div>
-          <div>Try adjusting your keywords or category filters.</div>
-        </div>
-      `;
+          <div class="empty-state">
+            <i class="fa-solid fa-circle-question"></i>
+            <h4>No matching skills found</h4>
+            <p>Try adjusting your search keywords or resetting category filters.</p>
+          </div>
+        `;
         return;
       }
 
@@ -1521,35 +1900,38 @@ To load this skill, copy these lines or run the command:
         const skillName = skill.id.split("/").pop();
 
         cardsHTML += `
-        <div class="skill-card">
-          <div class="skill-card-glow"></div>
-          <div class="skill-header">
-            <div class="skill-title">${skill.name}</div>
-            <span class="risk-badge ${riskClass}">${skill.risk}</span>
-          </div>
-          <div class="skill-desc">${skill.description}</div>
-          <div class="skill-meta">
-            <span class="meta-tag">🔑 /${skillName}</span>
-            <span class="meta-tag">🗂️ ${categoryLabels[skill.category] || skill.category}</span>
-          </div>
-          <div class="action-row">
-            <span class="skill-id-badge" title="${skill.id}">${skill.id}</span>
-            <div style="display: flex; gap: 0.4rem;">
-              <button class="install-btn" onclick="openInstall('${skillName}')" style="padding: 0.5rem 0.8rem;">
-                <span>Get</span>
+          <div class="skill-card">
+            <div class="skill-card-glow"></div>
+            <div class="skill-category">${categoryLabels[skill.category] || skill.category}</div>
+            <div class="skill-header">
+              <div class="skill-title">${skill.name}</div>
+              <span class="risk-badge ${riskClass}">${skill.risk}</span>
+            </div>
+            <div class="skill-desc">${skill.description}</div>
+            <div class="skill-meta">
+              <span class="meta-tag"><i class="fa-solid fa-hashtag"></i> /${skillName}</span>
+            </div>
+            <div class="card-footer">
+              <span class="skill-id-badge" title="${skill.id}">${skill.id}</span>
+              <button class="btn btn-card-action" onclick="openInstall('${skillName}')">
+                <span>Get Skill</span> <i class="fa-solid fa-arrow-right"></i>
               </button>
-              <button class="download-btn" onclick="downloadSkill('${skill.id}', '${skillName}')">
-                <span>Download</span>
-              </button>
+              <div class="card-action-row">
+                <button class="btn btn-outline btn-sm btn-card-secondary" onclick="downloadSkill('${skill.id}', '${skillName}')">
+                  <i class="fa-solid fa-download"></i> Download
+                </button>
+                <button class="btn btn-outline btn-sm btn-card-secondary" onclick="copyInstallCmdInline('${skillName}')">
+                  <i class="fa-solid fa-copy"></i> Copy CLI
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-      `;
+        `;
       });
       grid.innerHTML = cardsHTML;
     }
 
-    // Automatic Infinite scroll window listener
+    // Scroll pagination listener
     window.onscroll = () => {
       if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 500) {
         const filtered = getFilteredSkills();
@@ -1562,15 +1944,32 @@ To load this skill, copy these lines or run the command:
 
     function setCategory(cat) {
       currentCategory = cat;
-      renderedCount = 20; // reset infinite scroll count
+      renderedCount = 20; 
       renderCategories();
       renderCards();
     }
 
-    document.getElementById("search-box").oninput = (e) => {
-      searchQuery = e.target.value.toLowerCase();
-      renderedCount = 20; // reset pagination count
+    // Search events
+    const searchBox = document.getElementById("search-box");
+    const clearSearchBtn = document.getElementById("clear-search");
+
+    searchBox.oninput = (e) => {
+      searchQuery = e.target.value.toLowerCase().trim();
+      if (searchQuery.length > 0) {
+        clearSearchBtn.style.display = "block";
+      } else {
+        clearSearchBtn.style.display = "none";
+      }
+      renderedCount = 20; 
       renderCards();
+    };
+
+    clearSearchBtn.onclick = () => {
+      searchBox.value = "";
+      searchQuery = "";
+      clearSearchBtn.style.display = "none";
+      renderCards();
+      searchBox.focus();
     };
 
     function openInstall(skillId) {
@@ -1597,21 +1996,25 @@ To load this skill, copy these lines or run the command:
       const cmd = document.getElementById("modal-code").innerText;
       navigator.clipboard.writeText(cmd);
 
-      // Sleek tooltip confirmation
       const tip = document.querySelector("#code-box-el .code-copy-tip");
       const originalText = tip.innerText;
       tip.innerText = "✓ Copied!";
-      tip.style.background = "rgba(16, 185, 129, 0.15)";
-      tip.style.color = "#10B981";
       setTimeout(() => {
         tip.innerText = originalText;
-        tip.style.background = "rgba(255,255,255,0.05)";
-        tip.style.color = "hsl(var(--muted-foreground))";
       }, 2000);
+      showToast("Copied CLI command to clipboard!");
     }
 
-    // Dynamic window drop files logic
+    function copyInstallCmdInline(skillId) {
+      const cmd = `npx aboalrejal-skills install ${skillId}`;
+      navigator.clipboard.writeText(cmd);
+      showToast("Copied command: " + cmd);
+    }
+
+    // Drag files logic
     window.addEventListener('DOMContentLoaded', () => {
+      initTheme();
+
       const dropzone = document.getElementById("dropzone");
 
       dropzone.addEventListener('dragover', (e) => {
@@ -1633,7 +2036,6 @@ To load this skill, copy these lines or run the command:
         }
       });
 
-      // Wire manually triggered input loader
       document.getElementById("file-loader").addEventListener('change', (e) => {
         if (e.target.files.length > 0) {
           processFile(e.target.files[0]);
