@@ -1330,13 +1330,7 @@
       </div>
     </section>
 
-    <!-- Curated Editorial Bundles Row -->
-    <section style="margin-bottom: 48px;">
-      <h2 class="section-title"><i class="fa-solid fa-cubes"></i> Editorial <span>Bundles</span></h2>
-      <div class="bundles-grid" id="bundles-grid">
-        <!-- Generated Bundles -->
-      </div>
-    </section>
+
 
     <!-- Main Modular Skills Grid -->
     <section>
@@ -1433,12 +1427,7 @@
       "security-and-compliance": "Security & Compliance"
     };
 
-    const bundlesData = [
-      { id: "essentials", name: "Essentials", emoji: "🚀", tagline: "Verification, plans & rules. For everyone." },
-      { id: "web-wizard", name: "Web Wizard", emoji: "🌐", tagline: "React, Tailwind, Shadcn-UI & Frontend Design." },
-      { id: "marketing-growth", name: "Marketing & Growth", emoji: "📈", tagline: "SEO, Copywriting & Experiment Setup." },
-      { id: "agent-architect", name: "Agent Architect", emoji: "🤖", tagline: "MCP development & agent prompting systems." }
-    ];
+
 
     /* ==========================================================================
        Theme Management
@@ -1808,7 +1797,6 @@ To load this skill, copy these lines or run the command:
     function renderApp() {
       renderedCount = 20; 
       renderCategories();
-      renderBundles();
       renderCards();
     }
 
@@ -1845,30 +1833,7 @@ To load this skill, copy these lines or run the command:
       });
     }
 
-    function renderBundles() {
-      const grid = document.getElementById("bundles-grid");
-      grid.innerHTML = "";
-      bundlesData.forEach(bundle => {
-        const card = document.createElement("div");
-        card.className = "bundle-card";
-        card.innerHTML = `
-          <div class="bundle-header">
-            <span class="bundle-emoji">${bundle.emoji}</span>
-            <span class="bundle-name">${bundle.name}</span>
-          </div>
-          <div class="bundle-tagline">${bundle.tagline}</div>
-        `;
-        card.onclick = () => {
-          document.getElementById("search-box").value = bundle.name;
-          searchQuery = bundle.name.toLowerCase();
-          isAIMode = false;
-          document.getElementById("ai-active-banner").style.display = "none";
-          document.getElementById("clear-search").style.display = "block";
-          renderApp();
-        };
-        grid.appendChild(card);
-      });
-    }
+
 
     function renderCards() {
       const grid = document.getElementById("cards-grid");
