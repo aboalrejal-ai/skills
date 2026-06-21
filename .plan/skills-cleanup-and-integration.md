@@ -81,8 +81,8 @@ tags: [refactor, cleanup, integration, web-app]
 ---
 
 ### Phase 3: Ø§Ù„ØªØ­Ø¯ÙŠØ«Ø§Øª Ø§Ù„Ù‡ÙŠÙƒÙ„ÙŠØ© Ù„Ù„Ù…Ø´Ø±ÙˆØ¹ ÙˆÙ…Ù„Ù Ø§Ù„Ù€ README
-- [ ] **TASK-008**: ØªØ¹Ø¯ÙŠÙ„ Ù…Ù„Ù [package.json](file:///c:/Users/Abo%20Alrejal/Desktop/skills/package.json) Ù„Ø¥Ø²Ø§Ù„Ø© Ø³ÙƒØ±ÙŠØ¨Øª Ø§Ù„Ù…Ø²Ø§Ù…Ù†Ø© `bundles:sync` Ùˆ Ø­Ø°Ù Ù…Ù„Ù Ø§Ù„Ø³ÙƒØ±ÙŠØ¨Øª Ø§Ù„Ù…Ø±ÙÙ‚ `tools/scripts/sync_editorial_bundles.py`.
-- [ ] **TASK-009**: ØªØ­Ø¯ÙŠØ« Ù…Ù„Ù Ø§Ù„Ù€ [README.md](file:///c:/Users/Abo%20Alrejal/Desktop/skills/README.md) Ø§Ù„Ø±Ø¦ÙŠØ³ÙŠ Ù„ÙŠØ´Ø±Ø­ ÙƒÙŠÙÙŠØ© Ø§Ø³ØªØ®Ø¯Ø§Ù… Ø§Ù„Ù…Ù‡Ø§Ø±Ø§Øª ÙˆØªØ«Ø¨ÙŠØªÙ‡Ø§ Ù…Ù† Ø®Ù„Ø§Ù„ Ù…Ø³ØªÙˆØ¯Ø¹Ùƒ Ø§Ù„Ø£ØµÙ„ÙŠ Ù…Ø¨Ø§Ø´Ø±Ø© Ø¨Ø§Ù„Ø£Ù…Ø± Ø§Ù„Ø¬Ø¯ÙŠØ¯: `npx skills add aboalrejal-ai/skills`.
+- [x] **TASK-008**: ØªØ¹Ø¯ÙŠÙ„ Ù…Ù„Ù [package.json](file:///c:/Users/Abo%20Alrejal/Desktop/skills/package.json) Ù„Ø¥Ø²Ø§Ù„Ø© Ø³ÙƒØ±ÙŠØ¨Øª Ø§Ù„Ù…Ø²Ø§Ù…Ù†Ø© `bundles:sync` Ùˆ Ø­Ø°Ù Ù…Ù„Ù Ø§Ù„Ø³ÙƒØ±ÙŠØ¨Øª Ø§Ù„Ù…Ø±ÙÙ‚ `tools/scripts/sync_editorial_bundles.py`.
+- [x] **TASK-009**: ØªØ­Ø¯ÙŠØ« Ù…Ù„Ù Ø§Ù„Ù€ [README.md](file:///c:/Users/Abo%20Alrejal/Desktop/skills/README.md) Ø§Ù„Ø±Ø¦ÙŠØ³ÙŠ Ù„ÙŠØ´Ø±Ø­ ÙƒÙŠÙÙŠØ© Ø§Ø³ØªØ®Ø¯Ø§Ù… Ø§Ù„Ù…Ù‡Ø§Ø±Ø§Øª ÙˆØªØ«Ø¨ÙŠØªÙ‡Ø§ Ù…Ù† Ø®Ù„Ø§Ù„ Ù…Ø³ØªÙˆØ¯Ø¹Ùƒ Ø§Ù„Ø£ØµÙ„ÙŠ Ù…Ø¨Ø§Ø´Ø±Ø© Ø¨Ø§Ù„Ø£Ù…Ø± Ø§Ù„Ø¬Ø¯ÙŠØ¯: `npx skills add aboalrejal-ai/skills`.
 
 ### Checkpoint: Complete
 * ØªØ´ØºÙŠÙ„ Ø§Ø®ØªØ¨Ø§Ø± Ø§Ù„Ø¨Ù†Ø§Ø¡ Ø¨Ø§Ù„ÙƒØ§Ù…Ù„ Ù„Ù„ØªØ·Ø¨ÙŠÙ‚ Ø¹Ø¨Ø± `npm run app:build`.

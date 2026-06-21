@@ -43,26 +43,38 @@ By loading these specialized configurations into your agentic IDE or terminal co
 
 ## ⚡ Get Started & Installation
 
-Loading these modular skills into your favorite AI developer environment is extremely straightforward.
+You can install these curated agent skills directly using the official Vercel **Skills CLI**:
 
-### Method A: Direct Clone (Recommended for Local Customization)
+### Method A: Using the Skills CLI (Recommended)
+
+To browse and install skills interactively:
+```bash
+npx skills add aboalrejal-ai/skills
+```
+
+To install a specific skill (for example, `clean-code-guard`):
+```bash
+npx skills add aboalrejal-ai/skills --skill clean-code-guard
+```
+
+To list all available skills in this package without installing:
+```bash
+npx skills add aboalrejal-ai/skills --list
+```
+
+### Method B: Manual Copy
+
 1. **Clone the Repository:**
    ```bash
    git clone https://github.com/aboalrejal-ai/skills.git
    cd skills
    ```
 2. **Copy your desired skill folder to your agent directory:**
-   For example, loading `seo-content-writer` into **Claude Code**:
+   For example, loading `clean-code-guard` into **Claude Code**:
    ```bash
-   mkdir -p ~/.claude/skills/seo-content-writer
-   cp -r skills/marketing-and-seo/seo-content-writer/* ~/.claude/skills/seo-content-writer/
+   mkdir -p ~/.claude/skills/clean-code-guard
+   cp -r skills/clean-code-guard/* ~/.claude/skills/clean-code-guard/
    ```
-
-### Method B: Spec-Driven Command Line Setup
-Run our validator tool to ensure all rules are properly loaded into your environment:
-```bash
-bash tools/validate-skill.sh skills/marketing-and-seo/seo-content-writer/SKILL.md
-```
 
 ---
 

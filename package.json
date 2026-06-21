@@ -7,12 +7,11 @@
     "validate": "node tools/scripts/run-python.js tools/scripts/plugin_compatibility.py",
     "index": "node tools/scripts/run-python.js tools/scripts/generate_index.py",
     "readme": "node tools/scripts/run-python.js tools/scripts/update_readme.py",
-    "bundles:sync": "node tools/scripts/run-python.js tools/scripts/sync_editorial_bundles.py",
     "app:setup": "node tools/scripts/setup_web.js",
     "app:dev": "npm run app:setup && cd apps/web-app && npm run dev",
     "app:build": "npm run app:setup && cd apps/web-app && npm run build",
     "deploy": "node tools/scripts/deploy.js",
-    "chain": "npm run validate && npm run index && npm run bundles:sync && npm run readme",
+    "chain": "npm run validate && npm run index && npm run readme",
     "sync:all": "npm run chain"
   },
   "dependencies": {
