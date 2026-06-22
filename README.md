@@ -1,4 +1,4 @@
-# 🌱 Abo Alrejal Agentic Skills Hub
+# Abo Alrejal Agentic Skills Hub
 
 > *Curated, high-performance modular skills and prompt guidelines for AI coding agents.*
 
