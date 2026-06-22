@@ -1372,25 +1372,15 @@
 
   <!-- Copy Command Modal Dialog -->
   <div class="modal" id="install-modal" onclick="closeModal(event)">
-    <div class="modal-content" onclick="event.stopPropagation()">
+    <div class="modal-content" style="max-width: 800px; max-height: 85vh; overflow-y: auto;" onclick="event.stopPropagation()">
       <button class="modal-close" onclick="closeModal()">×</button>
-      <div class="modal-title" id="modal-title">Install Skill</div>
-      <p style="color: var(--text-secondary); line-height: 1.6; font-size: 0.95rem;" id="modal-desc">
-        To install this skill prompt directly into your local environment, copy and execute this terminal command:
-      </p>
-      <div class="code-box" id="code-box-el" onclick="copyInstallCmd()">
-        <span id="modal-code">npx aboalrejal-skills install seo-agent</span>
+      <div class="modal-title" id="modal-title">Skill Details</div>
+      <div class="code-box" id="code-box-el" onclick="copyInstallCmd()" style="margin-bottom: 1.5rem;">
+        <span id="modal-code">npx skills add x</span>
         <span class="code-copy-tip">Click to Copy</span>
       </div>
-      <div
-        style="background: var(--bg-primary); padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border-color);">
-        <div style="font-weight: 700; margin-bottom: 0.5rem; color: var(--text-primary); font-size: 0.88rem;">📋 Global Support:
-        </div>
-        <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.65;">
-          • <strong>Claude Code</strong>: installs to <code>~/.claude/skills/</code><br>
-          • <strong>Antigravity</strong>: appends to <code>~/.gemini/config/plugins/</code><br>
-          • <strong>Cursor</strong>: generates custom rule in <code>.cursor/rules/</code>
-        </p>
+      <div id="modal-markdown-body" style="background: var(--bg-primary); padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border-color); color: var(--text-primary); font-size: 0.9rem; line-height: 1.6; overflow-x: hidden;">
+        Loading details...
       </div>
     </div>
   </div>
@@ -1400,8 +1390,10 @@
     <i class="fa-solid fa-check-circle"></i> <span id="toast-message">Copied to clipboard!</span>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script>
     let skillsData = [];
+    let localSkillsData = []; 
     let currentCategory = "all";
     let searchQuery = "";
 
@@ -1426,8 +1418,6 @@
       "science-and-bioinformatics": "Science & Bioinformatics",
       "security-and-compliance": "Security & Compliance"
     };
-
-
 
     /* ==========================================================================
        Theme Management
@@ -1477,7 +1467,6 @@
       }, 2500);
     }
 
-    // Retrieve cached local skills if any
     function getCachedSkills() {
       try {
         const cached = localStorage.getItem("aburajal_skills_cache");
@@ -1505,6 +1494,7 @@
           { id: "frontend-development/frontend-design", name: "Frontend Design Specialist", category: "frontend-development", description: "Create distinctive, premium frontend interfaces with modern best practices.", risk: "safe" },
           { id: "marketing-and-seo/seo-agent", name: "GEO & SEO Auditor", category: "marketing-and-seo", description: "Automates search and generative engine optimization checks.", risk: "safe" }
         ];
+        localSkillsData = [...skillsData];
         isAIMode = false;
         updateStatus(false, "Cache cleared");
         showDropzone(true);
@@ -1520,17 +1510,17 @@
       const clearBtn = document.getElementById("clear-cache-btn");
 
       if (loaded) {
-        dot.className = "status-dot"; // active green by default
-        clearBtn.style.display = "inline-flex";
+        dot.className = "status-dot"; 
+        if (clearBtn) clearBtn.style.display = "inline-flex";
       } else {
         dot.className = "status-dot offline";
-        clearBtn.style.display = "none";
+        if (clearBtn) clearBtn.style.display = "none";
       }
     }
 
     function showDropzone(show) {
       const dz = document.getElementById("dropzone");
-      dz.style.display = show ? "flex" : "none";
+      if (dz) dz.style.display = show ? "flex" : "none";
     }
 
     function dismissDropzone() {
@@ -1538,60 +1528,85 @@
     }
 
     async function loadSkills() {
-      // Load saved API key from localStorage
       const savedKey = localStorage.getItem("aburajal_gemini_api_key");
       if (savedKey) {
-        document.getElementById("ai-api-key").value = savedKey;
+        const keyInput = document.getElementById("ai-api-key");
+        if (keyInput) keyInput.value = savedKey;
       }
 
-      // 1. Try local storage cache first
+      let loadedLocal = false;
       const cached = getCachedSkills();
       if (cached && cached.length > 2) {
         skillsData = cached;
+        localSkillsData = cached;
         showDropzone(false);
         updateStatus(true);
         renderApp();
-        return;
-      }
+        loadedLocal = true;
+      } else {
+        const urlsToTry = [
+          'skills_index.json',
+          'skills.json',
+          '/skills_index.json',
+          'public/skills.json',
+          '/skills.json'
+        ];
 
-      // 2. Try fetching from relative endpoints
-      const urlsToTry = [
-        'skills.json',
-        'public/skills.json',
-        '../../skills_index.json',
-        '/skills.json'
-      ];
-
-      for (const url of urlsToTry) {
-        try {
-          const response = await fetch(url);
-          if (response.ok) {
-            skillsData = await response.json();
-            if (skillsData && skillsData.length > 2) {
-              setCachedSkills(skillsData);
-              showDropzone(false);
-              updateStatus(true);
-              renderApp();
-              return;
+        for (const url of urlsToTry) {
+          try {
+            const response = await fetch(url);
+            if (response.ok) {
+              const data = await response.json();
+              if (data && data.length > 2) {
+                skillsData = data;
+                localSkillsData = data;
+                setCachedSkills(data);
+                showDropzone(false);
+                updateStatus(true);
+                renderApp();
+                loadedLocal = true;
+                break;
+              }
             }
+          } catch (err) {
           }
-        } catch (err) {
-          // quiet fail and try next relative path
         }
       }
 
-      // 3. Fallback mock setup if offline & uncached
-      console.warn("Failed to fetch skills.json locally. Presenting upload interface.");
-      skillsData = [
-        { id: "frontend-development/frontend-design", name: "Frontend Design Specialist", category: "frontend-development", description: "Create distinctive, premium frontend interfaces with modern best practices.", risk: "safe" },
-        { id: "marketing-and-seo/seo-agent", name: "GEO & SEO Auditor", category: "marketing-and-seo", description: "Automates search and generative engine optimization checks.", risk: "safe" }
-      ];
-      showDropzone(true);
-      updateStatus(false);
-      renderApp();
+      if (!loadedLocal) {
+        skillsData = [
+          { id: "frontend-development/frontend-design", name: "Frontend Design Specialist", category: "frontend-development", description: "Create distinctive, premium frontend interfaces with modern best practices.", risk: "safe" },
+          { id: "marketing-and-seo/seo-agent", name: "GEO & SEO Auditor", category: "marketing-and-seo", description: "Automates search and generative engine optimization checks.", risk: "safe" }
+        ];
+        localSkillsData = [...skillsData];
+        showDropzone(true);
+        updateStatus(false);
+        renderApp();
+      }
+
+      try {
+        const statsRes = await fetch('/api/stats');
+        if (statsRes.ok) {
+          const statsData = await statsRes.json();
+          const globalCount = statsData.total || 0;
+          
+          const heroDesc = document.querySelector('.hero-desc');
+          if (heroDesc) {
+             heroDesc.innerHTML = `Explore and fetch <strong>${globalCount.toLocaleString()}+ skills</strong> globally indexed by <strong>skills.sh</strong> for Claude, Cursor, Antigravity, and Gemini. Keep your prompts offline, highly structured, and optimized.`;
+          }
+
+          const searchBox = document.getElementById("search-box");
+          if (searchBox) {
+            searchBox.placeholder = `Search ${globalCount.toLocaleString()}+ global skills (e.g. seo, react, compose)...`;
+          }
+
+          updateStatus(true);
+        }
+      } catch (err) {
+        console.warn("Failed to fetch global stats from API:", err);
+      }
     }
 
-    // Handle files input selection
     function processFile(file) {
       const reader = new FileReader();
       reader.onload = function (e) {
@@ -1609,6 +1624,7 @@
 
           if (items.length > 0) {
             skillsData = items;
+            localSkillsData = items;
             setCachedSkills(skillsData);
             showDropzone(false);
             updateStatus(true);
@@ -1622,7 +1638,6 @@
       reader.readAsText(file);
     }
 
-    // AI Semantic Search Panel toggle
     function toggleAISearchPanel() {
       const consoleEl = document.getElementById("ai-console");
       if (consoleEl.style.display === "flex") {
@@ -1637,7 +1652,7 @@
       const key = document.getElementById("ai-api-key").value.trim();
       if (key) {
         localStorage.setItem("aburajal_gemini_api_key", key);
-        showToast("Gemini API Key saved inside your browser.");
+        showToast("Gemini API Key saved.");
       } else {
         localStorage.removeItem("aburajal_gemini_api_key");
         showToast("API Key cleared.");
@@ -1736,7 +1751,7 @@ Strictly output the JSON array only, without any Markdown backticks (\`\`\`json)
 
     async function downloadSkill(skillId, skillName) {
       try {
-        const url = `../../skills/${skillId}/SKILL.md`;
+        const url = `skills/${skillId}/SKILL.md`;
         const response = await fetch(url);
         if (!response.ok) {
           throw new Error("File not found on relative host");
@@ -1763,7 +1778,7 @@ ${skill.description || "No description provided."}
 
 ## Installation Guide:
 To load this skill, copy these lines or run the command:
-\`npx aboalrejal-skills install ${skillId}\`
+\`npx skills add ${skillId}\`
 `;
         triggerFileDownload(fallbackMD, `${skillName}.md`);
       }
@@ -1785,7 +1800,7 @@ To load this skill, copy these lines or run the command:
     function getFilteredSkills() {
       const source = isAIMode ? aiFilteredSkills : skillsData;
       return source.filter(skill => {
-        const matchesCategory = (currentCategory === "all" || skill.category === currentCategory);
+        const matchesCategory = (currentCategory === "all" || skill.category === currentCategory || (!skill.category && currentCategory === 'global-catalog'));
         const matchesSearch = !searchQuery ||
           skill.name.toLowerCase().includes(searchQuery) ||
           skill.description.toLowerCase().includes(searchQuery) ||
@@ -1804,28 +1819,32 @@ To load this skill, copy these lines or run the command:
       const listEl = document.getElementById("category-list");
       const source = isAIMode ? aiFilteredSkills : skillsData;
 
-      listEl.innerHTML = `
-        <button class="pill-btn ${currentCategory === 'all' ? 'active' : ''}" onclick="setCategory('all')">
-          All <span class="category-chip-count">${source.length}</span>
-        </button>
-      `;
+      listEl.innerHTML = Merged_all_html_pills(source.length);
 
       const counts = {};
       source.forEach(skill => {
-        counts[skill.category] = (counts[skill.category] || 0) + 1;
+        if (skill.category) {
+          counts[skill.category] = (counts[skill.category] || 0) + 1;
+        } else {
+          counts['global-catalog'] = (counts['global-catalog'] || 0) + 1;
+        }
       });
 
-      // Update categories count pill in hero
       document.getElementById("stat-cat-count").textContent = Object.keys(counts).length;
 
-      Object.keys(categoryLabels).forEach(key => {
+      const mergedLabels = {
+        ...categoryLabels,
+        "global-catalog": "Global Catalog"
+      };
+
+      Object.keys(mergedLabels).forEach(key => {
         if (key === "all") return;
         const count = counts[key] || 0;
         if (count > 0) {
           const btn = document.createElement("button");
           btn.className = `pill-btn ${currentCategory === key ? 'active' : ''}`;
           btn.innerHTML = `
-            ${categoryLabels[key]} <span class="category-chip-count">${count}</span>
+            ${mergedLabels[key]} <span class="category-chip-count">${count}</span>
           `;
           btn.onclick = () => setCategory(key);
           listEl.appendChild(btn);
@@ -1833,17 +1852,27 @@ To load this skill, copy these lines or run the command:
       });
     }
 
-
+    function Merged_all_html_pills(len) {
+      return `
+        <button class="pill-btn ${currentCategory === 'all' ? 'active' : ''}" onclick="setCategory('all')">
+          All <span class="category-chip-count">${len}</span>
+        </button>
+      `;
+    }
 
     function renderCards() {
       const grid = document.getElementById("cards-grid");
       const filtered = getFilteredSkills();
 
-      const activeCatLabel = categoryLabels[currentCategory] || currentCategory;
+      const mergedLabels = {
+        ...categoryLabels,
+        "global-catalog": "Global Catalog"
+      };
+
+      const activeCatLabel = mergedLabels[currentCategory] || currentCategory;
       let aiIndicatorText = isAIMode ? ` ✨ AI Match` : "";
       document.getElementById("catalog-title").innerHTML = `<i class="fa-solid fa-dna"></i> Browse <span>${activeCatLabel}</span> (${filtered.length})${aiIndicatorText}`;
 
-      // Update main count in hero
       document.getElementById("stat-count").textContent = filtered.length;
 
       const batch = filtered.slice(0, renderedCount);
@@ -1861,31 +1890,35 @@ To load this skill, copy these lines or run the command:
 
       let cardsHTML = "";
       batch.forEach(skill => {
-        const riskClass = skill.risk === "safe" ? "risk-safe" : (skill.risk === "high" ? "risk-high" : "risk-unknown");
+        const risk = skill.risk || "unknown";
+        const riskClass = risk === "safe" ? "risk-safe" : (risk === "high" ? "risk-high" : "risk-unknown");
         const skillName = skill.id.split("/").pop();
+        const skillCategory = skill.category || "global-catalog";
+        const displayCategory = mergedLabels[skillCategory] || skillCategory;
+        const displayDesc = skill.description || "Modular agentic skill prompt.";
 
         cardsHTML += `
           <div class="skill-card">
             <div class="skill-card-glow"></div>
-            <div class="skill-category">${categoryLabels[skill.category] || skill.category}</div>
+            <div class="skill-category">${displayCategory}</div>
             <div class="skill-header">
               <div class="skill-title">${skill.name}</div>
-              <span class="risk-badge ${riskClass}">${skill.risk}</span>
+              <span class="risk-badge ${riskClass}">${risk}</span>
             </div>
-            <div class="skill-desc">${skill.description}</div>
+            <div class="skill-desc">${displayDesc}</div>
             <div class="skill-meta">
               <span class="meta-tag"><i class="fa-solid fa-hashtag"></i> /${skillName}</span>
             </div>
             <div class="card-footer">
               <span class="skill-id-badge" title="${skill.id}">${skill.id}</span>
-              <button class="btn btn-card-action" onclick="openInstall('${skillName}')">
+              <button class="btn btn-card-action" onclick="openInstall('${skill.id}')">
                 <span>Get Skill</span> <i class="fa-solid fa-arrow-right"></i>
               </button>
               <div class="card-action-row">
                 <button class="btn btn-outline btn-sm btn-card-secondary" onclick="downloadSkill('${skill.id}', '${skillName}')">
                   <i class="fa-solid fa-download"></i> Download
                 </button>
-                <button class="btn btn-outline btn-sm btn-card-secondary" onclick="copyInstallCmdInline('${skillName}')">
+                <button class="btn btn-outline btn-sm btn-card-secondary" onclick="copyInstallCmdInline('${skill.id}')">
                   <i class="fa-solid fa-copy"></i> Copy CLI
                 </button>
               </div>
@@ -1896,7 +1929,6 @@ To load this skill, copy these lines or run the command:
       grid.innerHTML = cardsHTML;
     }
 
-    // Scroll pagination listener
     window.onscroll = () => {
       if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 500) {
         const filtered = getFilteredSkills();
@@ -1914,9 +1946,9 @@ To load this skill, copy these lines or run the command:
       renderCards();
     }
 
-    // Search events
     const searchBox = document.getElementById("search-box");
     const clearSearchBtn = document.getElementById("clear-search");
+    let searchTimeout;
 
     searchBox.oninput = (e) => {
       searchQuery = e.target.value.toLowerCase().trim();
@@ -1925,31 +1957,86 @@ To load this skill, copy these lines or run the command:
       } else {
         clearSearchBtn.style.display = "none";
       }
-      renderedCount = 20; 
-      renderCards();
+      
+      clearTimeout(searchTimeout);
+      searchTimeout = setTimeout(async () => {
+        if (searchQuery) {
+          try {
+            const res = await fetch(`/api/search?q=${encodeURIComponent(searchQuery)}`);
+            if (res.ok) {
+              const data = await res.json();
+              skillsData = data.skills || [];
+              renderedCount = 20;
+              renderCards();
+            }
+          } catch(e) {
+            console.error("Global search failed, falling back to local search.", e);
+            skillsData = localSkillsData;
+            renderedCount = 20;
+            renderCards();
+          }
+        } else {
+          skillsData = localSkillsData;
+          renderedCount = 20;
+          renderCards();
+        }
+      }, 400);
     };
 
     clearSearchBtn.onclick = () => {
       searchBox.value = "";
       searchQuery = "";
       clearSearchBtn.style.display = "none";
-      renderCards();
+      skillsData = localSkillsData;
+      renderApp();
       searchBox.focus();
     };
 
-    function openInstall(skillId) {
+    async function openInstall(skillId) {
       const modal = document.getElementById("install-modal");
-      document.getElementById("modal-title").innerText = `Install ${skillId}`;
-      document.getElementById("modal-code").innerText = `npx aboalrejal-skills install ${skillId}`;
-      document.getElementById("modal-desc").innerText = "To install this modular prompt directly into your developer workspace, copy and execute this terminal command:";
+      document.getElementById("modal-title").innerText = `Skill Details: ${skillId}`;
+      document.getElementById("modal-code").innerText = `npx skills add ${skillId}`;
+      const mdBody = document.getElementById("modal-markdown-body");
+      if (mdBody) {
+        mdBody.innerHTML = "Loading details from skills.sh...";
+      }
       modal.style.display = "flex";
+
+      try {
+        const parts = skillId.split('/');
+        const source = parts[0] || '';
+        const skillName = parts[1] || skillId;
+        const res = await fetch(`/api/skill-details?source=${encodeURIComponent(source)}&skill=${encodeURIComponent(skillName)}`);
+        if (res.ok) {
+          const data = await res.json();
+          if (data.skill && data.skill.readme) {
+            mdBody.innerHTML = marked.parse(data.skill.readme);
+          } else {
+            mdBody.innerHTML = "No README provided for this skill.";
+          }
+        } else {
+          mdBody.innerHTML = "No additional details found for this skill.";
+        }
+      } catch (e) {
+        mdBody.innerHTML = "Failed to load skill details from proxy.";
+      }
     }
 
     function openInstructions() {
       const modal = document.getElementById("install-modal");
       document.getElementById("modal-title").innerText = `🔧 CLI Setup Guide`;
       document.getElementById("modal-code").innerText = `npm install -g aboalrejal-skills`;
-      document.getElementById("modal-desc").innerText = "Install our unified command-line utility globally to search, fetch, and configure skills offline:";
+      const mdBody = document.getElementById("modal-markdown-body");
+      if (mdBody) {
+        mdBody.innerHTML = `
+          <div style="font-weight: 700; margin-bottom: 0.5rem; color: var(--text-primary); font-size: 0.88rem;">📋 Global Support:</div>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.65;">
+            • <strong>Claude Code</strong>: installs to <code>~/.claude/skills/</code><br>
+            • <strong>Antigravity</strong>: appends to <code>~/.gemini/config/plugins/</code><br>
+            • <strong>Cursor</strong>: generates custom rule in <code>.cursor/rules/</code>
+          </p>
+        `;
+      }
       modal.style.display = "flex";
     }
 
@@ -1971,41 +2058,45 @@ To load this skill, copy these lines or run the command:
     }
 
     function copyInstallCmdInline(skillId) {
-      const cmd = `npx aboalrejal-skills install ${skillId}`;
+      const cmd = `npx skills add ${skillId}`;
       navigator.clipboard.writeText(cmd);
       showToast("Copied command: " + cmd);
     }
 
-    // Drag files logic
     window.addEventListener('DOMContentLoaded', () => {
       initTheme();
 
       const dropzone = document.getElementById("dropzone");
 
-      dropzone.addEventListener('dragover', (e) => {
-        e.preventDefault();
-        dropzone.classList.add('dragover');
-      });
+      if (dropzone) {
+        dropzone.addEventListener('dragover', (e) => {
+          e.preventDefault();
+          dropzone.classList.add('dragover');
+        });
 
-      dropzone.addEventListener('dragleave', (e) => {
-        e.preventDefault();
-        dropzone.classList.remove('dragover');
-      });
+        dropzone.addEventListener('dragleave', (e) => {
+          e.preventDefault();
+          dropzone.classList.remove('dragover');
+        });
 
-      dropzone.addEventListener('drop', (e) => {
-        e.preventDefault();
-        dropzone.classList.remove('dragover');
-        const files = e.dataTransfer.files;
-        if (files.length > 0) {
-          processFile(files[0]);
-        }
-      });
+        dropzone.addEventListener('drop', (e) => {
+          e.preventDefault();
+          dropzone.classList.remove('dragover');
+          const files = e.dataTransfer.files;
+          if (files.length > 0) {
+            processFile(files[0]);
+          }
+        });
+      }
 
-      document.getElementById("file-loader").addEventListener('change', (e) => {
-        if (e.target.files.length > 0) {
-          processFile(e.target.files[0]);
-        }
-      });
+      const fileLoader = document.getElementById("file-loader");
+      if (fileLoader) {
+        fileLoader.addEventListener('change', (e) => {
+          if (e.target.files.length > 0) {
+            processFile(e.target.files[0]);
+          }
+        });
+      }
     });
 
     window.onload = loadSkills;
