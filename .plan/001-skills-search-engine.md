@@ -61,9 +61,9 @@ Files that MUST NOT be modified during this implementation:
 
 ### Phase 3: Frontend Search & UI
 - **GOAL**: Update the web app to consume the backend APIs and display the Search Engine UI.
-- [ ] TASK-005 [US1]: Update the Home page to display the live global skill counter
-- [ ] TASK-006 [P] [US1]: Implement the dynamic search bar and result list
-- [ ] TASK-007 [US1]: Implement the Skill Details modal with Markdown rendering and copy command
+- [x] TASK-005 [US1]: Update the Home page to display the live global skill counter
+- [x] TASK-006 [P] [US1]: Implement the dynamic search bar and result list
+- [x] TASK-007 [US1]: Implement the Skill Details modal with Markdown rendering and copy command
 - Checkpoint: Search flow works end-to-end. UI is polished and responsive.
 
 ## 5. Detailed Task Definitions

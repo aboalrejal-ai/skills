@@ -19,6 +19,8 @@
 
   <!-- FontAwesome for Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Marked.js for Markdown Rendering -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
   <!-- Premium Style Theme matching design-md -->
   <style>
@@ -1372,25 +1374,15 @@
 
   <!-- Copy Command Modal Dialog -->
   <div class="modal" id="install-modal" onclick="closeModal(event)">
-    <div class="modal-content" onclick="event.stopPropagation()">
+    <div class="modal-content" style="max-width: 800px; max-height: 85vh; overflow-y: auto;" onclick="event.stopPropagation()">
       <button class="modal-close" onclick="closeModal()">×</button>
-      <div class="modal-title" id="modal-title">Install Skill</div>
-      <p style="color: var(--text-secondary); line-height: 1.6; font-size: 0.95rem;" id="modal-desc">
-        To install this skill prompt directly into your local environment, copy and execute this terminal command:
-      </p>
-      <div class="code-box" id="code-box-el" onclick="copyInstallCmd()">
-        <span id="modal-code">npx aboalrejal-skills install seo-agent</span>
+      <div class="modal-title" id="modal-title">Skill Details</div>
+      <div class="code-box" id="code-box-el" onclick="copyInstallCmd()" style="margin-bottom: 1.5rem;">
+        <span id="modal-code">npx skills add x</span>
         <span class="code-copy-tip">Click to Copy</span>
       </div>
-      <div
-        style="background: var(--bg-primary); padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border-color);">
-        <div style="font-weight: 700; margin-bottom: 0.5rem; color: var(--text-primary); font-size: 0.88rem;">📋 Global Support:
-        </div>
-        <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.65;">
-          • <strong>Claude Code</strong>: installs to <code>~/.claude/skills/</code><br>
-          • <strong>Antigravity</strong>: appends to <code>~/.gemini/config/plugins/</code><br>
-          • <strong>Cursor</strong>: generates custom rule in <code>.cursor/rules/</code>
-        </p>
+      <div id="modal-markdown-body" style="background: var(--bg-primary); padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border-color); color: var(--text-primary); font-size: 0.9rem; line-height: 1.6; overflow-x: hidden;">
+        Loading details...
       </div>
     </div>
   </div>
@@ -1542,6 +1534,29 @@
       const savedKey = localStorage.getItem("aburajal_gemini_api_key");
       if (savedKey) {
         document.getElementById("ai-api-key").value = savedKey;
+      }
+
+      try {
+        const statsRes = await fetch('/api/stats');
+        if (statsRes.ok) {
+          const statsData = await statsRes.json();
+          const globalCount = statsData.total || 0;
+          
+          const heroDesc = document.querySelector('.hero-desc');
+          if (heroDesc) {
+             heroDesc.innerHTML = `Explore and fetch <strong>${globalCount.toLocaleString()}+ skills</strong> globally indexed by <strong>skills.sh</strong> for Claude, Cursor, Antigravity, and Gemini.`;
+          }
+          
+          if (statsData.skills && statsData.skills.length > 0) {
+            skillsData = statsData.skills;
+            showDropzone(false);
+            updateStatus(true);
+            renderApp();
+            return;
+          }
+        }
+      } catch (err) {
+        console.warn("Failed to fetch from Vercel APIs. Falling back to local index.", err);
       }
 
       // 1. Try local storage cache first
@@ -1878,14 +1893,14 @@ To load this skill, copy these lines or run the command:
             </div>
             <div class="card-footer">
               <span class="skill-id-badge" title="${skill.id}">${skill.id}</span>
-              <button class="btn btn-card-action" onclick="openInstall('${skillName}')">
+              <button class="btn btn-card-action" onclick="openInstall('${skill.id}')">
                 <span>Get Skill</span> <i class="fa-solid fa-arrow-right"></i>
               </button>
               <div class="card-action-row">
                 <button class="btn btn-outline btn-sm btn-card-secondary" onclick="downloadSkill('${skill.id}', '${skillName}')">
                   <i class="fa-solid fa-download"></i> Download
                 </button>
-                <button class="btn btn-outline btn-sm btn-card-secondary" onclick="copyInstallCmdInline('${skillName}')">
+                <button class="btn btn-outline btn-sm btn-card-secondary" onclick="copyInstallCmdInline('${skill.id}')">
                   <i class="fa-solid fa-copy"></i> Copy CLI
                 </button>
               </div>
@@ -1917,6 +1932,7 @@ To load this skill, copy these lines or run the command:
     // Search events
     const searchBox = document.getElementById("search-box");
     const clearSearchBtn = document.getElementById("clear-search");
+    let searchTimeout;
 
     searchBox.oninput = (e) => {
       searchQuery = e.target.value.toLowerCase().trim();
@@ -1925,8 +1941,25 @@ To load this skill, copy these lines or run the command:
       } else {
         clearSearchBtn.style.display = "none";
       }
-      renderedCount = 20; 
-      renderCards();
+      
+      clearTimeout(searchTimeout);
+      searchTimeout = setTimeout(async () => {
+        if (searchQuery) {
+          try {
+            const res = await fetch(`/api/search?q=${encodeURIComponent(searchQuery)}`);
+            if (res.ok) {
+              const data = await res.json();
+              skillsData = data.skills || [];
+              renderedCount = 20;
+              renderCards();
+            }
+          } catch(e) {
+            console.error(e);
+          }
+        } else {
+          loadSkills();
+        }
+      }, 400);
     };
 
     clearSearchBtn.onclick = () => {
@@ -1937,12 +1970,29 @@ To load this skill, copy these lines or run the command:
       searchBox.focus();
     };
 
-    function openInstall(skillId) {
+    async function openInstall(skillId) {
       const modal = document.getElementById("install-modal");
-      document.getElementById("modal-title").innerText = `Install ${skillId}`;
-      document.getElementById("modal-code").innerText = `npx aboalrejal-skills install ${skillId}`;
-      document.getElementById("modal-desc").innerText = "To install this modular prompt directly into your developer workspace, copy and execute this terminal command:";
+      document.getElementById("modal-title").innerText = `Skill Details: ${skillId}`;
+      document.getElementById("modal-code").innerText = `npx skills add ${skillId}`;
+      const mdBody = document.getElementById("modal-markdown-body");
+      mdBody.innerHTML = "Loading details from skills.sh...";
       modal.style.display = "flex";
+
+      try {
+        const parts = skillId.split('/');
+        const source = parts[0] || '';
+        const skillName = parts[1] || skillId;
+        const res = await fetch(`/api/skill-details?source=${encodeURIComponent(source)}&skill=${encodeURIComponent(skillName)}`);
+        const data = await res.json();
+        
+        if (data.skill && data.skill.readme) {
+          mdBody.innerHTML = marked.parse(data.skill.readme);
+        } else {
+          mdBody.innerHTML = "No README provided for this skill.";
+        }
+      } catch (e) {
+        mdBody.innerHTML = "Failed to load skill details.";
+      }
     }
 
     function openInstructions() {
@@ -1971,7 +2021,7 @@ To load this skill, copy these lines or run the command:
     }
 
     function copyInstallCmdInline(skillId) {
-      const cmd = `npx aboalrejal-skills install ${skillId}`;
+      const cmd = `npx skills add ${skillId}`;
       navigator.clipboard.writeText(cmd);
       showToast("Copied command: " + cmd);
     }
