@@ -1,6 +1,14 @@
 const { getVercelOidcToken } = require('@vercel/oidc');
 
 module.exports = async (req, res) => {
+  // Allow the browser front-end to call this proxy from any origin
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  if (req.method === 'OPTIONS') {
+    return res.status(204).end();
+  }
+
   const { source, skill } = req.query;
 
   if (!source || !skill) {

@@ -7,7 +7,7 @@
   <title>Abo Alrejal Skills | High-Performance Agentic Skills Catalog</title>
   <!-- SEO Meta Tags -->
   <meta name="description"
-    content="Explore and load 3,045+ premium modular skills for Claude Code, Cursor, Antigravity, and Gemini CLI. Fast, offline-first, and fully customizable.">
+    content="Explore and load 3,050+ premium modular skills, with access to 830,980+ global skills via skills.sh, for Claude Code, Cursor, Antigravity, and Gemini CLI. Fast, offline-first, and fully customizable.">
   <meta name="theme-color" content="#141413">
 
   <!-- Google Fonts -->
@@ -367,7 +367,7 @@
 
     .search-input {
       width: 100%;
-      padding: 16px 240px 16px 52px;
+      padding: 16px 330px 16px 52px;
       font-family: var(--font-headings);
       font-size: 1rem;
       background-color: var(--bg-secondary);
@@ -386,7 +386,7 @@
 
     .search-source-select {
       position: absolute;
-      right: 88px;
+      right: 52px;
       background-color: var(--bg-tertiary);
       border: 1px solid var(--border-color);
       color: var(--text-primary);
@@ -407,19 +407,27 @@
 
     .ai-search-toggle-btn {
       position: absolute;
-      right: 48px;
+      right: 186px;
       background: var(--bg-tertiary);
       border: 1px solid var(--border-color);
       color: var(--text-primary);
-      width: 32px;
       height: 32px;
-      border-radius: 50%;
+      padding: 0 14px;
+      border-radius: 20px;
+      gap: 6px;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.9rem;
+      font-family: var(--font-headings);
+      font-size: 0.82rem;
+      font-weight: 600;
+      white-space: nowrap;
       transition: all var(--transition-fast);
+    }
+
+    .ai-search-toggle-btn i {
+      font-size: 0.85rem;
     }
 
     .ai-search-toggle-btn:hover {
@@ -1262,7 +1270,7 @@
       </div>
       <h2>Modular Agentic Skills <br><span class="highlight">Tailored for AI Coding</span></h2>
       <p class="hero-desc">
-        Explore and fetch <strong>3,045+ production-grade modular skills</strong> for Claude Code, Cursor, Antigravity, and Gemini. Keep your prompts offline, highly structured, and optimized.
+        Explore and fetch <strong>3,050+ production-grade modular skills</strong> for Claude Code, Cursor, Antigravity, and Gemini. Keep your prompts offline, highly structured, and optimized.
       </p>
 
       <!-- Search & Filtering Box -->
@@ -1277,7 +1285,7 @@
           </select>
           <button class="ai-search-toggle-btn" id="ai-search-toggle-btn" onclick="toggleAISearchPanel()"
             title="AI Search">
-            <i class="fa-solid fa-wand-magic-sparkles"></i>
+            <i class="fa-solid fa-wand-magic-sparkles"></i> AI Search
           </button>
           <button id="clear-search" class="clear-btn" style="display:none;"><i class="fa-solid fa-xmark"></i></button>
         </div>
@@ -1336,7 +1344,7 @@
       <div class="dropzone-title">🔌 Local Preview Mode Offline</div>
       <p class="dropzone-description">
         Opening this catalog directly via a local file protocol is subject to browser CORS limits.
-        To view the complete collection of <strong>3,045+ skills</strong> offline, drag & drop the
+        To view the complete collection of <strong>3,050+ skills</strong> offline, drag & drop the
         <code>skills_index.json</code> file (or <code>skills.json</code>) here, or browse from your system.
       </p>
       <div class="dropzone-btn-row">
@@ -1613,7 +1621,10 @@
         const statsRes = await fetch('/api/stats');
         if (statsRes.ok) {
           const statsData = await statsRes.json();
-          const globalCount = statsData.total || 0;
+          let globalCount = parseInt(String(statsData.total || "").replace(/[^\d]/g, "")) || 0;
+          if (!globalCount || globalCount <= 0) {
+            globalCount = 830980; // Fallback so the counter always shows the expected magnitude
+          }
           
           localStorage.setItem("aburajal_global_count", globalCount);
 
@@ -1910,11 +1921,13 @@ To load this skill, copy these lines or run the command:
       if (batch.length === 0) {
         const sourceVal = document.getElementById("search-source").value;
         if (sourceVal === "global" && !searchQuery) {
+          const globalCountStr = localStorage.getItem("aburajal_global_count") || "830980";
+          const globalCount = parseInt(String(globalCountStr).replace(/[^\d]/g, "")) || 830980;
           grid.innerHTML = `
             <div class="empty-state">
               <i class="fa-solid fa-magnifying-glass"></i>
               <h4>Global Catalog Search</h4>
-              <p>Type keywords (e.g. "git", "python", "seo") above to search the global database of 9,500+ skills.</p>
+              <p>Type keywords (e.g. "git", "python", "seo") above to search the global database of ${globalCount.toLocaleString()}+ skills.</p>
             </div>
           `;
         } else {
@@ -2009,8 +2022,8 @@ To load this skill, copy these lines or run the command:
         }
         skillsData = localSkillsData;
       } else {
-        const globalCountStr = localStorage.getItem("aburajal_global_count") || "9,590";
-        const globalCount = parseInt(globalCountStr) || 9590;
+        const globalCountStr = localStorage.getItem("aburajal_global_count") || "830980";
+        const globalCount = parseInt(String(globalCountStr).replace(/[^\d]/g, "")) || 830980;
         if (heroDesc) {
           heroDesc.innerHTML = `Explore and fetch <strong>${globalCount.toLocaleString()}+ skills</strong> globally indexed by <strong>skills.sh</strong> for Claude, Cursor, Antigravity, and Gemini. Keep your prompts offline, highly structured, and optimized.`;
         }
@@ -2041,13 +2054,20 @@ To load this skill, copy these lines or run the command:
               const res = await fetch(`/api/search?q=${encodeURIComponent(searchQuery)}`);
               if (res.ok) {
                 const data = await res.json();
-                skillsData = data.skills || [];
+                skillsData = Array.isArray(data.skills) ? data.skills : [];
                 renderApp();
+              } else {
+                // HTTP error from the proxy — keep Global mode and surface a clear message
+                console.error("Global search request failed:", res.status, res.statusText);
+                skillsData = [];
+                renderApp();
+                showToast("Global search is temporarily unavailable. Please try again.");
               }
             } catch(e) {
-              console.error("Global search failed, falling back to local search.", e);
-              skillsData = localSkillsData;
+              console.error("Global search network error:", e);
+              skillsData = [];
               renderApp();
+              showToast("Global search is temporarily unavailable. Please try again.");
             }
           } else {
             skillsData = localSkillsData;
