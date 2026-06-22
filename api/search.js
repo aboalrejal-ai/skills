@@ -1,4 +1,4 @@
-const { getOidcToken } = require('@vercel/oidc');
+const { getVercelOidcToken } = require('@vercel/oidc');
 
 module.exports = async (req, res) => {
   const query = req.query.q || '';
@@ -7,7 +7,7 @@ module.exports = async (req, res) => {
   }
 
   try {
-    const token = await getOidcToken();
+    const token = await getVercelOidcToken();
     // Search skills endpoint
     const response = await fetch(`https://skills.sh/api/v1/skills/search?q=${encodeURIComponent(query)}`, {
       headers: {

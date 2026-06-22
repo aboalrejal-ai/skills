@@ -1,8 +1,8 @@
-const { getOidcToken } = require('@vercel/oidc');
+const { getVercelOidcToken } = require('@vercel/oidc');
 
 module.exports = async (req, res) => {
   try {
-    const token = await getOidcToken();
+    const token = await getVercelOidcToken();
     const response = await fetch('https://skills.sh/api/v1/skills', {
       headers: {
         Authorization: `Bearer ${token}`
