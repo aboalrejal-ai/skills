@@ -367,7 +367,7 @@
 
     .search-input {
       width: 100%;
-      padding: 16px 85px 16px 52px;
+      padding: 16px 240px 16px 52px;
       font-family: var(--font-headings);
       font-size: 1rem;
       background-color: var(--bg-secondary);
@@ -382,6 +382,27 @@
     .search-input:focus {
       border-color: var(--accent-orange);
       box-shadow: 0 0 0 4px rgba(217, 119, 87, 0.15), var(--shadow-md);
+    }
+
+    .search-source-select {
+      position: absolute;
+      right: 88px;
+      background-color: var(--bg-tertiary);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      border-radius: 20px;
+      padding: 6px 28px 6px 12px;
+      font-family: var(--font-headings);
+      font-size: 0.82rem;
+      font-weight: 600;
+      outline: none;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    .search-source-select:hover {
+      border-color: var(--text-primary);
+      background-color: var(--bg-secondary);
     }
 
     .ai-search-toggle-btn {
@@ -1250,8 +1271,12 @@
           <i class="fa-solid fa-magnifying-glass search-icon"></i>
           <input type="text" class="search-input" id="search-box"
             placeholder="Search skills, triggers, platforms (e.g. seo, react, compose)..." autocomplete="off">
+          <select id="search-source" class="search-source-select" onchange="onSearchSourceChange()">
+            <option value="local">Default (Local)</option>
+            <option value="global">Skills.sh (Global)</option>
+          </select>
           <button class="ai-search-toggle-btn" id="ai-search-toggle-btn" onclick="toggleAISearchPanel()"
-            title="AI Semantic Search">
+            title="AI Search">
             <i class="fa-solid fa-wand-magic-sparkles"></i>
           </button>
           <button id="clear-search" class="clear-btn" style="display:none;"><i class="fa-solid fa-xmark"></i></button>
@@ -1590,14 +1615,19 @@
           const statsData = await statsRes.json();
           const globalCount = statsData.total || 0;
           
-          const heroDesc = document.querySelector('.hero-desc');
-          if (heroDesc) {
-             heroDesc.innerHTML = `Explore and fetch <strong>${globalCount.toLocaleString()}+ skills</strong> globally indexed by <strong>skills.sh</strong> for Claude, Cursor, Antigravity, and Gemini. Keep your prompts offline, highly structured, and optimized.`;
-          }
+          localStorage.setItem("aburajal_global_count", globalCount);
 
-          const searchBox = document.getElementById("search-box");
-          if (searchBox) {
-            searchBox.placeholder = `Search ${globalCount.toLocaleString()}+ global skills (e.g. seo, react, compose)...`;
+          const source = document.getElementById("search-source").value;
+          if (source === "global") {
+            const heroDesc = document.querySelector('.hero-desc');
+            if (heroDesc) {
+               heroDesc.innerHTML = `Explore and fetch <strong>${globalCount.toLocaleString()}+ skills</strong> globally indexed by <strong>skills.sh</strong> for Claude, Cursor, Antigravity, and Gemini. Keep your prompts offline, highly structured, and optimized.`;
+            }
+
+            const searchBox = document.getElementById("search-box");
+            if (searchBox) {
+              searchBox.placeholder = `Search ${globalCount.toLocaleString()}+ global skills (e.g. seo, react, compose)...`;
+            }
           }
 
           updateStatus(true);
@@ -1878,13 +1908,24 @@ To load this skill, copy these lines or run the command:
       const batch = filtered.slice(0, renderedCount);
 
       if (batch.length === 0) {
-        grid.innerHTML = `
-          <div class="empty-state">
-            <i class="fa-solid fa-circle-question"></i>
-            <h4>No matching skills found</h4>
-            <p>Try adjusting your search keywords or resetting category filters.</p>
-          </div>
-        `;
+        const sourceVal = document.getElementById("search-source").value;
+        if (sourceVal === "global" && !searchQuery) {
+          grid.innerHTML = `
+            <div class="empty-state">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <h4>Global Catalog Search</h4>
+              <p>Type keywords (e.g. "git", "python", "seo") above to search the global database of 9,500+ skills.</p>
+            </div>
+          `;
+        } else {
+          grid.innerHTML = `
+            <div class="empty-state">
+              <i class="fa-solid fa-circle-question"></i>
+              <h4>No matching skills found</h4>
+              <p>Try adjusting your search keywords or resetting category filters.</p>
+            </div>
+          `;
+        }
         return;
       }
 
@@ -1950,6 +1991,38 @@ To load this skill, copy these lines or run the command:
     const clearSearchBtn = document.getElementById("clear-search");
     let searchTimeout;
 
+    function onSearchSourceChange() {
+      const source = document.getElementById("search-source").value;
+      const heroDesc = document.querySelector('.hero-desc');
+      const searchBoxEl = document.getElementById("search-box");
+
+      searchBoxEl.value = "";
+      searchQuery = "";
+      clearSearchBtn.style.display = "none";
+
+      if (source === "local") {
+        if (heroDesc) {
+          heroDesc.innerHTML = `Explore and fetch <strong>${localSkillsData.length.toLocaleString()}+ production-grade modular skills</strong> for Claude Code, Cursor, Antigravity, and Gemini. Keep your prompts offline, highly structured, and optimized.`;
+        }
+        if (searchBoxEl) {
+          searchBoxEl.placeholder = "Search local skills (e.g. seo, react, compose)...";
+        }
+        skillsData = localSkillsData;
+      } else {
+        const globalCountStr = localStorage.getItem("aburajal_global_count") || "9,590";
+        const globalCount = parseInt(globalCountStr) || 9590;
+        if (heroDesc) {
+          heroDesc.innerHTML = `Explore and fetch <strong>${globalCount.toLocaleString()}+ skills</strong> globally indexed by <strong>skills.sh</strong> for Claude, Cursor, Antigravity, and Gemini. Keep your prompts offline, highly structured, and optimized.`;
+        }
+        if (searchBoxEl) {
+          searchBoxEl.placeholder = `Search ${globalCount.toLocaleString()}+ global skills (e.g. seo, react, compose)...`;
+        }
+        skillsData = [];
+      }
+
+      renderApp();
+    }
+
     searchBox.oninput = (e) => {
       searchQuery = e.target.value.toLowerCase().trim();
       if (searchQuery.length > 0) {
@@ -1958,27 +2031,35 @@ To load this skill, copy these lines or run the command:
         clearSearchBtn.style.display = "none";
       }
       
+      const source = document.getElementById("search-source").value;
+
       clearTimeout(searchTimeout);
       searchTimeout = setTimeout(async () => {
         if (searchQuery) {
-          try {
-            const res = await fetch(`/api/search?q=${encodeURIComponent(searchQuery)}`);
-            if (res.ok) {
-              const data = await res.json();
-              skillsData = data.skills || [];
-              renderedCount = 20;
-              renderCards();
+          if (source === "global") {
+            try {
+              const res = await fetch(`/api/search?q=${encodeURIComponent(searchQuery)}`);
+              if (res.ok) {
+                const data = await res.json();
+                skillsData = data.skills || [];
+                renderApp();
+              }
+            } catch(e) {
+              console.error("Global search failed, falling back to local search.", e);
+              skillsData = localSkillsData;
+              renderApp();
             }
-          } catch(e) {
-            console.error("Global search failed, falling back to local search.", e);
+          } else {
             skillsData = localSkillsData;
-            renderedCount = 20;
-            renderCards();
+            renderApp();
           }
         } else {
-          skillsData = localSkillsData;
-          renderedCount = 20;
-          renderCards();
+          if (source === "global") {
+            skillsData = [];
+          } else {
+            skillsData = localSkillsData;
+          }
+          renderApp();
         }
       }, 400);
     };
@@ -1987,7 +2068,12 @@ To load this skill, copy these lines or run the command:
       searchBox.value = "";
       searchQuery = "";
       clearSearchBtn.style.display = "none";
-      skillsData = localSkillsData;
+      const source = document.getElementById("search-source").value;
+      if (source === "global") {
+        skillsData = [];
+      } else {
+        skillsData = localSkillsData;
+      }
       renderApp();
       searchBox.focus();
     };
