@@ -14,13 +14,24 @@ module.exports = async (req, res) => {
     }
 
     const data = await response.json();
-    // The skills.sh API returns { skills: [], pagination: { total: X, ... } }
+
+    let skillsArray = [];
+    let totalCount = 0;
+
+    if (Array.isArray(data)) {
+      skillsArray = data;
+      totalCount = data.length;
+    } else if (data) {
+      skillsArray = data.skills || data.items || data.data || [];
+      totalCount = data.pagination?.total || data.total || skillsArray.length;
+    }
+
     res.status(200).json({
-      total: data.pagination ? data.pagination.total : 0,
-      skills: data.skills.slice(0, 10) // Return top 10 as trending
+      total: totalCount,
+      skills: skillsArray.slice(0, 10),
+      debug_raw: data
     });
   } catch (error) {
-    console.error('Stats fetch error:', error);
-    res.status(500).json({ error: error.message });
+    res.status(500).json({ error: error.message, stack: error.stack });
   }
 };

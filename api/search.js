@@ -20,9 +20,20 @@ module.exports = async (req, res) => {
     }
 
     const data = await response.json();
-    res.status(200).json(data);
+
+    let skillsArray = [];
+    if (Array.isArray(data)) {
+      skillsArray = data;
+    } else if (data) {
+      skillsArray = data.skills || data.items || data.data || [];
+    }
+
+    res.status(200).json({ 
+      skills: skillsArray,
+      debug_raw: data
+    });
   } catch (error) {
     console.error('Search fetch error:', error);
-    res.status(500).json({ error: error.message });
+    res.status(500).json({ error: error.message, stack: error.stack });
   }
 };
