@@ -11,6 +11,7 @@ export default function Home() {
   const [source, setSource] = useState('default');
   const [results, setResults] = useState<Skill[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [totalCount, setTotalCount] = useState<number | null>(null);
 
   useEffect(() => {
     const handler = setTimeout(() => {
@@ -20,31 +21,24 @@ export default function Home() {
   }, [query, source]);
 
   const performSearch = async (q: string, s: string) => {
-    if (s === 'skills.sh') {
-      setIsLoading(true);
-      try {
-        const res = await fetch(`/api/skills/search?q=${encodeURIComponent(q)}`);
-        if (res.ok) {
-          const data = await res.json();
-          setResults(data.data || []);
-        } else {
-          setResults([]);
+    setIsLoading(true);
+    try {
+      const apiUrl = s === 'skills.sh' ? `/api/skills/search?q=${encodeURIComponent(q)}` : `/api/skills/local?q=${encodeURIComponent(q)}`;
+      const res = await fetch(apiUrl);
+      if (res.ok) {
+        const data = await res.json();
+        setResults(data.data || []);
+        if (s === 'default' && data.totalCount !== undefined) {
+          setTotalCount(data.totalCount);
         }
-      } catch (err) {
-        console.error("Failed to fetch skills", err);
-        setResults([]);
-      } finally {
-        setIsLoading(false);
-      }
-    } else {
-      setIsLoading(false);
-      if (!q) {
-        setResults([
-          { id: 'vercel-labs/skills/find-skills', slug: 'find-skills', name: 'find-skills', source: 'vercel-labs/skills', installs: 24531, sourceType: 'github', installUrl: '', url: 'https://skills.sh', description: 'Find relevant skills for your AI agents' }
-        ]);
       } else {
         setResults([]);
       }
+    } catch (err) {
+      console.error("Failed to fetch skills", err);
+      setResults([]);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -58,6 +52,7 @@ export default function Home() {
           source={source}
           setSource={setSource}
           onSearch={() => performSearch(query, source)}
+          totalCount={totalCount || 3050}
         />
         <SkillsGrid skills={results} isLoading={isLoading} />
       </main>

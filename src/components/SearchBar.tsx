@@ -6,9 +6,10 @@ type SearchBarProps = {
   source: string;
   setSource: (s: string) => void;
   onSearch: () => void;
+  totalCount: number;
 };
 
-export default function SearchBar({ query, setQuery, source, setSource, onSearch }: SearchBarProps) {
+export default function SearchBar({ query, setQuery, source, setSource, onSearch, totalCount }: SearchBarProps) {
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter') {
       onSearch();
@@ -22,7 +23,7 @@ export default function SearchBar({ query, setQuery, source, setSource, onSearch
       </div>
       <h2>Modular Agentic Skills <br /><span className="highlight">Tailored for AI Coding</span></h2>
       <p className="hero-desc">
-        Explore and fetch <strong>3,050+ production-grade modular skills</strong> for Claude Code, Cursor, Antigravity, and Gemini.
+        Explore and fetch <strong>{totalCount}+ production-grade modular skills</strong> for Claude Code, Cursor, Antigravity, and Gemini.
       </p>
 
       <div className="filter-box">
@@ -49,7 +50,7 @@ export default function SearchBar({ query, setQuery, source, setSource, onSearch
         </div>
       </div>
       <div className="stats-row" style={{ marginTop: '24px' }}>
-        <div className="stat-pill"><i className="fa-solid fa-folder-open"></i> <span>3,050</span> Skills</div>
+        <div className="stat-pill"><i className="fa-solid fa-folder-open"></i> <span>{totalCount}</span> Skills</div>
         <div className="stat-pill"><i className="fa-solid fa-code"></i> Offline Ready</div>
       </div>
     </section>
