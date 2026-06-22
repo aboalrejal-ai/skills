@@ -26,4 +26,6 @@ Thumbs.db
 
 # Graphify
 graphify-out/
+.next/
+NUL
 
